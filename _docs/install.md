@@ -127,10 +127,6 @@ Custom shortcut:
   - name: `Flameshot`
   - command: `bash -c "flatpak run --command=flameshot org.flameshot.Flameshot gui --raw | wl-copy"`
   - shortcut: `PrtScn`
-- Flameshot Screen
-  - name: `Flameshot`
-  - command: `flatpak run --command=flameshot org.flameshot.Flameshot screen`
-  - shortcut: `Shitf + PrtScn`
 
 ### Multitasking
 

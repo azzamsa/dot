@@ -24,4 +24,5 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-4 "['<Super>r
 gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-applications "[]"
 
-dconf write /org/gnome/shell/extensions/auto-move-windows/application-list ['dev.vencord.Vesktop.desktop:3', 'app.zen_browser.zen.desktop:2']
+gsettings set org.gnome.shell.extensions.auto-move-windows application-list
+"['dev.vencord.Vesktop.desktop:3', 'app.zen_browser.zen.desktop:2', 'org.atheme.audacious.desktop:4', 'emacs.desktop:1', 'com.mitchellh.ghostty.desktop:1']"

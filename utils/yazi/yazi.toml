@@ -2,6 +2,9 @@
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
+[tasks]
+image_bound = [50000, 50000] # default [ 5000, 5000 ]
+
 [mgr]
 sort_by = "mtime" # default: "alphabetical"
 sort_reverse = true # default: false

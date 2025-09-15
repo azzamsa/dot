@@ -5,8 +5,8 @@
 
 My personal .dotfiles 🗃️
 
-<a href="https://github.com/azzamsa/dotfiles/actions/workflows/ci.yml">
-    <img src="https://github.com/azzamsa/dotfiles/actions/workflows/ci.yml/badge.svg" alt="Build status" />
+<a href="https://github.com/azzamsa/dot/actions/workflows/ci.yml">
+    <img src="https://github.com/azzamsa/dot/actions/workflows/ci.yml/badge.svg" alt="Build status" />
 </a>
 
 </div>
@@ -23,7 +23,7 @@ Refer to [local.toml](.dotter/local.example.toml) to see the tools I'm currently
 
 ```bash
 $ # Clone the repository
-$ git clone https://github.com/azzamsa/dotfiles ~/dot
+$ git clone https://github.com/azzamsa/dot ~/dot
 
 $ cd ~/dot
 $ just setup

@@ -2,15 +2,15 @@
 
 - Ubuntu GNOME, Oct 23, 2013 - Dec 18, 2015 (2 years, 1 month, 25 days).
 - Debian, Dec 18, 2015 - Sep 13, 2022 (6 years, 8 months, 26 days).
-  - i3 -> [BSPWM](https://github.com/azzamsa/dotfiles/commit/52aa44bca349cc575aba6dc22cafc6f50e5f4d31)
-  - BSPWM -> [GNOME](https://github.com/azzamsa/dotfiles/commit/376e66797cc6cc9914af727f0a8f2396286d4e10)
+  - i3 -> [BSPWM](https://github.com/azzamsa/dot/commit/52aa44bca349cc575aba6dc22cafc6f50e5f4d31)
+  - BSPWM -> [GNOME](https://github.com/azzamsa/dot/commit/376e66797cc6cc9914af727f0a8f2396286d4e10)
 - Fedora GNOME, [Sep 13, 2022][fedora-2022-start] - Jul 6, 2023 (9 months, 23 days).
 - Fedora Silverblue GNOME, [Jul 6, 2023][fedora-silverblue-start] - Jul 17, 2023 (11 days).
 - Debian GNOME, [Jul 17, 2023][debian-2023-start] - Aug 5, 2023 (19 days).
 - Fedora GNOME, [Aug 5, 2023][fedora-2023-start] - Aug 21, 2025 (2 years 16 days).
 - Debian GNOME, [Aug 21, 2025][debian-2025-start] - Aug 25, 2025 (4 days).
 - Endeavour GNOME, [Aug 25, 2025][endeavour-2025-start] - Sep 10, 2025 (16 days).
-- Debian GNOME, [Sep 10, 2025][debian-2025-start-1] - now.
+- Debian GNOME, [Sep 10, 2025][current] - now.
 - [More...](BOOKMARKS.md)
 
 ## Ubuntu (2 years) -> Debian
@@ -83,10 +83,10 @@ I also don’t need anything fancy when it comes to the filesystem, bootloader, 
 
 Lastly, I don’t need a fancy LUKS password prompt either. It asks for the password right after I press the power button, and the system boots so quickly that I don’t even get to see the Plymouth animation anyway.
 
-[fedora-2022-start]: https://github.com/azzamsa/dotfiles/commit/4c5ccdc51e63a552c73113753687e6d9aa5e70fd
-[fedora-2023-start]: https://github.com/azzamsa/dotfiles/commit/f09550c399e67f223fa41c4517b15b1772e56847
-[debian-2023-start]: https://github.com/azzamsa/dotfiles/commit/61513966e5b6c1697af94e68e22a6caffb0c64dc
-[fedora-silverblue-start]: https://github.com/azzamsa/dotfiles/commit/d2d3d2e0b4f83362488a407155149d581122d361
-[debian-2025-start]: https://github.com/azzamsa/dotfiles/commit/1584afb8202e2e2a227ff0daff10c102bee07188
-[debian-2025-start-1]: https://github.com/azzamsa/dotfiles/tree/16864b33eac61ff8b557d2cbce6187e0291a7d44
-[current-os]: https://github.com/azzamsa/dotfiles
+[fedora-2022-start]: https://github.com/azzamsa/dot/commit/4c5ccdc51e63a552c73113753687e6d9aa5e70fd
+[fedora-2023-start]: https://github.com/azzamsa/dot/commit/f09550c399e67f223fa41c4517b15b1772e56847
+[debian-2023-start]: https://github.com/azzamsa/dot/commit/61513966e5b6c1697af94e68e22a6caffb0c64dc
+[fedora-silverblue-start]: https://github.com/azzamsa/dot/commit/d2d3d2e0b4f83362488a407155149d581122d361
+[debian-2025-start]: https://github.com/azzamsa/dot/commit/1584afb8202e2e2a227ff0daff10c102bee07188
+[endeavour-2025-start]: https://github.com/azzamsa/dot/commit/0a091a9cde8f9fcd8119ed8ba53ca81e8d3b6555
+[current]: https://github.com/azzamsa/dot

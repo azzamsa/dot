@@ -1,7 +1,7 @@
 #
 # Bookmarks
-# - https://github.com/azzamsa/dotfiles/tree/925cf2f92360a3132291230e8054ac755aacc6d7/shells/fish/themes
-# - https://github.com/azzamsa/dotfiles/blob/ae4be03241dabb9daa8b8f4ee68bf4025cf40c54/shells/fish/colors.fish
+# - https://github.com/azzamsa/dot/tree/925cf2f92360a3132291230e8054ac755aacc6d7/shells/fish/themes
+# - https://github.com/azzamsa/dot/blob/ae4be03241dabb9daa8b8f4ee68bf4025cf40c54/shells/fish/colors.fish
 
 if [ $theme = modus_vivendi ]
     # License: GPL 3.0

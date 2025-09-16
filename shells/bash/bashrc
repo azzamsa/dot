@@ -6,3 +6,6 @@ if [ -f "$HOME/.exports" ]; then
 fi
 
 eval "$(starship init bash)"
+
+. "$HOME/.local/share/cargo/env"
+. "$HOME/.local/share/rye/env"

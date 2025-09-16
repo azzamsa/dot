@@ -10,7 +10,11 @@ just --justfile ~/dot/justfile deploy
 #
 # Python
 curl -sSf https://rye.astral.sh/get | bash
-rye install qmk grip poetry python-lsp-server
+
+set -l pkgs qmk grip poetry python-lsp-server uv
+for pkg in $pkgs
+    rye install $pkg
+end
 
 #
 # Node

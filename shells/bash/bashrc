@@ -6,6 +6,7 @@ if [ -f "$HOME/.exports" ]; then
 fi
 
 eval "$(starship init bash)"
+eval "$(fnm env --use-on-cd)"
 
 . "$HOME/.local/share/cargo/env"
 . "$HOME/.local/share/rye/env"

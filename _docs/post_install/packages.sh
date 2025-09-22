@@ -1,15 +1,12 @@
 #!/usr/bin/env fish
 
-#
-# Setup Nala
-
 # I prefer to work with `fish` than `bash`
-sudo apt install --assume-yes nala fish flatpak gnome-software-plugin-flatpak
+sudo apt install --assume-yes netselect-apt fish flatpak gnome-software-plugin-flatpak
 
 # Find the fastest mirrors.
-sudo nala fetch
+sudo netselect-apt
 # Upgrade The Os
-sudo nala update && sudo nala upgrade
+sudo apt update && sudo apt upgrade
 
 #
 # Setup Core Packages
@@ -30,5 +27,5 @@ set -l pkgs bash git fish curl wl-clipboard \
     libfuse-dev
 
 for pkg in $pkgs
-    sudo nala install --assume-yes $pkg
+    sudo apt install --assume-yes $pkg
 end

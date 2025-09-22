@@ -79,7 +79,8 @@ fn golang() -> anyhow::Result<()> {
 fn system() -> anyhow::Result<()> {
     utils::stdout("🐧 Upgrading System apps");
     // Use `unchecked()` to allow the next command to run even if `No` is chosen at the prompt.
-    cmd!("sudo", "nala", "upgrade").unchecked().run()?;
+    cmd!("sudo", "apt", "update").unchecked().run()?;
+    cmd!("sudo", "apt", "upgrade").unchecked().run()?;
     Ok(())
 }
 

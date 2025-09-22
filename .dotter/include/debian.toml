@@ -1,4 +1,4 @@
 [shell.variables]
 pkg = "sudo nala"
-install = "sudo nala install"
-uninstall = "sudo nala purge"
+install = "sudo apt install"
+uninstall = "sudo apt purge"

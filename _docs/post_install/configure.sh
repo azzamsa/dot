@@ -76,7 +76,7 @@ set -l pkgs \
     wngerman wpolish wportuguese
 
 for pkg in $pkgs
-    sudo nala purge $pkg
+    sudo apt purge $pkg
 end
 
-sudo nala autoremove && sudo nala autopurge
+sudo apt autoremove && sudo apt autopurge

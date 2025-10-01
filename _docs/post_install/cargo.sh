@@ -13,7 +13,7 @@ cargo install cargo-binstall
 
 set -l pkgs \
     atuin dotter fnm starship just jj-cli \
-    cargo-update cargo-edit cargo-outdated cargo-tarpaulin bacon dprint git-cliff hurl selene \
+    cargo-update cargo-edit cargo-outdated cargo-cache cargo-tarpaulin bacon dprint git-cliff hurl selene \
     stylua typos-cli watchexec-cli git-cliff dprint typos-cli jaq bandwhich bat dua-cli kondo \
     yazi-fm eza typstyle typst-cli lolcrab macchina tokei \
     # Text Editor

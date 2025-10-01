@@ -5,7 +5,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 #
 # Setup Core Packages
 set -l pkgs \
-    app.zen_browser.zen ca.desrt.dconf-editor com.brave.Browser \
+    app.zen_browser.zen ca.desrt.dconf-editor com.google.Chrome \
     com.calibre_ebook.calibre com.dec05eba.gpu_screen_recorder com.github.IsmaelMartinez.teams_for_linux \
     com.github.finefindus.eyedropper com.github.johnfactotum.Foliate com.github.qarmin.czkawka \
     com.github.tchx84.Flatseal com.mattjakeman.ExtensionManager com.usebruno.Bruno \

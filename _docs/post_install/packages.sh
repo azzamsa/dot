@@ -24,7 +24,9 @@ set -l pkgs bash git fish curl wl-clipboard \
     # pandoc will pull a whopping `199.2 MB` deps, because it so powerful it pull latex and everything.
     jq fd-find ripgrep fzf telnet pandoc podman podman-compose shfmt markdown \
     # appimage
-    libfuse-dev
+    libfuse-dev \
+    # utils
+    rsync
 
 for pkg in $pkgs
     sudo apt install --assume-yes $pkg

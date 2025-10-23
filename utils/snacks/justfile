@@ -12,7 +12,7 @@ _default:
 [confirm('⚠️ This command will alter your system. Run recipe `setup`?')]
 [doc('Setup the repository')]
 setup:
-    just _cargo-install 'cargo-outdated bacon'
+    cargo binstall 'cargo-outdated bacon'
 
 [doc('Publish the binaries')]
 deploy: check
@@ -55,18 +55,3 @@ up arg="":
     else
         cargo outdated --root-deps-only
     fi;
-
-#
-# Helper
-
-[doc('Install using plain cargo or cargo-binstall')]
-[unix]
-_cargo-install tool:
-    #!/usr/bin/env bash
-    if command -v cargo-binstall >/dev/null 2>&1; then
-        echo "cargo-binstall..."
-        cargo binstall --no-confirm --no-symlinks {{ tool }}
-    else
-        echo "Building from source"
-        cargo install --locked {{ tool }}
-    fi

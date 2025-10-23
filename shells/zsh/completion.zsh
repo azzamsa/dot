@@ -55,7 +55,7 @@ zstyle ':completion:*:history-words' list false
 zstyle ':completion:*:history-words' menu yes
 # Exclude internal/fake envvars
 zstyle ':completion::*:(-command-|export):*' fake-parameters ${${${_comps[(I)-value-*]#*,}%%,*}:#-*-}
-# Sory array completion candidates
+# array completion candidates
 zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
 # Don't complete uninteresting users
 zstyle ':completion:*:users' ignored-patterns \

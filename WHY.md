@@ -1,5 +1,9 @@
 # Why I Switched?
 
+<div align="center">
+<img src='_assets/distro_timeline.png' width=350px/>
+</div>
+
 - Ubuntu GNOME, Oct 23, 2013 - Dec 18, 2015 (2 years, 1 month, 25 days).
 - Debian, Dec 18, 2015 - Sep 13, 2022 (6 years, 8 months, 26 days).
   - i3 -> [BSPWM](https://github.com/azzamsa/dot/commit/52aa44bca349cc575aba6dc22cafc6f50e5f4d31)

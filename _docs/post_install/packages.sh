@@ -28,7 +28,7 @@ set -l pkgs bash git fish curl wl-clipboard \
     # appimage
     libfuse-dev \
     # utils
-    rsync
+    rsync borgbackup
 
 for pkg in $pkgs
     sudo apt install --assume-yes $pkg

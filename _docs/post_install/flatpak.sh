@@ -3,9 +3,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 
 # Tier 1: Core Daily Tools
 set -l core_pkgs (
-# editors
-dev.zed.Zed
-
+    dev.zed.Zed
     com.google.Chrome
     org.telegram.desktop
     com.github.IsmaelMartinez.teams_for_linux

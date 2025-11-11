@@ -10,3 +10,4 @@ eval "$(fnm env --use-on-cd)"
 
 . "$HOME/.local/share/cargo/env"
 . "$HOME/.local/share/rye/env"
+. "$HOME/.goup/env"

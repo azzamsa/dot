@@ -1,3 +1,5 @@
+# https://github.com/dracula/ghostty/blob/main/dracula
+
 palette = 0=#000000
 palette = 1=#ff5555
 palette = 2=#50fa7b
@@ -6,9 +8,9 @@ palette = 4=#bd93f9
 palette = 5=#ff79c6
 palette = 6=#8be9fd
 palette = 7=#ffffff
-# Atuin comment header
-# Modus Vivendi
-palette = 8=#989898
+# The default color doesn't pass WCAG AA (4.46:1)
+# palette = 8=#6272a4
+palette = 8=#a6adc8
 palette = 9=#ff5555
 palette = 10=#50fa7b
 palette = 11=#f1fa8c

@@ -43,8 +43,7 @@ alias mkdir 'mkdir -pv'
 alias j just
 alias x nyazi
 
-abbr --add crg cargo
-abbr --add hld hledger
+alias fd fdfind
 
 #
 # Apps

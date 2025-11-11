@@ -15,6 +15,8 @@ set -l pkgs bash git fish curl wl-clipboard \
     vim neovim \
     # Rust
     clang mold libssl-dev \
+    # Lua
+    luarocks lua5.4 \
     # Prompt
     zoxide ffmpeg 7zip poppler-utils imagemagick \
     # Extensions

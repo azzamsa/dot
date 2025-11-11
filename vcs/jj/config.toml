@@ -3,5 +3,5 @@ name = "Azzam S.A"
 email = "vcs@azzamsa.com"
 
 [ui]
-editor = "nvim"
+editor = "hx"
 diff-editor = "meld"

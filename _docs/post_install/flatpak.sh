@@ -50,6 +50,7 @@ set -l utility_pkgs (
     io.github.pieterdd.StretchBreak
     io.github.nokse22.Exhibit
     org.atheme.audacious
+    org.videolan.VLC
 )
 
 # Combine all packages into a single list for installation

@@ -43,6 +43,7 @@ alias mkdir 'mkdir -pv'
 alias j just
 alias x nyazi
 
+alias hld hledger
 alias fd fdfind
 
 #

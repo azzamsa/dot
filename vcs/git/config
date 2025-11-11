@@ -60,9 +60,9 @@
 
 	path = ~/.config/git/config.local
 
-# The `**/office/name/**` path must points
+# The `**/desk/name/**` path must points
 # to specific office directory
-[includeIf "gitdir:**/canteen/bgn/**"]
+[includeIf "gitdir:**/desk/bgn/**"]
 	path = ~/.config/git/config.bgn
 
 [core]

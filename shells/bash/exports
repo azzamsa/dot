@@ -42,6 +42,9 @@ export GOPATH="$XDG_DATA_HOME/go"
 export EMACSDIR="$XDG_CONFIG_HOME/emacs"
 export LSP_USE_PLISTS=true
 
+# Nvim
+export PATH=~/.local/share/bob/nvim-bin:$PATH
+
 # Apps
 export HELIX_RUNTIME=~/.config/helix/
 export QT_QPA_PLATFORMTHEME="qt5ct"

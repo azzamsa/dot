@@ -17,15 +17,15 @@ themes {
             emphasis_3 187 154 247
         }
         ribbon_unselected {
-            base 56 62 90
+            base 0 0 0
             background 169 177 214
-            emphasis_0 249 51 87
+            emphasis_0 0 0 0
             emphasis_1 192 202 245
             emphasis_2 122 162 247
             emphasis_3 187 154 247
         }
         ribbon_selected {
-            base 56 62 90
+            base 0 0 0
             background 158 206 106
             emphasis_0 249 51 87
             emphasis_1 255 158 100

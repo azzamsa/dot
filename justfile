@@ -20,7 +20,7 @@ deploy:
     dotter deploy
 
 [doc('Make the codebase comply with formatting and linting rules (used in git hooks)')]
-comply: fmt lint _update-example
+comply: _update-example fmt lint
     just --justfile utils/snacks/justfile comply
 
 [doc('Check if the repository complies with rules and is ready to push')]
@@ -36,7 +36,7 @@ fmt-check:
     dprint check
 
 [doc('Lint the codebase')]
-lint:
+lint: fmt-check
     typos
 
 [doc('Create a new release. Example: just release v2.2.0')]

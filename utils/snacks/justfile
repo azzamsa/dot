@@ -1,9 +1,14 @@
 #!/usr/bin/env -S just --justfile
 
+set dotenv-load := true
+
 alias d := dev
+alias r := run
 alias f := fmt
 alias l := lint
-alias p := deploy
+alias t := test
+alias c := comply
+alias k := check
 
 [doc('List available commands')]
 _default:
@@ -12,23 +17,27 @@ _default:
 [confirm('⚠️ This command will alter your system. Run recipe `setup`?')]
 [doc('Setup the repository')]
 setup:
-    cargo binstall 'cargo-outdated bacon'
+    cargo binstall 'cargo-edit cargo-outdated dprint git-cliff bacon typos-cli'
+
+[doc('Tasks to make the code-base comply with the rules. Mostly used in git hooks')]
+comply: fmt lint test
+
+[doc('Check if the repository comply with the rules and ready to be pushed')]
+check: fmt-check lint test
 
 [doc('Publish the binaries')]
 deploy: check
     cargo test
 
-[doc('Tasks to make the code-base comply with the rules. Mostly used in git hooks')]
-comply: fmt lint _doc-check
-
-[doc('Check if the repository comply with the rules and ready to be pushed')]
-check: fmt-check lint _doc-check
-
 [doc('Develop the app')]
 dev:
     bacon
 
-[doc('Format the codebase')]
+[doc('Run the app')]
+run:
+    cargo run
+
+[doc('Format the codebase.')]
 fmt:
     cargo fmt --all
 
@@ -38,11 +47,12 @@ fmt-check:
 
 [doc('Lint the codebase')]
 lint:
-    cargo clippy --locked --all-targets --all-features
+    cargo clippy --all-targets --all-features
+    typos
 
-[doc('Check the documentation')]
-_doc-check:
-    cargo doc --all-features --no-deps
+[doc('Test the codebase')]
+test:
+    cargo test
 
 [doc('Check dependencies health. Pass `--write` to upgrade dependencies')]
 up arg="":
@@ -53,3 +63,8 @@ up arg="":
     else \
         cargo outdated --root-deps-only; \
     fi
+
+[doc('Dependency analysis')]
+meta:
+    cargo +nightly udeps
+    cargo audit

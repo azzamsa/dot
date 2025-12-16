@@ -21,4 +21,3 @@ esc = ["collapse_selection", "keep_primary_selection"]
 [editor.auto-save]
 focus-lost = true # default: false
 after-delay.enable = true # default: false
-

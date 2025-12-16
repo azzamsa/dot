@@ -55,5 +55,6 @@ end
 
 # All the colors below are kept across theme.
 set -g selection 1e1e2e #, #1e1e2e (Catpuccin Mocha Base)
-set -g comment a6adc8 # 9.43:1, #a6adc8 (Catpuccin Mocha Subtext 0)
+# Catpuccin Mocha Subtext 1 (#bac2de) is too bright (11.85:1)
+set -g comment a6adc8 # 9.43:1, #a6adc8 (katpuccin Mocha Subtext 0)
 set -g foreground ffffff # 21:1, #ffffff

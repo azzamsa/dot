@@ -2,7 +2,7 @@ themes {
     catppuccin_mocha {
         text_unselected {
             base 205 214 244
-            background 17 17 27
+            background 0   0   0
             emphasis_0 250 179 135
             emphasis_1 137 220 235
             emphasis_2 166 227 161

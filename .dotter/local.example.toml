@@ -1,54 +1,56 @@
 includes = [".dotter/include/debian.toml"]
 
 packages = [
-  #
-  # Shell
-  "shell",
-  "fish",
-  "nushell",
-  #
-  # Terminals
-  # "wezterm",
-  # "alacritty",
-  "ghostty",
-  "zellij",
-  "starship",
-  "atuin",
-  #
-  # Fetchers
-  "fastfetch",
-  #
-  # Editor
-  "helix",
-  "neovide",
-  #
-  # Scripts
-  "bin",
-  #
-  # VSC
-  "git",
-  "jj",
-  #
-  # Utils
-  "fontconfig",
-  "gnupg",
-  # "zellij",
-  "yazi",
-  # "lla",
-  "eget",
-  "jjui",
-  #
-  # Browsers
-  "tridactyl",
-  #
-  # Programming Languages
-  "cargo",
+    #
+    # Shell
+    "shell",
+    "fish",
+    "nushell",
+    #
+    # Terminals
+    # "wezterm",
+    # "alacritty",
+    "ghostty",
+    "zellij",
+    "starship",
+    "atuin",
+    #
+    # Fetchers
+    "fastfetch",
+    #
+    # Editor
+    "helix",
+    "neovide",
+    #
+    # Scripts
+    "bin",
+    #
+    # VSC
+    "git",
+    "jj",
+    #
+    # Utils
+    "fontconfig",
+    "gnupg",
+    # "zellij",
+    "yazi",
+    # "lla",
+    "eget",
+    "jjui",
+    #
+    # Browsers
+    "tridactyl",
+    #
+    # Programming Languages
+    "cargo",
 ]
 
 [variables]
+multiplexer = "zellij"
 editor = "hx"
 shell = "fish"
 terminal_font_size = 21
-font = "Maple Mono NF"  # the only font that doesn't stare at me. I feel happy coding.
+font = "Maple Mono NF" # the only font that doesn't stare at me. I feel happy coding.
+
 # Available theme can be found in shells/fish/colors.fish
 theme = "dracula"

@@ -2,7 +2,7 @@ themes {
     tokyonight_night {
         text_unselected {
             base 192 202 245
-            background 26 27 38
+            background 0   0   0
             emphasis_0 255 158 100
             emphasis_1 42 195 222
             emphasis_2 158 206 106

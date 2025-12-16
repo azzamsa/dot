@@ -19,7 +19,8 @@ themes {
         ribbon_selected {
             base 24 24 37
             background 166 227 161
-            emphasis_0 255 80 95
+            // Most color is unreadable on green bg but dark red
+            emphasis_0 210 15 57   // Ctp Latte Red
             emphasis_1 250 179 135
             emphasis_2 245 194 231
             emphasis_3 137 180 250

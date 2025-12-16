@@ -9,6 +9,7 @@ alias l := lint
 alias t := test
 alias c := comply
 alias k := check
+alias p := deploy
 
 [doc('List available commands')]
 _default:

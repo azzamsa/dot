@@ -17,8 +17,8 @@ pub enum Task {
     Cargo,
     Golang,
     Flatpak,
-    System,
     Node,
+    System,
 }
 
 pub(crate) fn run() -> anyhow::Result<()> {
@@ -37,8 +37,8 @@ fn run_all() -> anyhow::Result<()> {
     flatpak()?;
     cargo()?;
     golang()?;
-    system()?;
     node()?;
+    system()?;
     Ok(())
 }
 

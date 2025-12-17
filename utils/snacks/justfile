@@ -28,7 +28,6 @@ check: fmt-check lint test
 
 [doc('Publish the binaries')]
 deploy: check
-    cargo test
 
 [doc('Develop the app')]
 dev:
@@ -36,7 +35,7 @@ dev:
 
 [doc('Run the app')]
 run:
-    cargo run
+    cargo run --quiet
 
 [doc('Format the codebase.')]
 fmt:
@@ -48,12 +47,12 @@ fmt-check:
 
 [doc('Lint the codebase')]
 lint:
-    cargo clippy --all-targets --all-features
+    cargo clippy --all-targets --all-features --quiet
     typos
 
 [doc('Test the codebase')]
 test:
-    cargo test
+    cargo test --quiet
 
 [doc('Check dependencies health. Pass `--write` to upgrade dependencies')]
 up arg="":

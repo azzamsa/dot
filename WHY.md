@@ -4,17 +4,17 @@
 <img src='_assets/distro_timeline.png' width=350px/>
 </div>
 
-- Ubuntu GNOME, Oct 23, 2013 - Dec 18, 2015 (2 years, 1 month, 25 days).
-- Debian, Dec 18, 2015 - Sep 13, 2022 (6 years, 8 months, 26 days).
+- **Ubuntu GNOME**: Oct 23, 2013 - Dec 18, 2015 (2 years, 1 month, 25 days).
+- **Debian**: Dec 18, 2015 - Sep 13, 2022 (6 years, 8 months, 26 days).
   - i3 -> [BSPWM](https://github.com/azzamsa/dot/commit/52aa44bca349cc575aba6dc22cafc6f50e5f4d31)
   - BSPWM -> [GNOME](https://github.com/azzamsa/dot/commit/376e66797cc6cc9914af727f0a8f2396286d4e10)
-- Fedora GNOME, [Sep 13, 2022][fedora-2022-start] - Jul 6, 2023 (9 months, 23 days).
-- Fedora Silverblue GNOME, [Jul 6, 2023][fedora-silverblue-start] - Jul 17, 2023 (11 days).
-- Debian GNOME, [Jul 17, 2023][debian-2023-start] - Aug 5, 2023 (19 days).
-- Fedora GNOME, [Aug 5, 2023][fedora-2023-start] - Aug 21, 2025 (2 years 16 days).
-- Debian GNOME, [Aug 21, 2025][debian-2025-start] - Aug 25, 2025 (4 days).
-- Endeavour GNOME, [Aug 25, 2025][endeavour-2025-start] - Sep 10, 2025 (16 days).
-- Debian GNOME, [Sep 10, 2025][current] - now.
+- **Fedora GNOME**: [Sep 13, 2022][fedora-2022-start] - Jul 6, 2023 (9 months, 23 days).
+- **Fedora Silverblue GNOME**: [Jul 6, 2023][fedora-silverblue-start] - Jul 17, 2023 (11 days).
+- **Debian GNOME**: [Jul 17, 2023][debian-2023-start] - Aug 5, 2023 (19 days).
+- **Fedora GNOME**: [Aug 5, 2023][fedora-2023-start] - Aug 21, 2025 (2 years 16 days).
+- **Debian GNOME**: [Aug 21, 2025][debian-2025-start] - Aug 25, 2025 (4 days).
+- **Endeavour GNOME**: [Aug 25, 2025][endeavour-2025-start] - Sep 10, 2025 (16 days).
+- **Debian GNOME**: [Sep 10, 2025][current] - now.
 - [More...](BOOKMARKS.md)
 
 ## Ubuntu (2 years) -> Debian

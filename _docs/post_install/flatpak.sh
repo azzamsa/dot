@@ -53,12 +53,18 @@ set -l utility_pkgs (
     org.videolan.VLC
 )
 
+# Optionals
+set -l optionals (
+    org.gramps_project.Gramps
+    org.bleachbit.BleachBit
+    fr.romainvigier.MetadataCleaner
+    com.github.huluti.Curtail
+    org.freecad.FreeCAD
+)
+
 # Combine all packages into a single list for installation
 set -l pkgs $core_pkgs $task_pkgs $project_pkgs $utility_pkgs
 
 for pkg in $pkgs
     flatpak install flathub --assumeyes "$pkg"
 end
-
-# Optionals
-# org.gramps_project.Gramps org.bleachbit.BleachBit fr.romainvigier.MetadataCleaner com.github.huluti.Curtail

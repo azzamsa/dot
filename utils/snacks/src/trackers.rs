@@ -29,17 +29,20 @@ pub(crate) fn run() -> anyhow::Result<()> {
         ("Empty", "⬜"),
     ];
 
-    let mut total: usize = 0;
-    let mut counts = std::collections::HashMap::new();
+    // Calculate counts and store them in a Vector
+    let mut stats = Vec::new();
+    let mut total = 0;
 
-    for (_, emoji) in items {
+    for (label, emoji) in items {
         let count = content.matches(emoji).count();
-        counts.insert(emoji, count);
+        stats.push((label, emoji, count));
         total += count;
     }
 
-    for (label, emoji) in items {
-        let count = *counts.get(emoji).unwrap_or(&0);
+    // Sort the vector by count (highest to lowest)
+    stats.sort_by(|a, b| b.2.cmp(&a.2));
+
+    for (label, emoji, count) in stats {
         let share = if total > 0 {
             (count as f64 / total as f64) * 100.0
         } else {

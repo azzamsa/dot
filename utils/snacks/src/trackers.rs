@@ -15,14 +15,17 @@ pub(crate) fn run() -> anyhow::Result<()> {
 
     let content = fs::read_to_string(&opts.path)?;
     //  Stop processing if separator is found
-    let content = content.split("------").next().unwrap_or("");
+    let content = content.split("Summary:").next().unwrap_or("");
 
     let items = [
         ("Desk", "🍚"),
-        ("Career/Teach", "🦄"),
+        ("Career", "🦄"),
+        ("Childcare", "🍼"),
         ("Hobby", "🕹️"),
-        ("Leisure/Rest/Pray", "🏖️"),
-        ("Chores/Social Activity", "🧹"),
+        ("Leisure/Rest", "🏖️"),
+        ("Pray", "🕋"),
+        ("Chores", "🧹"),
+        ("Social", "🫂"),
         ("Workout", "🚲"),
         ("Sleep", "😴"),
         ("Low-value", "🪫"),

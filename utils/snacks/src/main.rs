@@ -6,6 +6,7 @@ mod names;
 mod ports;
 mod quotes;
 mod termhere;
+mod trackers;
 mod up;
 mod utils;
 
@@ -20,6 +21,7 @@ const TOOLS: Tools = &[
     ("quotes", quotes::run),
     ("termhere", termhere::run),
     ("up", up::run),
+    ("trackers", trackers::run),
 ];
 
 fn main() -> anyhow::Result<()> {

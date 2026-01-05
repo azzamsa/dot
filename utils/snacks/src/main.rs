@@ -2,6 +2,7 @@ mod clean;
 mod container_name;
 mod emojis;
 mod git_gone;
+mod hourly_rate;
 mod names;
 mod ports;
 mod quotes;
@@ -22,6 +23,7 @@ const TOOLS: Tools = &[
     ("termhere", termhere::run),
     ("up", up::run),
     ("trackers", trackers::run),
+    ("hourly-rate", hourly_rate::run),
 ];
 
 fn main() -> anyhow::Result<()> {

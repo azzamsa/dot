@@ -20,9 +20,9 @@ pub(crate) fn run() -> anyhow::Result<()> {
     let items = [
         ("Desk", "🍚"),
         ("Career", "🦄"),
-        ("Childcare", "🍼"),
+        ("Family", "💍"),
         ("Hobby", "🕹️"),
-        ("Leisure/Rest", "🏖️"),
+        ("Leisure", "🏖️"),
         ("Pray", "🕋"),
         ("Chores", "🧹"),
         ("Social", "🫂"),

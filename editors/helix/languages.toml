@@ -1,0 +1,6 @@
+[language-server.uwu_colors]
+command = "uwu_colors"
+
+[[language]]
+name = "fish"
+language-servers = ["fish-lsp", "uwu_colors"]

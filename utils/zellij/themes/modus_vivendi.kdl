@@ -17,10 +17,10 @@ themes {
             emphasis_3 187 154 247
         }
         ribbon_unselected {
-            base 0 0 0
-            // bg-mode-line-active
-            background 72 77 103
-            emphasis_0 0 0 0
+            base 255 255 255
+            // bg-mode-line-inactive
+            background 41  45  72
+            emphasis_0 255 255 255
             emphasis_1 255 255 255
             emphasis_2 122 162 247
             emphasis_3 187 154 247

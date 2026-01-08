@@ -28,7 +28,7 @@ palette = 14=#6ae4b9
 palette = 7=#ffffff
 palette = 15=#989898
 
-cursor-color = #feacd0
+cursor-color = #ff66ff
 
 # All the colors below are kept across theme.
 background = #000000

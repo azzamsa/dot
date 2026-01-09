@@ -5,7 +5,7 @@ packages = [
     # Shell
     "shell",
     "fish",
-    "nushell",
+    # "nushell",
     #
     # Terminals
     # "wezterm",
@@ -39,7 +39,7 @@ packages = [
     "jjui",
     #
     # Browsers
-    "tridactyl",
+    # "tridactyl",
     #
     # Programming Languages
     "cargo",
@@ -50,7 +50,8 @@ multiplexer = "zellij"
 editor = "hx"
 shell = "fish"
 terminal_font_size = 21
-font = "Maple Mono NF" # the only font that doesn't stare at me. I feel happy coding.
+# font = "Maple Mono NF" # the only font that doesn't stare at me. I feel happy coding.
+font = "0xProto Nerd Font"
 
 # Available theme can be found in shells/fish/colors.fish
 theme = "modus_vivendi"

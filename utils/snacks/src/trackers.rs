@@ -18,7 +18,7 @@ pub(crate) fn run() -> anyhow::Result<()> {
     let content = content.split("Summary:").next().unwrap_or("");
 
     let items = [
-        ("Desk", "🍚"),
+        ("Job", "🍙"),
         ("Career", "🦄"),
         ("Family", "💍"),
         ("Hobby", "🕹️"),

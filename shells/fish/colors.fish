@@ -21,7 +21,6 @@ else if [ $theme = tokyonight_moon ]
 end
 
 # All the colors below are kept across theme.
-set -g selection  "1e1e2e"  # "#1e1e2e"  (Catppuccin Mocha Base)
-# Catppuccin Mocha Subtext 1 ("#bac2de") is too bright (11.85:1)
-set -g comment    "a6adc8"  # 9.43:1,    "#a6adc8" (Catppuccin Mocha Subtext 0)
-set -g foreground "ffffff"  # 21:1,      "#ffffff"
+set -g selection 4a4f69 # #4a4f69 (modus-vivendi bg-active)
+set -g comment 989898 # 7.27:1, #989898 (modus-vivendi fg-dim)
+set -g foreground ffffff # 21:1, #ffffff

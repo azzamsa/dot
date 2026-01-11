@@ -1,0 +1,10 @@
+# Modus Vivendi Tinted Plus: An opinionated `Modus Viviendi Tinted`
+inherits = "modus_vivendi_tinted"
+
+"comment" = "fg-dim"
+"ui.linenr.selected" = { fg = "magenta-intense", bg = "bg-dim" }
+"ui.statusline" = { fg = "fg-mode-line-active", bg = "bg-dim" }
+
+[palette]
+# Basic values
+bg-main = "#000000"

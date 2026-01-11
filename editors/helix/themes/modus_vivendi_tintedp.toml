@@ -8,3 +8,5 @@ inherits = "modus_vivendi_tinted"
 [palette]
 # Basic values
 bg-main = "#000000"
+# darker bg-dim, default: "#1d2235"
+bg-dim = "#0d0e1c" # bg-main

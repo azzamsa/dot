@@ -19,7 +19,7 @@ themes {
         ribbon_unselected {
             base 255 255 255
             // bg-mode-line-inactive
-            background 41  45  72
+            background 29  34  54
             emphasis_0 255 255 255
             emphasis_1 255 255 255
             emphasis_2 122 162 247
@@ -28,7 +28,7 @@ themes {
         ribbon_selected {
             base 0 0 0
             background 68  188 68
-            emphasis_0 249 51  87
+            emphasis_0 255 95  95
             emphasis_1 223 175 122
             emphasis_2 187 154 247
             emphasis_3 122 162 247

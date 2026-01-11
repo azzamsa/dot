@@ -1,91 +1,45 @@
 {
   "helix_mode": true,
   "relative_line_numbers": "enabled",
-  "buffer_font_family": "Maple Mono NF",
+  "buffer_font_family": "0xProto Nerd Font",
   "autosave": {
     "after_delay": {
-      "milliseconds": 2000
-    }
+      "milliseconds": 2000,
+    },
   },
   "terminal": {
     "shell": {
-      "program": "fish"
-    }
+      "program": "fish",
+    },
   },
   "vim_mode": true,
   "icon_theme": "Catppuccin Mocha",
-  "ui_font_size": 19.0,
-  "buffer_font_size": 22.0,
+  "ui_font_size": 18.5,
+  "buffer_font_size": 24.0,
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Modus Vivendi Tinted"
+    "dark": "Modus Vivendi Tinted",
   },
   "ui_font_features": {
-    "calt": true
+    "calt": true,
   },
   "theme_overrides": {
     "Modus Vivendi Tinted": {
+      // Editor
+      "editor.background": "#000000",
+      "editor.active_line_number": "#ff66ff" // magenta-intense
+      "editor.gutter.background": "#0d0e1c", // bg-main
       // Tab
       "tab_bar.background": "#000000",
-      "tab.inactive_background": "#11111b",
-      "tab.active_background": "#1e1e2e",
-      // Editor
-      "editor.background": "#000000",
-      "editor.gutter.background": "#11111b",
+      "tab.inactive_background": "#0d0e1c",
+      "tab.active_background": "#2b3045", // bg-inactive
       "syntax": {
         "comment": {
-          "color": "#a6adc8"
-        }
-      }
+          // red-faint is too harsh
+          "color": "#989898", // fg-dim
+        },
+      },
     },
-    "Tokyo Night Moon": {
-      // Tab
-      "tab_bar.background": "#000000",
-      "tab.inactive_background": "#11111b",
-      "tab.active_background": "#1e1e2e",
-
-      //
-      // Editor
-      //
-      "text": "#ffffff",
-      "editor.background": "#000000",
-      "editor.foreground": "#ffffff",
-      "editor.line_number": "#9399b2",
-      "editor.active_line_number": "#fca7ea",
-      "syntax": {
-        "comment": {
-          "color": "#a6adc8"
-        }
-      }
-    },
-    "Tokyo Night": {
-      // Tab
-      "tab_bar.background": "#000000",
-      "tab.inactive_background": "#11111b",
-      "tab.active_background": "#1e1e2e",
-
-      //
-      // Editor
-      //
-      "text": "#ffffff",
-      "editor.background": "#000000",
-      "editor.foreground": "#ffffff",
-      "editor.line_number": "#9399b2",
-      "editor.active_line_number": "#94e2d5",
-      "syntax": {
-        "comment": {
-          "color": "#a6adc8"
-        }
-      }
-    },
-    "Catppuccin Mocha": {
-      //
-      // Editor
-      //
-      "text": "#ffffff",
-      "editor.background": "#000000",
-      "editor.foreground": "#ffffff"
-    }
-  }
+  },
 }

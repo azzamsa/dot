@@ -36,6 +36,7 @@ set -l project_pkgs (
     com.audacityteam.Audacity
     com.dec05eba.gpu_screen_recorder
     com.calibre_ebook.calibre
+    com.github.geigi.cozy
     com.github.johnfactotum.Foliate
     com.github.qarmin.czkawka
     ca.desrt.dconf-editor

@@ -4,9 +4,16 @@
 
 [mgr]
 prepend_keymap = [
+    { on = ["g", "g"], run = "arrow top", desc = "Go to top" },
+    # default: G
+    # I changed to mimic helix keymap
+    { on = ["g", "e"], run = "arrow bot", desc = "Go to bottom" },
+
     { on = ["g", "h"], run = "cd ~", desc = "~/" },
     { on = ["g", "t"], run = "cd /tmp", desc = "/tmp" },
     { on = ["g", "c"], run = "cd ~/code", desc = "~/code" },
-    { on = ["g", "d"], run = "cd ~/hq", desc = "~/hq" },
-    { on = ["g", "<Space>"], run = "cd --interactive", desc = "Jump to" },
+    { on = ["g", "f"], run = "cd ~/.config", desc = "~/.config" },
+    { on = ["g", "l"], run = "cd ~/.local", desc = "~/.local" },
+    { on = ["g", "d"], run = "cd ~/Downloads", desc = "~/Downloads" },
+    { on = ["g", "<Space>"], run = "cd --interactive", desc = "Jump interactively" },
 ]

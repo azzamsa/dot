@@ -61,5 +61,5 @@
 	path = ~/.config/git/config.local
 
 # This path must points to specific office directory
-[includeIf "gitdir:**/hq/bgn/**"]
+[includeIf "gitdir:**/hq/bgn/code/in/**"]
 	path = ~/.config/git/config.bgn

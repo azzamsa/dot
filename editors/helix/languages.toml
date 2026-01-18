@@ -1,6 +1,24 @@
+# See https://github.com/helix-editor/helix/blob/master/languages.toml
+
 [language-server.uwu_colors]
 command = "uwu_colors"
+
+[language-server.fs_watcher_lsp]
+command = "fs_watcher_lsp" # maybe use the path where it is installed
+args = []
 
 [[language]]
 name = "fish"
 language-servers = ["fish-lsp", "uwu_colors"]
+
+[[language]]
+name = "toml"
+language-servers = ["taplo", "tombi", "uwu_colors"]
+
+[[language]]
+name = "elisp"
+language-servers = ["uwu_colors"]
+
+[[language]]
+name = "markdown"
+language-servers = ["marksman", "markdown-oxide", "rumdl", "uwu_colors", "fs_watcher_lsp"]

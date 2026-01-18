@@ -6,7 +6,6 @@
   "editor.fontSize": 14.5,
   "files.autoSave": "afterDelay",
   "editor.formatOnSave": true,
-  "terminal.integrated.defaultProfile.linux": "fish",
   "go.toolsManagement.autoUpdate": true,
   "svelte.enable-ts-plugin": true,
   "workbench.colorTheme": "Catppuccin Mocha",

@@ -1,4 +1,3 @@
-default_shell "{{ shell }}"
 copy_command "wl-copy" // I am using Wayland
 show_startup_tips false // default: true
 

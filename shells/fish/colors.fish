@@ -1,3 +1,5 @@
+#!/usr/bin/env fish
+
 if [ $theme = modus_vivendi ]
     set -g red     "ff5f59"  # 7.48:1,  "#ff5f59"
     set -g green   "44bc44"  # 13.41:1, "#44bc44"

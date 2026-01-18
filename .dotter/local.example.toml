@@ -48,10 +48,10 @@ packages = [
 [variables]
 multiplexer = "zellij"
 editor = "hx"
-shell = "fish"
 terminal_font_size = 21
-# font = "Maple Mono NF" # the only font that doesn't stare at me. I feel happy coding.
-font = "0xProto Nerd Font"
+
+font = "Maple Mono NF" # 21. Friendly
+# font = "0xProto Nerd Font" # 21. Too much noise.
 
 # Available theme can be found in shells/fish/colors.fish
 theme = "modus_vivendi"

@@ -7,11 +7,6 @@
       "milliseconds": 2000,
     },
   },
-  "terminal": {
-    "shell": {
-      "program": "fish",
-    },
-  },
   "vim_mode": true,
   "icon_theme": "Catppuccin Mocha",
   "ui_font_size": 18.5,

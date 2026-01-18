@@ -16,7 +16,6 @@ export HISTCONTROL="ignoreboth"
 # Editors
 export VISUAL="{{ editor }}"
 export EDITOR="{{ editor }}"
-export TERM='xterm-256color'
 
 # Paths
 export PATH=~/opt/pbin:~/.local/bin:$PATH

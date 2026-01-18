@@ -1,6 +1,3 @@
-[shell]
-program = "/bin/fish"
-
 [cursor]
 blinking = true
 shape = 'beam'

@@ -1,3 +1,5 @@
+#!/usr/bin/env fish
+
 set fish_greeting # no greeting
 
 # Force true-color support; otherwise, the Neovim Terminal inside Neovide
@@ -55,6 +57,9 @@ starship init fish | source
 fnm env --use-on-cd | source
 atuin init fish | source
 jj util completion fish | source
+
+source ~/.config/fish/exports.fish
+source "$HOME/.local/share/cargo/env.fish"
 
 #
 # Functions

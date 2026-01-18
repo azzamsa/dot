@@ -1,5 +1,3 @@
 Config(
   prefix: ":",
-  // Override the shell used to launch the command
-  shell: fish,
 )

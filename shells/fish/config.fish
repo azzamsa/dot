@@ -41,7 +41,8 @@ alias mv 'mv -i'
 alias mkdir 'mkdir -pv'
 
 alias j just
-alias x nyazi
+alias f nyazi
+alias x scratch
 
 alias hld hledger
 alias fd fdfind
@@ -122,6 +123,12 @@ function clone
 
     git clone --depth 1 $repo_url
     cd $repo_name
+end
+
+#
+# Scratch
+function scratch
+    hx $HOME/.local/share/meta/scratch.md
 end
 
 #

@@ -59,7 +59,8 @@ atuin init fish | source
 jj util completion fish | source
 
 source ~/.config/fish/exports.fish
-source "$HOME/.local/share/cargo/env.fish"
+source ~/.local/share/cargo/env.fish
+source ~/.goup/env
 
 #
 # Functions

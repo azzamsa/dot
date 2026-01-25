@@ -4,11 +4,13 @@
 
 [mgr]
 prepend_keymap = [
+    # Hopping
     { on = ["g", "g"], run = "arrow top", desc = "Go to top" },
     # default: G
     # I changed to mimic helix keymap
     { on = ["g", "e"], run = "arrow bot", desc = "Go to bottom" },
 
+    # Goto
     { on = ["g", "h"], run = "cd ~", desc = "~/" },
     { on = ["g", "t"], run = "cd /tmp", desc = "/tmp" },
     { on = ["g", "c"], run = "cd ~/code", desc = "~/code" },

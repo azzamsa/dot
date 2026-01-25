@@ -21,15 +21,18 @@ pub(crate) fn run() -> anyhow::Result<()> {
         ("Job", "🍙"),
         ("Career", "🦄"),
         ("Family", "💍"),
+        ("Roots", "🧶"), // Extended Family
         ("Hobby", "🕹️"),
         ("Leisure", "🏖️"),
         ("Pray", "🕋"),
         ("Chores", "🧹"),
-        ("Social", "🫂"),
-        ("Workout", "🚲"),
+        ("Mend", "🪡"), // Productive Chores
+        ("Social", "🧵"),
+        ("Workout", "👟"),
         ("Sleep", "😴"),
+        ("Sick", "🤕"),
         ("Low-value", "🪫"),
-        ("Empty", "⬜"),
+        ("Empty", "◽"),
     ];
 
     // Calculate counts and store them in a Vector

@@ -1,30 +1,61 @@
 {
-  "helix_mode": true,
+  "vim_mode": true,
+  "helix_mode": false,
+  "languages": {
+    "Rust": {
+      "inlay_hints": {
+        "enabled": true,
+      },
+    },
+  },
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+    },
+  },
+  "show_edit_predictions": true,
+  "minimap": {
+    "show": "auto",
+  },
+  "soft_wrap": "editor_width",
   "relative_line_numbers": "enabled",
-  "buffer_font_family": "0xProto Nerd Font",
+  "buffer_font_family": "Maple Mono NF",
   "autosave": {
     "after_delay": {
       "milliseconds": 2000,
     },
   },
-  "vim_mode": true,
   "icon_theme": "Catppuccin Mocha",
-  "ui_font_size": 18.5,
+  "ui_font_size": 19,
   "buffer_font_size": 24.0,
+  // lsp
+  "lsp_document_colors": "background",
   "theme": {
     "mode": "dark",
-    "light": "One Light",
-    "dark": "Modus Vivendi Tinted",
+    "light": "Modus Operandi",
+    "dark": "Modus Vivendi",
   },
   "ui_font_features": {
     "calt": true,
   },
   "theme_overrides": {
+    "Modus Vivendi": {
+      // Editor
+      // Tinted bg-main is still too bright.
+      // I use darker shade from `color-hex.com/color/0d0e1c`
+      "editor.gutter.background": "#090913",
+      // `fg-main` is hard to distinguish
+      "editor.active_line_number": "#feacd0", // magenta
+      // Tab
+      "tab_bar.background": "#000000",
+      "tab.inactive_background": "#000000",
+      "tab.active_background": "#1d2235", // Tinted bg-main
+    },
     "Modus Vivendi Tinted": {
       // Editor
       "editor.background": "#000000",
-      "editor.active_line_number": "#ff66ff" // magenta-intense
-      "editor.gutter.background": "#0d0e1c", // bg-main
+      "editor.active_line_number": "#ff66ff", // magenta-intense
+      "editor.gutter.background": "#000000", // bg-main
       // Tab
       "tab_bar.background": "#000000",
       "tab.inactive_background": "#0d0e1c",

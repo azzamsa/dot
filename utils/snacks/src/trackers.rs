@@ -21,17 +21,17 @@ pub(crate) fn run() -> anyhow::Result<()> {
         ("Job", "🍙"),
         ("Career", "🦄"),
         ("Family", "💍"),
-        ("Roots", "🧶"), // Extended Family
-        ("Hobby", "🕹️"),
-        ("Leisure", "🏖️"),
-        ("Pray", "🕋"),
+        ("Roots", "🧶"),
+        ("Hobby", "🎯"),
+        ("Leisure", "⛺"),
+        ("Pray", "🕌"),
         ("Chores", "🧹"),
-        ("Mend", "🪡"), // Productive Chores
+        ("Mend", "🪡"),
         ("Social", "🧵"),
         ("Workout", "👟"),
-        ("Sleep", "😴"),
+        ("Sleep", "😌"),
         ("Sick", "🤕"),
-        ("Low-value", "🪫"),
+        ("Doom", "🪫"),
         ("Empty", "◽"),
     ];
 

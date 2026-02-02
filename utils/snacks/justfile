@@ -3,7 +3,6 @@
 set dotenv-load := true
 
 alias d := dev
-alias r := run
 alias f := fmt
 alias l := lint
 alias t := test
@@ -32,10 +31,6 @@ deploy: check
 [doc('Develop the app')]
 dev:
     bacon
-
-[doc('Run the app')]
-run:
-    cargo run --quiet
 
 [doc('Format the codebase.')]
 fmt:

@@ -47,8 +47,8 @@ packages = [
 
 [variables]
 multiplexer = "zellij"
-editor = "hx"
-terminal_font_size = 21
+editor = "nvim"
+terminal_font_size = 22
 
 font = "Maple Mono NF" # 21. Friendly
 # font = "0xProto Nerd Font" # 21. Too much noise.

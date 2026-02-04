@@ -8,8 +8,9 @@ if [ $theme = modus_vivendi ]
     set -g purple  "b6a0ff"  # 9.46:1,  "#b6a0ff"
     set -g cyan    "00d3d0"  # 13.42:1, "#00d3d0"
     set -g pink    "feacd0"  # 12.02:1, "#feacd0"
+end
 
-else if [ $theme = tokyonight_moon ]
+if [ $theme = tokyonight_moon ]
     # Source:
     # - https://github.com/folke/tokyonight.nvim/blob/main/extras/fish/tokyonight_moon.fish
 

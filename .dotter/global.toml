@@ -96,9 +96,6 @@ depends = ["shell"]
 [yazi.files]
 "utils/yazi" = "~/.config/yazi"
 
-[lla.files]
-"utils/lla" = "~/.config/lla"
-
 [eget.files]
 "utils/eget" = "~/.config/eget"
 

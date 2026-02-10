@@ -32,40 +32,22 @@
   "lsp_document_colors": "background",
   "theme": {
     "mode": "dark",
-    "light": "Modus Operandi",
-    "dark": "Modus Vivendi",
+    "light": "Modus Operandi Tinted",
+    "dark": "Modus Vivendi Tinted",
   },
   "ui_font_features": {
     "calt": true,
   },
   "theme_overrides": {
-    "Modus Vivendi": {
-      // Editor
-      // Tinted bg-main is still too bright.
-      // I use darker shade from `color-hex.com/color/0d0e1c`
-      "editor.gutter.background": "#090913",
-      // `fg-main` is hard to distinguish
-      "editor.active_line_number": "#feacd0", // magenta
-      // Tab
-      "tab_bar.background": "#000000",
-      "tab.inactive_background": "#000000",
-      "tab.active_background": "#1d2235", // Tinted bg-main
-    },
     "Modus Vivendi Tinted": {
       // Editor
       "editor.background": "#000000",
+      "editor.gutter.background": "#0d0e1c", // bg-main
       "editor.active_line_number": "#ff66ff", // magenta-intense
-      "editor.gutter.background": "#000000", // bg-main
       // Tab
       "tab_bar.background": "#000000",
-      "tab.inactive_background": "#0d0e1c",
-      "tab.active_background": "#2b3045", // bg-inactive
-      "syntax": {
-        "comment": {
-          // red-faint is too harsh
-          "color": "#989898", // fg-dim
-        },
-      },
+      "tab.inactive_background": "#000000",
+      "tab.active_background": "#0d0e1c", // bg-main
     },
   },
 }

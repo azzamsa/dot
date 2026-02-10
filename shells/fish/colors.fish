@@ -3,35 +3,12 @@
 if [ $theme = modus_vivendi ]
     set -g red     "ff5f59"  # 7.48:1   #ff5f59
     set -g green   "44bc44"  # 13.41:1  #44bc44
-    set -g yellow  "d0bc00"  # 10.87:1  #d0bc00
-    set -g orange  "dfaf7a"  # 10.55:1  #dfaf7a
-    set -g purple  "b6a0ff"  # 9.46:1   #b6a0ff
-    set -g cyan    "00d3d0"  # 13.42:1  #00d3d0
-    set -g pink    "feacd0"  # 12.02:1  #feacd0
-    set -g comment "989898"  # 7.27:1   #989898
-end
-
-if [ $theme = modus_vivendi_tinted ]
-    set -g red     "ff5f59"  # 7.48:1   #ff5f59
-    set -g green   "44bc44"  # 13.41:1  #44bc44
-    set -g yellow  "d0bc00"  # 10.87:1  #d0bc00
-    # set -g yellow  "fec43f"  # 13.18:1  #fec43f
+    set -g yellow  "fec43f"  # 13.18:1  #fec43f
     set -g orange  "dfaf7a"  # 10.55:1  #dfaf7a
     set -g purple  "b6a0ff"  # 9.46:1   #b6a0ff
     set -g cyan    "00d3d0"  # 13.42:1  #00d3d0
     set -g pink    "feacd0"  # 12.02:1  #feacd0
     set -g comment "ef8386"  # 8.26:1   #ef8386
-end
-
-if [ $theme = ef_dark ]
-    set -g red     "ef6560"  # !6.71:1  #ef6560
-    set -g green   "0faa26"  # !6.79:1  #0faa26
-    set -g yellow  "bf9032"  # 7.25:1   #bf9032
-    set -g orange  "df8a5a"  # 7.92:1   #df8a5a
-    set -g purple  "af85ff"  # 7.62:1   #af85ff
-    set -g cyan    "4fbaef"  # 9.6:1    #4fbaef
-    set -g pink    "d369af"  # !6.4:1   #d369af
-    set -g comment "cf9f8f"  # 9.1:1    #cf9f8f
 end
 
 # https://github.com/folke/tokyonight.nvim/blob/main/extras/fish/tokyonight_moon.fish

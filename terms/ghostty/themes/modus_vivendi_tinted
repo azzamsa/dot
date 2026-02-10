@@ -1,15 +1,15 @@
 # https://codeberg.org/anhsirk0/ghostty-themes
 
-# Modus-Vivendi Colors
-background = #000000
+# Modus-Vivendi-Tinted Colors
+background = #0d0e1c
 foreground = #ffffff
-selection-background = #5a5a5a
+selection-background = #555a66
 selection-foreground = #ffffff
 cursor-color = #ffffff
 
 # black
-palette = 0=#1e1e1e
-palette = 8=#535353
+palette = 0=#1d2235
+palette = 8=#4a4f69
 # red
 palette = 1=#ff5f59
 palette = 9=#ff7f9f

@@ -18,7 +18,7 @@ function M.append(config)
 
         -- Tab Bar Options
         -- GTK tab-bar is looking awful.
-        use_fancy_tab_bar = true, -- default: true
+        use_fancy_tab_bar = false, -- default: true
 
         -- Hiding the tab-bar also means hiding the right status
         -- Means you lose viseal feedback of sticky keys.

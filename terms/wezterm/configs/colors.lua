@@ -22,21 +22,6 @@ M.color_schemes = {
         brights = { "#9399b2", "#ff757f", "#c3e88d", "#ffc777", "#82aaff", "#c099ff", "#86e1fc", "#ffffff" },
         cursor_bg = "#86e1fc",
     },
-    ["material_palenight"] = {
-        ansi = { "#9399b2", "#f07178", "#c3e88d", "#ffcb6b", "#82aaff", "#c792ea", "#89ddff", "#ffffff" },
-        brights = { "#9399b2", "#f07178", "#c3e88d", "#ffcb6b", "#82aaff", "#c792ea", "#89ddff", "#ffffff" },
-        cursor_bg = "#79a8ff",
-    },
-    ["dracula"] = {
-        ansi = { "#9399b2", "#ff5555", "#50fa7b", "#f1fa8c", "#bd93f9", "#ff79c6", "#8be9fd", "#ffffff" },
-        brights = { "#9399b2", "#ff5555", "#50fa7b", "#f1fa8c", "#bd93f9", "#ff79c6", "#8be9fd", "#ffffff" },
-        cursor_bg = "#f8f8f2",
-    },
-    ["catppuccin_mocha"] = {
-        ansi = { "#9399b2", "#f38ba8", "#a6e3a1", "#f9e2af", "#89b4fa", "#f5c2e7", "#94e2d5", "#ffffff" },
-        brights = { "#9399b2", "#f38ba8", "#a6e3a1", "#f9e2af", "#89b4fa", "#f5c2e7", "#94e2d5", "#ffffff" },
-        cursor_bg = "#f5e0dc",
-    },
 }
 
 function M.append(config)
@@ -48,7 +33,7 @@ function M.append(config)
             -- Mostly taken from https://catppuccin.com/palette mocha.
             foreground = "#ffffff",
             background = "#000000",
-            scrollbar_thumb = "#7f849c",
+            scrollbar_thumb = "#1d2235",
             --  #1e1e2e (Catpuccin Mocha Base)
             selection_bg = "#1e1e2e",
         },

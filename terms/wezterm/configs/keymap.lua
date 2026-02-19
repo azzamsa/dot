@@ -63,11 +63,25 @@ function M.append(config)
         -- Keyboard mappings
         --
         keys = {
+            -- Clipboard
             { key = "y", mods = "CTRL", action = act({ PasteFrom = "Clipboard" }) },
 
+            -- Font
             { key = "+", mods = "CTRL", action = act.IncreaseFontSize },
             { key = "-", mods = "CTRL", action = act.DecreaseFontSize },
             { key = "=", mods = "CTRL", action = act.ResetFontSize },
+
+            -- Pane
+            {
+                key = "h",
+                mods = "CTRL|SHIFT",
+                action = act({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
+            },
+            {
+                key = "v",
+                mods = "CTRL|SHIFT",
+                action = act({ SplitVertical = { domain = "CurrentPaneDomain" } }),
+            },
         },
     }
 

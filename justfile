@@ -30,10 +30,12 @@ check: fmt-check lint
 [doc('Format the codebase')]
 fmt:
     dprint fmt
+    stylua . --allow-hidden
 
 [doc('Check if the codebase is properly formatted')]
 fmt-check:
     dprint check
+    stylua . --allow-hidden --check
 
 [doc('Lint the codebase')]
 lint: fmt-check

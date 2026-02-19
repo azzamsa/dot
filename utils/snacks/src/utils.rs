@@ -7,5 +7,5 @@ pub fn get_random_number(length: usize) -> usize {
 }
 
 pub fn stdout(input: &str) {
-    writeln!(io::stdout(), "{input}").ok();
+    write!(io::stdout(), "{input}").ok();
 }

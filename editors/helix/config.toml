@@ -1,6 +1,9 @@
-theme = "modus_vivendi_tintedp"
+theme = "modus_vivendi_me"
 
 [editor]
+# Sync clipboard with system clipboard
+default-yank-register = "+"
+
 line-number = "relative"
 # Renders a line at the top of the editor displaying open buffers
 bufferline = "multiple"

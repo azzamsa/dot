@@ -47,6 +47,9 @@ depends = ["shell"]
 [ghostty.files]
 "terms/ghostty" = "~/.config/ghostty"
 
+[kitty.files]
+"terms/kitty" = "~/.config/kitty"
+
 #
 # Fetchers
 [fastfetch.files]

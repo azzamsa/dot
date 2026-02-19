@@ -9,19 +9,25 @@ adjust-cursor-thickness = 200%
 maximize = true
 
 # Fonts
-#
 font-family = {{ font }}
 font-size = {{ terminal_font_size }}
 
-# Keybindings
 #
+# Keybindings
+
+# Clipboard
 # Maintain consistency with my other apps: nvim, emacs
 # Some app doesn't accept `copy` key,
 # and pressing `Ctrl-Shift-v` is cumbersome in my keyboard.
 keybind = alt+w=copy_to_clipboard
 keybind = ctrl+y=paste_from_clipboard
 
+# Panes
+keybind = ctrl+shift+w=close_surface
+keybind = ctrl+shift+h=new_split:right
+keybind = ctrl+shift+v=unbind
+keybind = ctrl+shift+v=new_split:down
+
 # Theme
-#
 # See https://github.com/mbadolato/iTerm2-Color-Schemes
 theme = {{ theme }}

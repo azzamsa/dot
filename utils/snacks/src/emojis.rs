@@ -111,9 +111,12 @@ static ANIMALS: &[&str] = &[
     "🪱",
 ];
 
-static PLANTS: &[&str] = &[
+static NATURE: &[&str] = &[
     "💐", "🌸", "🪷", "🏵️", "🌹", "🌺", "🌻", "🌼", "🌷", "🪻", "🌱", "🪴", "🌲", "🌳", "🌴", "🌵",
-    "🌾", "🌿", "🍁", "🍂", "🍃", "🍄", "🪨", "🪵",
+    "🌾", "🌿", "🍁", "🍂", "🍃", "🍄", "🪨", "🪵", "🌒", "🌔", "🌕", "🌖", "🌗", "🌘", "🌙", "🌚",
+    "🌛", "🌜", "☀️", "🌝", "🌞", "🪐", "⭐", "🌟", "🌠", "🌌", "☁️", "⛅", "⛈️", "🌤️", "🌥️", "🌦️",
+    "🌧️", "🌨️", "🌩️", "🌪️", "🌬️", "🌀", "🌂", "☂️", "☔", "⛱️", "⚡", "❄️", "☃️", "⛄", "☄️", "🔥",
+    "💧", "🌊",
 ];
 
 static FOODS: &[&str] = &[
@@ -135,7 +138,7 @@ pub struct Opts {
 #[derive(Debug, Clone, ValueEnum)]
 pub enum Category {
     Foods,
-    Plants,
+    Nature,
     Animals,
 }
 
@@ -152,9 +155,9 @@ pub fn emoji(category: Option<Category>) -> String {
             let index = utils::get_random_number(ANIMALS.len());
             ANIMALS[index]
         }
-        Some(Category::Plants) => {
-            let index = utils::get_random_number(PLANTS.len());
-            PLANTS[index]
+        Some(Category::Nature) => {
+            let index = utils::get_random_number(NATURE.len());
+            NATURE[index]
         }
         Some(Category::Foods) => {
             let index = utils::get_random_number(FOODS.len());
@@ -163,7 +166,7 @@ pub fn emoji(category: Option<Category>) -> String {
         None => {
             let merged: Vec<_> = ANIMALS
                 .iter()
-                .chain(PLANTS.iter())
+                .chain(NATURE.iter())
                 .chain(FOODS.iter())
                 .copied()
                 .collect();

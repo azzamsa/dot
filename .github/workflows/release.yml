@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v5
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           # It is a must. To generate a changelog.
           # this operation is chap. It took less than one second.
@@ -56,7 +56,7 @@ jobs:
           echo "PKG_PATH=${PKG_STAGING}/${PKG_NAME}" >> $GITHUB_OUTPUT
 
       - name: Generate a changelog
-        uses: orhun/git-cliff-action@v4
+        uses: orhun/git-cliff-action@e16f179f0be49ecdfe63753837f20b9531642772 # v4.7.0
         id: git-cliff
         with:
           config: .cliff.toml
@@ -68,7 +68,7 @@ jobs:
         run: cat "${{ steps.git-cliff.outputs.changelog }}"
 
       - name: Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2.5.0
         with:
           token: ${{ secrets.GH_TOKEN }}
           name: "v${{ env.RELEASE_VERSION }}"

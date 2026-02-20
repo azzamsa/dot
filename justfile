@@ -40,6 +40,7 @@ fmt-check:
 [doc('Lint the codebase')]
 lint: fmt-check
     typos
+    selene . --quiet
 
 [doc('Create a new release. Example: just release v2.2.0')]
 release version:
@@ -54,3 +55,7 @@ up arg="":
 [doc('Keep example up-to-date.')]
 _update-example:
     cp -f .dotter/local.toml .dotter/local.example.toml
+
+[doc('Dependency analysis')]
+meta:
+    pnpx actions-up

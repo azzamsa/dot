@@ -9,11 +9,11 @@ jobs:
 
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v5
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
-      - uses: taiki-e/install-action@v2
+      - uses: taiki-e/install-action@1cf3de8de323df92fe08c793e53eaef58799aec4 # v2.68.3
         with:
-          tool: just,dprint,typos
+          tool: just,dprint,typos,stylua,selene
 
       - name: Show version information
         shell: bash

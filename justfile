@@ -59,3 +59,4 @@ _update-example:
 [doc('Dependency analysis')]
 meta:
     pnpx actions-up
+    actionlint

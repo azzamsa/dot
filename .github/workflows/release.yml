@@ -21,17 +21,15 @@ jobs:
 
       - name: Set the release version
         shell: bash
-        run: echo "RELEASE_VERSION=${GITHUB_REF:11}" >> $GITHUB_ENV
+        run: echo "RELEASE_VERSION=${GITHUB_REF:11}" >> "$GITHUB_ENV"
 
       - name: Show release version
         shell: bash
-        run: |
-          echo ${{ env.RELEASE_VERSION }}
+        run: echo ${{ env.RELEASE_VERSION }}
 
       - name: Extract repository information
         shell: bash
-        run: |
-          echo "PROJECT_NAME=${{ env.PROJECT_NAME }}" >> $GITHUB_ENV
+        run: echo "PROJECT_NAME=${{ env.PROJECT_NAME }}" >> "$GITHUB_ENV"
 
       - name: Create tarball
         id: package
@@ -39,13 +37,13 @@ jobs:
           PKG_suffix=".tar.gz"
           PKG_BASENAME=${PROJECT_NAME}-${RELEASE_VERSION}
           PKG_NAME=${PKG_BASENAME}${PKG_suffix}
-          echo "PKG_NAME=${PKG_NAME}" >> $GITHUB_OUTPUT
+          echo "PKG_NAME=${PKG_NAME}" >> "$GITHUB_OUTPUT"
 
           PKG_STAGING="/tmp/package"
           ARCHIVE_DIR="${PKG_STAGING}/${PKG_BASENAME}/"
           mkdir -p "${ARCHIVE_DIR}"
 
-          cp -r * "$ARCHIVE_DIR"
+          cp -r ./* "$ARCHIVE_DIR"
 
           # Compress
           pushd "${PKG_STAGING}/" >/dev/null
@@ -53,7 +51,7 @@ jobs:
           popd >/dev/null
 
           # Let subsequent steps know where to find the compressed package
-          echo "PKG_PATH=${PKG_STAGING}/${PKG_NAME}" >> $GITHUB_OUTPUT
+          echo "PKG_PATH=${PKG_STAGING}/${PKG_NAME}" >> "$GITHUB_OUTPUT"
 
       - name: Generate a changelog
         uses: orhun/git-cliff-action@e16f179f0be49ecdfe63753837f20b9531642772 # v4.7.0

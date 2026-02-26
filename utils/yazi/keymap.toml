@@ -12,10 +12,11 @@ prepend_keymap = [
 
     # Goto
     { on = ["g", "h"], run = "cd ~", desc = "~/" },
-    { on = ["g", "t"], run = "cd /tmp", desc = "/tmp" },
     { on = ["g", "c"], run = "cd ~/code", desc = "~/code" },
-    { on = ["g", "f"], run = "cd ~/.config", desc = "~/.config" },
-    { on = ["g", "l"], run = "cd ~/.local", desc = "~/.local" },
+    { on = ["g", "l"], run = "cd ~/code", desc = "~/labs" },
     { on = ["g", "d"], run = "cd ~/Downloads", desc = "~/Downloads" },
+    { on = ["g", "t"], run = "cd /tmp", desc = "/tmp" },
+    { on = ["g", "f"], run = "cd ~/.config", desc = "~/.config" },
+    { on = ["g", "o"], run = "cd ~/.local", desc = "~/.local" },
     { on = ["g", "<Space>"], run = "cd --interactive", desc = "Jump interactively" },
 ]

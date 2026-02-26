@@ -125,12 +125,12 @@ pub enum Figure {
 
 pub(crate) fn run() -> anyhow::Result<()> {
     let opts = Opts::parse();
-    print(opts.figure, opts.with_adjective)?;
+    get_name(opts.figure, opts.with_adjective)?;
 
     Ok(())
 }
 
-fn print(figure: Figure, with_adjective: bool) -> anyhow::Result<()> {
+fn get_name(figure: Figure, with_adjective: bool) -> anyhow::Result<()> {
     let noun = match figure {
         Figure::Islamic => {
             let index = utils::get_random_number(ISLAMIC.len());

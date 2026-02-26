@@ -31,7 +31,7 @@ pub(crate) fn run() -> anyhow::Result<()> {
         Some(tasks) => run_some(tasks)?,
     }
 
-    utils::stdout("✨ You have a new shiny machine!");
+    utils::stdoutln("✨ You have a new shiny machine!");
     Ok(())
 }
 
@@ -62,7 +62,7 @@ fn run_all() -> anyhow::Result<()> {
 fn kondo() -> anyhow::Result<()> {
     let home = env::var("HOME")?;
 
-    utils::stdout("🧽 Cleaning dependencies and build artifacts");
+    utils::stdoutln("🧽 Cleaning dependencies and build artifacts");
     cmd!(
         "kondo",
         &home,
@@ -78,25 +78,25 @@ fn kondo() -> anyhow::Result<()> {
 }
 
 fn package_manager() -> anyhow::Result<()> {
-    utils::stdout("🧽 Cleaning package manager cache");
+    utils::stdoutln("🧽 Cleaning package manager cache");
     cmd!("sudo", "apt", "autoremove").run()?;
     Ok(())
 }
 
 fn flatpak() -> anyhow::Result<()> {
-    utils::stdout("🧽 Cleaning unused flatpak package");
+    utils::stdoutln("🧽 Cleaning unused flatpak package");
     cmd!("flatpak", "uninstall", "--unused").unchecked().run()?;
     Ok(())
 }
 
 fn cargo() -> anyhow::Result<()> {
-    utils::stdout("🧽 Cleaning cargo cache");
+    utils::stdoutln("🧽 Cleaning cargo cache");
     cmd!("cargo", "cache", "--autoclean").unchecked().run()?;
     Ok(())
 }
 
 fn container() -> anyhow::Result<()> {
-    utils::stdout("🧽 Cleaning container cache");
+    utils::stdoutln("🧽 Cleaning container cache");
     cmd!("podman", "system", "prune").unchecked().run()?;
     // cmd!("docker", "system", "prune").unchecked().run()?;
     Ok(())

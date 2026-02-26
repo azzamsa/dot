@@ -23,11 +23,11 @@ pub(crate) fn run() -> anyhow::Result<()> {
     let annual_hours = hours_per_day * days_per_week * weeks_per_year;
     let hourly_rate = (monthly_salary * months_per_year) / annual_hours;
 
-    utils::stdout(&format!(
+    utils::stdoutln(&format!(
         "Monthly Salary      : Rp {}",
         monthly_salary.to_formatted_string(&Locale::id),
     ));
-    utils::stdout(&format!(
+    utils::stdoutln(&format!(
         "Hourly Rate         : Rp {}/hour",
         hourly_rate.to_formatted_string(&Locale::id),
     ));

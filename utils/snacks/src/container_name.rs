@@ -15,7 +15,7 @@ pub(crate) fn run() -> anyhow::Result<()> {
 
     let content = fs::read_to_string(container_env)?;
     let value = content.parse::<Table>()?;
-    utils::stdout(value["name"].as_str().unwrap_or(""));
+    utils::stdoutln(value["name"].as_str().unwrap_or(""));
 
     Ok(())
 }

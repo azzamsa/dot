@@ -33,7 +33,7 @@ fn proc_name(port: &str) -> anyhow::Result<()> {
 }
 
 fn kill(port: &str) -> anyhow::Result<()> {
-    utils::stdout(&format!("Killing process at port {port}"));
+    utils::stdoutln(&format!("Killing process at port {port}"));
     let port = format!("-i:{port}");
     let pid = cmd!("lsof", "-t", port).read()?;
     cmd!("kill", pid).run()?;

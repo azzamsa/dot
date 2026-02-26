@@ -9,3 +9,7 @@ pub fn get_random_number(length: usize) -> usize {
 pub fn stdout(input: &str) {
     write!(io::stdout(), "{input}").ok();
 }
+
+pub fn stdoutln(input: &str) {
+    writeln!(io::stdout(), "{input}").ok();
+}

@@ -29,7 +29,7 @@ pub(crate) fn run() -> anyhow::Result<()> {
         Some(tasks) => run_some(tasks)?,
     }
 
-    utils::stdout("\n✨ You have a new shiny machine!");
+    utils::stdoutln("\n✨ You have a new shiny machine!");
     Ok(())
 }
 
@@ -56,13 +56,13 @@ fn run_some(modules: Vec<Task>) -> anyhow::Result<()> {
 }
 
 fn flatpak() -> anyhow::Result<()> {
-    utils::stdout("📦 Upgrading Flatpak apps");
+    utils::stdoutln("📦 Upgrading Flatpak apps");
     cmd!("flatpak", "update").unchecked().run()?;
     Ok(())
 }
 
 fn cargo() -> anyhow::Result<()> {
-    utils::stdout("🦀 Upgrading Cargo apps");
+    utils::stdoutln("🦀 Upgrading Cargo apps");
     cmd!("cargo", "install-update", "-a")
         .pipe(cmd!("grep", "-v", "No"))
         .run()?;
@@ -71,13 +71,13 @@ fn cargo() -> anyhow::Result<()> {
 }
 
 fn golang() -> anyhow::Result<()> {
-    utils::stdout("🐹 Upgrading Go apps");
+    utils::stdoutln("🐹 Upgrading Go apps");
     cmd!("gup", "update").run()?;
     Ok(())
 }
 
 fn system() -> anyhow::Result<()> {
-    utils::stdout("🐧 Upgrading System apps");
+    utils::stdoutln("🐧 Upgrading System apps");
     // Use `unchecked()` to allow the next command to run even if `No` is chosen at the prompt.
     cmd!("sudo", "apt", "update").unchecked().run()?;
     cmd!("sudo", "apt", "upgrade").unchecked().run()?;
@@ -85,7 +85,7 @@ fn system() -> anyhow::Result<()> {
 }
 
 fn node() -> anyhow::Result<()> {
-    utils::stdout("🦖 Upgrading Node apps");
+    utils::stdoutln("🦖 Upgrading Node apps");
     let dir = format!("{}/opt/nodebin", env::var("HOME")?);
     cmd!("npx", "taze", "major", "--write").dir(&dir).run()?;
     cmd!("npm", "install").dir(&dir).run()?;

@@ -24,7 +24,7 @@ pub(crate) fn run() -> anyhow::Result<()> {
 }
 
 fn here(cwd: &str) -> anyhow::Result<()> {
-    utils::stdout("Opening terminal in `{cwd}`");
+    utils::stdoutln("Opening terminal in `{cwd}`");
     // cmd!("zellij", "action", "new-tab", "--layout", "default", "--cwd", cwd).run()?;
     cmd!("wezterm", "cli", "spawn", "--window-id", "0", "--cwd", cwd).run()?;
     Ok(())

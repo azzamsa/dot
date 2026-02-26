@@ -55,12 +55,12 @@ pub(crate) fn run() -> anyhow::Result<()> {
             0.0
         };
 
-        utils::stdout(&format!(
+        utils::stdoutln(&format!(
             "- {} ({}): {} hours ({:.1}%)",
             label, emoji, count, share
         ));
     }
-    utils::stdout(&format!("\nTotal: {} hours (100%)", total));
+    utils::stdoutln(&format!("\nTotal: {} hours (100%)", total));
 
     Ok(())
 }

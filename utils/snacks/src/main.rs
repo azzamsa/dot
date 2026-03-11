@@ -4,6 +4,7 @@ mod emojis;
 mod git_gone;
 mod hourly_rate;
 mod names;
+mod percent;
 mod ports;
 mod quotes;
 mod termhere;
@@ -22,6 +23,7 @@ const TOOLS: Tools = &[
     ("quotes", quotes::run),
     ("termhere", termhere::run),
     ("up", up::run),
+    ("percent", percent::run),
     ("trackers", trackers::run),
     ("hourly-rate", hourly_rate::run),
 ];

@@ -16,6 +16,10 @@ font-size = {{ terminal_font_size }}
 window-padding-x = 10
 window-padding-y = 10
 
+custom-shader-animation = true
+# https://github.com/sahaj-b/ghostty-cursor-shaders
+custom-shader = "shaders/cursor_warp.glsl"
+
 #
 # Keybindings
 

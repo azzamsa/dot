@@ -1,5 +1,5 @@
 [files]
-extend-exclude = ["CHANGELOG.md", "**/*themes/**", "colors.fish", "_assets/*"]
+extend-exclude = ["CHANGELOG.md", "**/*themes/**", "colors.fish", "_assets/*", "**/shaders/**"]
 
 [default.extend-words]
 # GObject Introspection

@@ -17,12 +17,15 @@ _default:
 [confirm('⚠️ This command will alter your system. Run recipe `setup`?')]
 [doc('Setup the repository')]
 setup:
-    cargo binstall 'cargo-edit cargo-outdated dprint git-cliff bacon typos-cli'
+    cargo binstall cargo-edit cargo-outdated dprint git-cliff bacon typos-cli
 
-[doc('Tasks to make the code-base comply with the rules. Mostly used in git hooks')]
+[doc('Comply, then check')]
+qq: comply check
+
+[doc('Enforce rules')]
 comply: fmt lint test
 
-[doc('Check if the repository comply with the rules and ready to be pushed')]
+[doc('Check rules')]
 check: fmt-check lint test
 
 [doc('Publish the binaries')]

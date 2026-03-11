@@ -1,4 +1,4 @@
-use rand::Rng;
+use rand::RngExt;
 use std::io::{self, Write};
 
 pub fn get_random_number(length: usize) -> usize {

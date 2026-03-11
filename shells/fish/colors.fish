@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-if [ $theme = modus_vivendi ]
+if [ $theme = modus_vivendi ] || [ $theme = modus_vivendi_tinted ]
     set -g red     "ff5f59"  # 7.48:1   #ff5f59
     set -g green   "44bc44"  # 13.41:1  #44bc44
     set -g yellow  "fec43f"  # 13.18:1  #fec43f
@@ -8,7 +8,12 @@ if [ $theme = modus_vivendi ]
     set -g purple  "b6a0ff"  # 9.46:1   #b6a0ff
     set -g cyan    "00d3d0"  # 13.42:1  #00d3d0
     set -g pink    "feacd0"  # 12.02:1  #feacd0
-    set -g comment "ef8386"  # 8.26:1   #ef8386
+
+    if [ $theme = modus_vivendi_tinted ]
+        set -g comment "ef8386"  # 8.26:1   #ef8386
+    else
+        set -g comment "989898"  # 7.27:1   #989898
+    end
 end
 
 # https://github.com/folke/tokyonight.nvim/blob/main/extras/fish/tokyonight_moon.fish

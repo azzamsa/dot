@@ -19,11 +19,14 @@ deploy:
     just --justfile utils/snacks/justfile deploy
     dotter deploy
 
-[doc('Make the codebase comply with formatting and linting rules (used in git hooks)')]
+[doc('Comply, then check')]
+qq: comply check
+
+[doc('Enforce rules')]
 comply: _update-example fmt lint
     just --justfile utils/snacks/justfile comply
 
-[doc('Check if the repository complies with rules and is ready to push')]
+[doc('Check rules')]
 check: fmt-check lint
     just --justfile utils/snacks/justfile check
 

@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-# Get My current public IP
-curl ifconfig.me

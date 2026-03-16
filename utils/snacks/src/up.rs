@@ -17,6 +17,7 @@ pub enum Task {
     Cargo,
     Golang,
     Flatpak,
+    Appimages,
     Node,
     System,
 }
@@ -35,6 +36,7 @@ pub(crate) fn run() -> anyhow::Result<()> {
 
 fn run_all() -> anyhow::Result<()> {
     flatpak()?;
+    appimages()?;
     cargo()?;
     golang()?;
     node()?;
@@ -46,6 +48,7 @@ fn run_some(modules: Vec<Task>) -> anyhow::Result<()> {
     for module in modules {
         match module {
             Task::Flatpak => flatpak()?,
+            Task::Appimages => appimages()?,
             Task::Cargo => cargo()?,
             Task::Golang => golang()?,
             Task::System => system()?,
@@ -58,6 +61,12 @@ fn run_some(modules: Vec<Task>) -> anyhow::Result<()> {
 fn flatpak() -> anyhow::Result<()> {
     utils::stdoutln("📦 Upgrading Flatpak apps");
     cmd!("flatpak", "update").unchecked().run()?;
+    Ok(())
+}
+
+fn appimages() -> anyhow::Result<()> {
+    utils::stdoutln("⚙️ List Upgradable Appimages");
+    cmd!("flatpak", "run", "it.mijorus.gearlever", "--list-updates").run()?;
     Ok(())
 }
 

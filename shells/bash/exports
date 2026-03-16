@@ -18,7 +18,7 @@ export VISUAL="{{ editor }}"
 export EDITOR="{{ editor }}"
 
 # Paths
-export PATH=~/opt/pbin:~/.local/bin:$PATH
+export PATH=~/.local/bin:$PATH
 export PATH=~/.local/share/go/bin:$PATH
 export PATH=~/.local/bin/appimages:$PATH
 

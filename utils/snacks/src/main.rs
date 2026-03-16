@@ -43,7 +43,7 @@ fn main() -> anyhow::Result<()> {
 fn deploy() -> anyhow::Result<()> {
     use duct::cmd;
 
-    let target = format!("{}/.local/bin", std::env::var("HOME")?);
+    let target = format!("{}/bin", std::env::var("HOME")?);
     let target = std::path::Path::new(&target);
     cmd!("mkdir", "-p", target).run()?;
     cmd!("cargo", "build", "--release").run()?;

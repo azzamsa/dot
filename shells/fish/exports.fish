@@ -18,7 +18,6 @@ set -gx VISUAL "{{ editor }}"
 set -gx EDITOR "{{ editor }}"
 
 # Paths
-fish_add_path ~/opt/pbin
 fish_add_path ~/.local/bin
 fish_add_path ~/.local/share/go/bin
 fish_add_path ~/.local/bin/appimages

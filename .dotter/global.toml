@@ -61,7 +61,10 @@ depends = ["shell"]
 #
 # Scripts
 [bin.files]
-"bin" = "~/.local/bin"
+"bin/system" = "~/.local/bin"
+# must be invoked with ~/bin/...
+# prevents command name collisions
+"bin/personal" = "~/bin"
 
 #
 # Editor

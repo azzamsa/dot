@@ -65,7 +65,7 @@ pub(crate) fn run() -> anyhow::Result<()> {
     }
 
     if opts.emoji {
-        let emoji = emojis::emoji(None);
+        let emoji = emojis::get_emoji(None, None)?;
         quote = format!("{emoji} {quote}");
     }
 

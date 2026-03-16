@@ -1,138 +1,17 @@
+use std::{collections::HashMap, env, fs, path::PathBuf};
+
 use clap::{Parser, ValueEnum};
 
 use crate::utils;
-
-static ANIMALS: &[&str] = &[
-    "🐒",
-    "🦍",
-    "🦧",
-    "🐶",
-    "🐺",
-    "🦊",
-    "🦝",
-    "🐱",
-    "🦁",
-    "🐯",
-    "🐅",
-    "🐆",
-    "🐴",
-    "🫎",
-    "🫏",
-    "🐎",
-    "🦄",
-    "🦓",
-    "🦌",
-    "🦬",
-    "🐮",
-    "🐂",
-    "🐃",
-    "🐄",
-    "🐏",
-    "🐑",
-    "🐐",
-    "🐫",
-    "🦙",
-    "🦒",
-    "🐘",
-    "🦣",
-    "🦏",
-    "🦛",
-    "🐹",
-    "🐰",
-    "🐇",
-    "🐿️",
-    "🦫",
-    "🦔",
-    "🦇",
-    "🐻",
-    "🐻‍❄️",
-    "🐨",
-    "🐼",
-    "🦥",
-    "🦦",
-    "🦨",
-    "🦘",
-    "🦡",
-    "🦃",
-    "🐔",
-    "🐓",
-    "🐣",
-    "🐦",
-    "🐧",
-    "🕊️",
-    "🦅",
-    "🦆",
-    "🦢",
-    "🦉",
-    "🦤",
-    "🪶",
-    "🦩",
-    "🦚",
-    "🦜",
-    "🪽",
-    "🐦‍⬛",
-    "🪿",
-    "🐦‍🔥",
-    "🪺",
-    "🐸",
-    "🐊",
-    "🐢",
-    "🐍",
-    "🐲",
-    "🦕",
-    "🦖",
-    "🐳",
-    "🐬",
-    "🦭",
-    "🐟",
-    "🐠",
-    "🐡",
-    "🦈",
-    "🐙",
-    "🐚",
-    "🪸",
-    "🪼",
-    "🦀",
-    "🦞",
-    "🦐",
-    "🦑",
-    "🦪",
-    "🐌",
-    "🦋",
-    "🐛",
-    "🐜",
-    "🐝",
-    "🪲",
-    "🐞",
-    "🦗",
-    "🕷️",
-    "🕸️",
-    "🦂",
-    "🪱",
-];
-
-static NATURE: &[&str] = &[
-    "💐", "🌸", "🪷", "🏵️", "🌹", "🌺", "🌻", "🌼", "🌷", "🪻", "🌱", "🪴", "🌲", "🌳", "🌴", "🌵",
-    "🌾", "🌿", "🍁", "🍂", "🍃", "🍄", "🪨", "🪵", "🌒", "🌔", "🌕", "🌖", "🌗", "🌘", "🌙", "🌚",
-    "🌛", "🌜", "☀️", "🌝", "🌞", "🪐", "⭐", "🌟", "🌠", "🌌", "☁️", "⛅", "⛈️", "🌤️", "🌥️", "🌦️",
-    "🌧️", "🌨️", "🌩️", "🌪️", "🌬️", "🌀", "🌂", "☂️", "☔", "⛱️", "⚡", "❄️", "☃️", "⛄", "☄️", "🔥",
-    "💧", "🌊",
-];
-
-static FOODS: &[&str] = &[
-    "🍞", "🥐", "🥖", "🫓", "🥨", "🥯", "🥞", "🧇", "🧀", "🍖", "🍗", "🥩", "🥓", "🍔", "🍟", "🍕",
-    "🌭", "🥪", "🌮", "🌯", "🫔", "🥙", "🧆", "🥚", "🍳", "🥘", "🍲", "🫕", "🥣", "🥗", "🍿", "🧈",
-    "🧂", "🥫", "🍝", "🍱", "🍘", "🍙", "🍚", "🍛", "🍜", "🍠", "🍢", "🍣", "🍤", "🍥", "🥮", "🍡",
-    "🥟", "🥠", "🥡", "🍦", "🍧", "🍨", "🍩", "🍪", "🎂", "🍰", "🧁", "🥧", "🍫", "🍬", "🍭", "🍮",
-    "🍯", "🥛", "☕", "🫖", "🍵", "🍶", "🍾", "🍷", "🍸", "🍹", "🍺", "🍻", "🥂", "🥃", "🫗", "🥤",
-    "🧋", "🧃", "🧉",
-];
 
 #[derive(Parser)]
 pub struct Opts {
     /// Category of choice
     #[arg(value_enum)]
     pub category: Option<Category>,
+
+    #[arg(long)]
+    pub file: Option<PathBuf>,
 }
 
 #[derive(Debug, Clone, ValueEnum)]
@@ -142,37 +21,41 @@ pub enum Category {
     Animals,
 }
 
+impl Category {
+    fn as_key(&self) -> &str {
+        match self {
+            Category::Foods => "foods",
+            Category::Nature => "nature",
+            Category::Animals => "animals",
+        }
+    }
+}
+
 pub(crate) fn run() -> anyhow::Result<()> {
     let opts = Opts::parse();
-    let emoji = emoji(opts.category);
+
+    let emoji = get_emoji(opts.category, opts.file)?;
     utils::stdout(&emoji);
     Ok(())
 }
 
-pub fn emoji(category: Option<Category>) -> String {
-    let emoji = match category {
-        Some(Category::Animals) => {
-            let index = utils::get_random_number(ANIMALS.len());
-            ANIMALS[index]
-        }
-        Some(Category::Nature) => {
-            let index = utils::get_random_number(NATURE.len());
-            NATURE[index]
-        }
-        Some(Category::Foods) => {
-            let index = utils::get_random_number(FOODS.len());
-            FOODS[index]
-        }
-        None => {
-            let merged: Vec<_> = ANIMALS
-                .iter()
-                .chain(NATURE.iter())
-                .chain(FOODS.iter())
-                .copied()
-                .collect();
-            let index = utils::get_random_number(merged.len());
-            merged[index]
-        }
+pub fn get_emoji(category: Option<Category>, file: Option<PathBuf>) -> anyhow::Result<String> {
+    let content = get_content(file)?;
+    let categories: HashMap<String, Vec<String>> = toml::from_str(&content)?;
+
+    let emojis: Vec<&String> = match &category {
+        Some(cat) => categories.get(cat.as_key()).unwrap().iter().collect(),
+        None => categories.values().flatten().collect(),
     };
-    emoji.to_string()
+
+    let index = utils::get_random_number(emojis.len());
+    Ok(emojis[index].to_string())
+}
+
+pub fn get_content(file: Option<PathBuf>) -> anyhow::Result<String> {
+    let file = file.unwrap_or_else(|| {
+        let home = env::var("HOME").expect("HOME not set");
+        PathBuf::from(home).join(".config/meta/emojis.toml")
+    });
+    Ok(fs::read_to_string(file)?)
 }

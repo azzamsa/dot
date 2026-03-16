@@ -2,9 +2,7 @@ mod clean;
 mod container_name;
 mod emojis;
 mod git_gone;
-mod hourly_rate;
 mod names;
-mod percent;
 mod ports;
 mod quotes;
 mod termhere;
@@ -23,9 +21,7 @@ const TOOLS: Tools = &[
     ("quotes", quotes::run),
     ("termhere", termhere::run),
     ("up", up::run),
-    ("percent", percent::run),
     ("trackers", trackers::run),
-    ("hourly-rate", hourly_rate::run),
 ];
 
 fn main() -> anyhow::Result<()> {
@@ -43,7 +39,7 @@ fn main() -> anyhow::Result<()> {
 fn deploy() -> anyhow::Result<()> {
     use duct::cmd;
 
-    let target = format!("{}/bin", std::env::var("HOME")?);
+    let target = format!("{}/.local/bin", std::env::var("HOME")?);
     let target = std::path::Path::new(&target);
     cmd!("mkdir", "-p", target).run()?;
     cmd!("cargo", "build", "--release").run()?;

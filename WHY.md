@@ -14,7 +14,8 @@
 - **Fedora GNOME**: [Aug 5, 2023][fedora-2023-start] - Aug 21, 2025 (2 years 16 days).
 - **Debian GNOME**: [Aug 21, 2025][debian-2025-start] - Aug 25, 2025 (4 days).
 - **Endeavour GNOME**: [Aug 25, 2025][endeavour-2025-start] - Sep 10, 2025 (16 days).
-- **Debian GNOME**: [Sep 10, 2025][current] - now.
+- **Debian GNOME**: [Sep 10, 2025][debian-2025-start] - March 24, 2026 (6 months, 14 days).
+- **Fedora GNOME**: [Mar 24, 2026][current] - now.
 - [More...](BOOKMARKS.md)
 
 ## Ubuntu (2 years) -> Debian
@@ -75,7 +76,7 @@ I guess I’m okay with that ugly LUKS password prompt in Debian 🤷🏼.
 I feel like desktop users are not a first-class citizen in Debian 🥲.
 I’ve been using GNU/Linux for 12 years, and I wanted to try an Arch-based distro at least once.
 
-## Endeavour OS -> Debian (16 days)
+## Endeavour OS (16 days) -> Debian
 
 I live in a rural area, so I don’t want to constantly download large updates just to keep my system running smoothly.
 
@@ -87,10 +88,16 @@ I also don’t need anything fancy when it comes to the filesystem, bootloader, 
 
 Lastly, I don’t need a fancy LUKS password prompt either. It asks for the password right after I press the power button, and the system boots so quickly that I don’t even get to see the Plymouth animation anyway.
 
+## Debian (6 months) -> Fedora
+
+The logout issue I mentioned earlier isn’t caused by Fedora. It turned out to be a GNOME extension.
+I wanted to use the latest GNOME, and waiting 2–3 years for updates is just too long for a desktop system.
+
 [fedora-2022-start]: https://github.com/azzamsa/dot/commit/4c5ccdc51e63a552c73113753687e6d9aa5e70fd
 [fedora-2023-start]: https://github.com/azzamsa/dot/commit/f09550c399e67f223fa41c4517b15b1772e56847
 [debian-2023-start]: https://github.com/azzamsa/dot/commit/61513966e5b6c1697af94e68e22a6caffb0c64dc
 [fedora-silverblue-start]: https://github.com/azzamsa/dot/commit/d2d3d2e0b4f83362488a407155149d581122d361
 [debian-2025-start]: https://github.com/azzamsa/dot/commit/1584afb8202e2e2a227ff0daff10c102bee07188
 [endeavour-2025-start]: https://github.com/azzamsa/dot/commit/0a091a9cde8f9fcd8119ed8ba53ca81e8d3b6555
+[debian-2026-start]: https://github.com/azzamsa/dot/commit/16864b33eac61ff8b557d2cbce6187e0291a7d44
 [current]: https://github.com/azzamsa/dot

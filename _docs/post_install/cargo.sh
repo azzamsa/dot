@@ -12,7 +12,7 @@ rustup component add rust-analyzer
 cargo install cargo-binstall
 
 set -l pkgs \
-    atuin dotter fnm starship just jj-cli gitu \
+    zoxide atuin dotter fnm starship just jj-cli gitu \
     cargo-update cargo-udeps cargo-audit cargo-edit cargo-outdated cargo-cache cargo-tarpaulin \
     bacon dprint git-cliff hurl selene \
     stylua typos-cli watchexec-cli git-cliff dprint typos-cli jaq bandwhich bat dua-cli kondo \

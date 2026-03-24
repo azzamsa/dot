@@ -1,28 +1,28 @@
 # Installation Guide
 
-The steps I need to install Debian GNU/Linux on my machine.
+The steps I need to install fresh GNU/Linux distro on my machine.
 
 ## Current Machine
 
-- Debian + GNOME
+- Fedora + GNOME
 
-## ⚠️ Before Migration
+## Before Migration
 
 Look for what to backup in your notes. See "What To Backup?".
 
+```bash
+~/bin/snapshot
+```
+
 ## Preparing The ISO image
 
-Go to the distro’s website and download the **GNOME-flavored LIVE ISO**, then copy it to your Ventoy USB stick.
-Make sure you grab the **LIVE ISO**, as the Calamares installer is only available there.
+Go to the distro’s website and download the **GNOME-flavored LIVE ISO**, use Fedora Media Writer to put it on USB stick.
 
-Whenever possible, use the provided _torrent_ file to reduce load on the server. Wait until the copying process is **fully** finished.
-Otherwise, the file may end up corrupted. After that, verify the checksum:
+Verify the checksum.
 
 ```shell
 sha256sum -c CHECKSUM
 ```
-
-Copy the ISO using Ventoy. If you run into issues even after verifying the checksum, try another flashing tool such as `Fedora Media Writer` or `BalenaEtcher`.
 
 ## Installation
 
@@ -39,13 +39,13 @@ Stick with the defaults for everything, including locales, to avoid running into
 ## Setting Up Core Packages
 
 ⚠️ Restore your previous backup.
-See "What To Backup?" note.
+See "Fresh Install Linux Distro" note.
 
 ```bash
-# Setup XDG
-$ cd ~/dot && source shells/bash/exports
-
 $ ./packages.sh
+
+# Set fish as default $SHELL
+$ chsh -s /usr/bin/fish
 
 $ # Wait until flatpak installed,
 Then in new terminal
@@ -53,11 +53,6 @@ $ ./flatpak.sh
 
 $ ./cargo.sh
 ```
-
-AppImages:
-
-- https://github.com/neovide/neovide/releases
-- https://yaak.app/download
 
 ## Configure Apps
 
@@ -142,4 +137,4 @@ To prevent Apps to move to the Laptop monitor during suspension, go to `Display`
 
 ## Finish 🎉
 
-Go to `opt/pbin` and run `post_install.sh`
+Go to `~/bin` and run `post_install.sh`

@@ -1,35 +1,29 @@
 #!/usr/bin/env fish
 
-# I prefer to work with `fish` than `bash`
-sudo apt install --assume-yes netselect-apt fish flatpak gnome-software-plugin-flatpak
+# Upgrade the OS
+sudo dnf update
 
-# Find the fastest mirrors.
-sudo netselect-apt
-# Upgrade The Os
-sudo apt update && sudo apt upgrade
+# editors
+set -l cores \
+    fish
 
-#
-# Setup Core Packages
-set -l pkgs bash git fish curl wl-clipboard \
-    emacs aspell libenchant-2-dev \
-    vim neovim \
-    # Rust
-    clang mold libssl-dev \
-    # Lua
-    luarocks lua5.4 \
-    # Prompt
-    zoxide ffmpeg 7zip poppler-utils imagemagick \
-    # Extensions
-    ddcutil gir1.2-gda-5.0 gir1.2-gsound-1.0 \
-    # Polish
-    gnome-tweaks bibata-cursor-theme gnome-shell-pomodoro fastfetch \
-    # pandoc will pull a whopping `199.2 MB` deps, because it so powerful it pull latex and everything.
-    jq fd-find ripgrep fzf telnet pandoc podman podman-compose shfmt markdown \
-    # appimage
-    libfuse-dev \
-    # utils
-    rsync borgbackup
+# editors
+set -l editors \
+    emacs enchant2-devel \
+    vim neovim
 
-for pkg in $pkgs
-    sudo apt install --assume-yes $pkg
-end
+# programming
+# - https://docs.rs/openssl/latest/openssl/#automatic
+set -l code \
+    clang mold \
+    pkgconf perl-FindBin perl-IPC-Cmd openssl-devel \
+    podman-compose
+
+# utils
+set -l utils \
+   gnome-tweaks \
+   ddcutil libgda libgda-sqlite \
+   fastfetch
+
+set -l pkgs $cores $editors $code $utils
+sudo dnf install --assumeyes $pkgs

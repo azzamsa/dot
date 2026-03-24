@@ -18,15 +18,9 @@ end
 
 #
 # Node
-fnm use v24
+fnm use v25
 # To get LTS version, see https://endoflife.date/nodejs
 npm install --prefix ~/opt/nodebin
-
-#
-# yazi
-ya pkg add yazi-rs/flavors:catppuccin-mocha
-# remove the (in case) duplicate `yazi`
-rm ~/.local/bin/yazi
 
 #
 # ddcutil
@@ -53,30 +47,14 @@ eget idursun/jjui --to ~/.local/bin/jjui
 eget getzola/zola
 
 #
-# Emacs
-
-# Those files are unnecessary and occasionally cause me to misclick.
-sudo rm -f \
-    /usr/share/applications/emacs-term.desktop \
-    /usr/share/applications/emacs-mail.desktop \
-    /usr/share/applications/emacsclient-mail.desktop \
-    /usr/share/applications/emacsclient.desktop
-# Debian use `Emacs (GUI)`
-sudo sed -i 's/^Name=Emacs (GUI)$/Name=Emacs/' /usr/share/applications/emacs.desktop
-
-# Remove ImageMagick From Dash
-sudo rm /usr/share/applications/display-im7.q16.desktop
-
 # Remove bloatware.
+#
+
 set -l pkgs \
-    rhythmbox xiterm+thai goldendict-ng hdate-applet fcitx5 mozc-utils-gui firefox-esr \
-    thunderbird anthy* shotwell \
-    # Dictionaries
-    wbrazilian witalian wfrench wspanish wswedish wcatalan wbulgarian wdanish \
-    wngerman wpolish wportuguese
+    firefox
 
 for pkg in $pkgs
-    sudo apt purge $pkg
+    sudo dnf remove --assumeyes $pkg
 end
 
-sudo apt autoremove && sudo apt autopurge
+sudo dnf autoremove

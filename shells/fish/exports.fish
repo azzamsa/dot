@@ -17,14 +17,17 @@ set -gx HISTFILESIZE 100000
 set -gx VISUAL "{{ editor }}"
 set -gx EDITOR "{{ editor }}"
 
+#
 # Paths
 fish_add_path ~/.local/bin
 fish_add_path ~/.local/share/go/bin
 fish_add_path ~/.local/bin/appimages
-
+fish_add_path ~/.local/bin/node
 # Rust
 fish_add_path ~/.local/share/cargo/bin
 fish_add_path ~/.cargo/bin
+# Nvim
+fish_add_path ~/.local/share/bob/nvim-bin
 
 set -gx CARGO_HOME "$XDG_DATA_HOME/cargo"
 set -gx RUSTUP_HOME "$XDG_DATA_HOME/rustup"
@@ -34,18 +37,12 @@ set -gx RYE_HOME "$XDG_DATA_HOME/rye"
 set -gx IPYTHONDIR "$XDG_CONFIG_HOME/ipython"
 fish_add_path "$XDG_DATA_HOME/rye/shims"
 
-# Javascript
-fish_add_path ~/opt/nodebin/node_modules/.bin
-
 # Golang
 set -gx GOPATH "$XDG_DATA_HOME/go"
 
 # Emacs
 set -gx EMACSDIR "$XDG_CONFIG_HOME/emacs"
 set -gx LSP_USE_PLISTS true
-
-# Nvim
-fish_add_path ~/.local/share/bob/nvim-bin
 
 # Apps
 set -gx FZF_DEFAULT_COMMAND 'fd --type f --strip-cwd-prefix'

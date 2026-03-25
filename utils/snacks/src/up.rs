@@ -94,7 +94,7 @@ fn system() -> anyhow::Result<()> {
 
 fn node() -> anyhow::Result<()> {
     utils::stdoutln("🦖 Upgrading Node apps");
-    let dir = format!("{}/opt/nodebin", env::var("HOME")?);
+    let dir = format!("{}/.local/bin/node", env::var("HOME")?);
     cmd!("npx", "taze", "major", "--write").dir(&dir).run()?;
     cmd!("npm", "install").dir(&dir).run()?;
     Ok(())

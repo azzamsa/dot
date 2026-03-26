@@ -14,6 +14,7 @@ set -gx HISTFILESIZE 100000
 # HISTTIMEFORMAT and HISTCONTROL are bash-specific
 
 # Editors
+set -gx TERM xterm-256color
 set -gx VISUAL "{{ editor }}"
 set -gx EDITOR "{{ editor }}"
 

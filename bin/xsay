@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+cowsay $1 | lolcrab --gradient warm

@@ -6,6 +6,9 @@ function fish_greeting
     echo "$(set_color magenta)$emoji $quote$(set_color normal)"
 end
 
+# Auto-deploy dotfiles on terminal start
+cd dot && dotter deploy; and cd -
+
 # Force true-color support; otherwise, the Neovim Terminal inside Neovide
 # (not the case with Neovim inside the Terminal) will use slightly different colors,
 # which is sometimes annoying and hard to read. I've been having a hard time solving this issue,

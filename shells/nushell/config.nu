@@ -19,3 +19,17 @@ $env.config = {
         file_format: "sqlite" # default: plaintext
     }
 }
+
+$env.config.hooks.env_change = {
+    HOME: [{||
+        let emoji = (emojis nature)
+        let quote = (quotes --period --file ~/.config/meta/quotes.txt)
+        print $"(ansi magenta)($emoji) ($quote)(ansi reset)"
+    }]
+}
+
+
+#
+# Themes
+#
+source ~/.config/nushell/themes/{{ theme }}.nu

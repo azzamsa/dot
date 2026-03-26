@@ -1,35 +1,30 @@
-#!/usr/bin/env bash
+#!/usr/bin/env nu
+#
+# Create a release
+#
 
-# Create a release.
-# Usage: ./release.sh <tag>
+# Create a release with the given tag
+def main [tag: string] {
+    # Check for untracked files
+    let untracked = (git ls-files . --exclude-standard --others | str trim)
+    if $untracked != "" {
+        error make { msg: "Error: Please stash or remove the untracked files!" }
+    }
 
-if [[ $# -ne 1 ]]; then
-    echo "Usage: $0 <tag>"
-    exit 1
-fi
+    # Update the changelog
+    print "Updating the changelog"
+    git-cliff --config .cliff.toml --tag $tag --output CHANGELOG.md
 
-tag="$1"
+    # Format the newly created changelog file
+    just fmt
 
-# Check for untracked files
-untracked_files=$(git ls-files . --exclude-standard --others)
-if [[ -n "$untracked_files" ]]; then
-    echo "Error: Please stash or remove the untracked files!"
-    exit 1
-fi
+    # Write the new version to a file 'version'
+    $tag | save --force version
 
-# Update the changelog
-echo "Updating the changelog"
-git-cliff --config .cliff.toml --tag "$tag" --output CHANGELOG.md
-
-# Format the newly created changelog file
-just fmt
-
-# Write the new_version to a file 'version'
-echo "$tag" > version
-
-# Commit a release
-git add --all
-git commit --message "$tag"
-git show
-git tag --sign --annotate "$tag" --message "For details, see the CHANGELOG.md"
-git tag --verify "$tag"
+    # Commit a release
+    git add --all
+    git commit --message $tag
+    git show
+    git tag --sign --annotate $tag --message "For details, see the CHANGELOG.md"
+    git tag --verify $tag
+}

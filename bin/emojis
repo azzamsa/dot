@@ -1,0 +1,23 @@
+#!/usr/bin/env nu
+
+#
+# Random Emoji
+#
+
+# Get a random emoji
+def main [
+    category?: string  # foods, nature, animals
+    --file: path       # Path to a custom emojis file
+] {
+    let file = ($file | default ("~/.config/meta/emojis.toml" | path expand))
+    let categories = (open $file)
+
+    let emojis = if ($category | is-empty) {
+        $categories | values | flatten
+    } else {
+        $categories | get $category
+    }
+
+    let index = (random int 0..<($emojis | length))
+    $emojis | get $index
+}

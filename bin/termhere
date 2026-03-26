@@ -1,0 +1,14 @@
+#!/usr/bin/env nu
+
+#
+# Open terminal in directory
+#
+
+# Open terminal in current working directory
+def main [
+    cwd?: string  # Directory to open (defaults to $HOME)
+] {
+    let cwd = ($cwd | default $env.HOME)
+    print $"Opening terminal in `($cwd)`"
+    wezterm cli spawn --window-id 0 --cwd $cwd
+}

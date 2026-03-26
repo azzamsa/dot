@@ -1,0 +1,14 @@
+#!/usr/bin/env nu
+
+#
+# Get container name
+#
+
+# Get the name of the current container
+def main [] {
+    let file = "/run/.containerenv"
+    if not ($file | path exists) {
+        error make { msg: "Exiting. Not inside a container" }
+    }
+    open $file | get name
+}

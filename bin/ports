@@ -1,0 +1,19 @@
+#!/usr/bin/env nu
+
+#
+# Inspect or kill process by port
+#
+
+# Inspect or kill process by port
+def main [
+    port: string   # Port number
+    --kill (-k)    # Terminate the process
+] {
+    if $kill {
+        print $"Killing process at port ($port)"
+        let pid = (lsof -t $"-i:($port)" | str trim)
+        kill $pid
+    } else {
+        lsof $"-i:($port)"
+    }
+}

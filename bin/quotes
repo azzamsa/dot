@@ -1,0 +1,25 @@
+#!/usr/bin/env nu
+
+#
+# Random Quote
+#
+
+# Get a random motivational quote
+def main [
+    --quoted (-q)        # Wrap with quotes
+    --period (-p)        # End with dot
+    --emoji  (-e)        # Prefix with emoji
+    --file:  path (-f)   # Path to a custom quotes file (one quote per line)
+] {
+    let file = ($file | default ("~/.config/meta/quotes.txt" | path expand))
+    let quotes = (open $file | lines | where { |l| ($l | str trim) != "" })
+
+    let index = (random int 0..<($quotes | length))
+    mut quote = ($quotes | get $index)
+
+    if $period { $quote = $"($quote)." }
+    if $quoted { $quote = $'"($quote)"' }
+    if $emoji { $quote = $"(emojis) ($quote)" }
+
+    print $quote
+}

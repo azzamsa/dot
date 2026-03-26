@@ -1,28 +1,8 @@
-mod clean;
-mod container_name;
-mod emojis;
-mod git_gone;
-mod names;
-mod ports;
-mod quotes;
-mod termhere;
 mod trackers;
-mod up;
 mod utils;
 
 type Tools<'a> = &'a [(&'a str, fn() -> anyhow::Result<()>)];
-const TOOLS: Tools = &[
-    ("clean", clean::run),
-    ("container_name", container_name::run),
-    ("emojis", emojis::run),
-    ("git-gone", git_gone::run),
-    ("names", names::run),
-    ("ports", ports::run),
-    ("quotes", quotes::run),
-    ("termhere", termhere::run),
-    ("up", up::run),
-    ("trackers", trackers::run),
-];
+const TOOLS: Tools = &[("trackers", trackers::run)];
 
 fn main() -> anyhow::Result<()> {
     let progn = std::env::args_os().next().unwrap_or_default();

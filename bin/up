@@ -1,0 +1,69 @@
+#!/usr/bin/env nu
+
+#
+# Upgrade everything
+#
+
+def task-flatpak [] {
+    print "📦 Upgrading Flatpak apps"
+    flatpak update
+}
+
+def task-appimages [] {
+    print "⚙️ List Upgradable Appimages"
+    flatpak run it.mijorus.gearlever --list-updates
+}
+
+def task-cargo [] {
+    print "🦀 Upgrading Cargo apps"
+    cargo install-update -a | grep -v No
+    rustup update stable
+}
+
+def task-golang [] {
+    print "🐹 Upgrading Go apps"
+    gup update
+}
+
+def task-system [] {
+    print "🐧 Upgrading System apps"
+    sudo dnf update
+}
+
+def task-node [] {
+    print "🦖 Upgrading Node apps"
+    let dir = ($env.HOME | path join ".local/bin/node")
+    npx taze major --write
+    npm install
+}
+
+def run-all [] {
+    task-flatpak
+    task-appimages
+    task-cargo
+    task-golang
+    task-system
+    task-node
+}
+
+# Upgrade system and apps
+def main [
+    ...tasks: string  # cargo, golang, flatpak, appimages, node, system (default: all)
+] {
+    if ($tasks | is-empty) {
+        run-all
+    } else {
+        for task in $tasks {
+            match $task {
+                "flatpak"   => { task-flatpak }
+                "appimages" => { task-appimages }
+                "cargo"     => { task-cargo }
+                "golang"    => { task-golang }
+                "system"    => { task-system }
+                "node"      => { task-node }
+                _           => { error make { msg: $"Unknown task: ($task)" } }
+            }
+        }
+    }
+    print "\n✨ You have a new shiny machine!"
+}

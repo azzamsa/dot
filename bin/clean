@@ -1,0 +1,72 @@
+#!/usr/bin/env nu
+
+#
+# Clean system
+#
+
+def task-kondo [] {
+    print "🧽 Cleaning dependencies and build artifacts"
+    kondo $env.HOME --older 2w --ignored-dirs $"($env.HOME)/opt/nodebin" --all
+}
+
+def task-pm [] {
+    print "🧽 Cleaning package manager cache"
+    sudo apt autoremove
+}
+
+def task-flatpak [] {
+    print "🧽 Cleaning unused flatpak packages"
+    flatpak uninstall --unused
+}
+
+def task-cargo [] {
+    print "🧽 Cleaning cargo cache"
+    cargo cache --autoclean
+}
+
+def task-container [] {
+    print "🧽 Cleaning container cache"
+    podman system prune
+}
+
+# def task-dirs [] {
+#     print "🧽 Cleaning ~/Downloads, ~/Pictures/Screenshots dirs"
+#     let dirs = [
+#         ($env.HOME | path join "Downloads")
+#         ($env.HOME | path join "Pictures/Screenshots")
+#     ]
+#     for dir in $dirs {
+#         ls $dir | each { |f| rm -rf $f.name }
+#     }
+# }
+
+def run-all [] {
+    task-kondo
+    task-pm
+    task-flatpak
+    task-container
+    task-cargo
+    # task-dirs
+}
+
+# Clean system artifacts, caches, and junk
+def main [
+    ...tasks: string  # kondo, pm, flatpak, container, cargo, dirs (default: all)
+] {
+    if ($tasks | is-empty) {
+        run-all
+    } else {
+        for task in $tasks {
+            match $task {
+                "kondo"     => { task-kondo }
+                "pm"        => { task-pm }
+                "flatpak"   => { task-flatpak }
+                "container" => { task-container }
+                "cargo"     => { task-cargo }
+                # "dirs"      => { task-dirs }
+                _           => { error make { msg: $"Unknown task: ($task)" } }
+            }
+        }
+    }
+    print "✨ You have a new shiny machine!"
+}

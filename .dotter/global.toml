@@ -111,4 +111,9 @@ depends = ["shell"]
 #
 # Programming Languages
 [cargo.files]
-"langs/cargo/config.toml" = "~/local/share/cargo/config.toml"
+"langs/cargo/" = "~/local/share/cargo/"
+
+#
+# utils
+[sane-break.files]
+"utils/sane-break" = "~/.var/app/io.github.AllanChain.sane-break/config/SaneBreak/"

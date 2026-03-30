@@ -1,7 +1,7 @@
 # Why I Switched?
 
 <div align="center">
-<img src='_assets/distro_timeline.png' width=350px/>
+<img src='assets/distro_timeline.png' width=350px/>
 </div>
 
 - **Ubuntu GNOME**: Oct 23, 2013 - Dec 18, 2015 (2 years, 1 month, 25 days).

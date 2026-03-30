@@ -1,7 +1,7 @@
 <div align="center">
 <h1>.dotfiles</h1>
 
-<img src='_assets/logo.png' width=150px/>
+<img src='assets/logo.png' width=150px/>
 
 My personal .dotfiles 🗃️
 

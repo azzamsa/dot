@@ -1,3 +1,3 @@
 #!/bin/sh
 
-just check
+just qa

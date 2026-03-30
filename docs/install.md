@@ -75,11 +75,11 @@ Change the default scale to 130%.
 
 Increase the default value of "clear clipboard after" in KeepassXC
 
-### Pano
+### Copyous
 
 Enable `Sync to Primary clipboard`.
 Increase history limit to `400`.
-Disable `Keep search entry`.
+Disable `Keep search entry`, `Paste on copy`.
 
 ## Setting Up DNS
 
@@ -116,12 +116,19 @@ Set `Time Format` to `AM/PM`.
 
 Go to `Settings` -> `Keyboard`.
 
+- Switch applications Disabled
+- Switch windows Alt+Tab
+- Switch to workspace 1	 Super+1
+- Switch to workspace 2	 Super+2
+- Switch to workspace 3	 Super+3
+- Switch to workspace 4	 Super+4
+
 Custom shortcut:
 
 - Flameshot
-  - name: `Flameshot`
-  - command: `bash -c "flatpak run --command=flameshot org.flameshot.Flameshot gui --raw | wl-copy"`
-  - shortcut: `PrtScn`
+  - name: `Grardia`
+  - command: `flatpak run be.alexandervanhee.gradia --screenshot=INTERACTIVE`
+  - shortcut: `Ctrl + PrtScn`
 
 ### Multitasking
 

@@ -23,7 +23,8 @@ set -gx EDITOR "{{ editor }}"
 fish_add_path ~/.local/bin
 fish_add_path ~/.local/share/go/bin
 fish_add_path ~/.local/bin/appimages
-fish_add_path ~/.local/bin/node
+fish_add_path ~/.local/bin/node/node_modules/.bin
+
 # Rust
 fish_add_path ~/.local/share/cargo/bin
 fish_add_path ~/.cargo/bin

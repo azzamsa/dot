@@ -32,7 +32,7 @@ export RYE_HOME="$XDG_DATA_HOME/rye"
 export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 
 # Javascript
-export PATH=~/opt/nodebin/node_modules/.bin:$PATH
+export PATH=~/.local/bin/node/node_modules/.bin:$PATH
 
 # Golang
 export GOPATH="$XDG_DATA_HOME/go"

@@ -6,12 +6,12 @@
 
 def task-kondo [] {
     print "🧽 Cleaning dependencies and build artifacts"
-    kondo $env.HOME --older 2w --ignored-dirs $"($env.HOME)/opt/nodebin" --all
+    kondo $env.HOME --older 2w --ignored-dirs ($env.HOME | path join ".local/bin/node") --all
 }
 
-def task-pm [] {
+def task-system [] {
     print "🧽 Cleaning package manager cache"
-    sudo apt autoremove
+    sudo dnf autoremove
 }
 
 def task-flatpak [] {
@@ -40,33 +40,38 @@ def task-container [] {
 #     }
 # }
 
+
 def run-all [] {
     task-kondo
-    task-pm
     task-flatpak
     task-container
     task-cargo
-    # task-dirs
+    task-system
 }
 
-# Clean system artifacts, caches, and junk
+
 def main [
-    ...tasks: string  # kondo, pm, flatpak, container, cargo, dirs (default: all)
+    ...tasks: string  # kondo, flatpak, container, cargo, system (default: all)
 ] {
+    let tasks_map = {
+        kondo:     { task-kondo }
+        flatpak:   { task-flatpak }
+        container: { task-container }
+        cargo:     { task-cargo }
+        system:        { task-system }
+    }
+
     if ($tasks | is-empty) {
         run-all
     } else {
         for task in $tasks {
-            match $task {
-                "kondo"     => { task-kondo }
-                "pm"        => { task-pm }
-                "flatpak"   => { task-flatpak }
-                "container" => { task-container }
-                "cargo"     => { task-cargo }
-                # "dirs"      => { task-dirs }
-                _           => { error make { msg: $"Unknown task: ($task)" } }
+            if ($task in ($tasks_map | columns)) {
+                do ($tasks_map | get $task)
+            } else {
+                error make { msg: $"Unknown task: ($task)" }
             }
         }
     }
-    print "✨ You have a new shiny machine!"
+
+    print "\n✨ You have a new shiny machine!"
 }

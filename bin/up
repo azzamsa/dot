@@ -16,7 +16,7 @@ def task-appimages [] {
 
 def task-cargo [] {
     print "🦀 Upgrading Cargo apps"
-    cargo install-update -a | grep -v No
+    cargo install-update -a | lines | where ($it !~ "No")
     rustup update stable
 }
 
@@ -32,9 +32,11 @@ def task-system [] {
 
 def task-node [] {
     print "🦖 Upgrading Node apps"
-    let dir = ($env.HOME | path join ".local/bin/node")
-    npx taze major --write
-    npm install
+    do {
+       cd ($env.HOME | path join ".local/bin/node")
+       npx taze major --write
+       npm install
+    }
 }
 
 def run-all [] {
@@ -50,20 +52,26 @@ def run-all [] {
 def main [
     ...tasks: string  # cargo, golang, flatpak, appimages, node, system (default: all)
 ] {
+    let tasks_map = {
+        flatpak:   { task-flatpak }
+        appimages: { task-appimages }
+        cargo:     { task-cargo }
+        golang:    { task-golang }
+        system:    { task-system }
+        node:      { task-node }
+    }
+
     if ($tasks | is-empty) {
         run-all
     } else {
         for task in $tasks {
-            match $task {
-                "flatpak"   => { task-flatpak }
-                "appimages" => { task-appimages }
-                "cargo"     => { task-cargo }
-                "golang"    => { task-golang }
-                "system"    => { task-system }
-                "node"      => { task-node }
-                _           => { error make { msg: $"Unknown task: ($task)" } }
+            if ($task in ($tasks_map | columns)) {
+                do ($tasks_map | get $task)
+            } else {
+                error make { msg: $"Unknown task: ($task)" }
             }
         }
     }
+
     print "\n✨ You have a new shiny machine!"
 }

@@ -4,18 +4,14 @@
 # Random Font
 #
 
-let log_file = ("~/.cache/rfont/log" | path expand)
 let fonts_file = ("~/.config/meta/fonts" | path expand)
 
-def "main clean" [] {
-    let lines = (open $log_file | lines | last 2)
-    $lines | str join "\n" | save --force $log_file
+def "main current" [] {
+    ghostty +show-config | grep "font-family"
 }
 
 def main [] {
     let fonts = (open $fonts_file | lines | where { |l| ($l | str trim) != "" })
     let font = ($fonts | get (random int 0..<($fonts | length)))
-    mkdir ~/.cache/rfont
-    $"($font)\n" | save --append $log_file
     $font
 }

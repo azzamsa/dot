@@ -8,7 +8,7 @@
 def main [] {
     let file = "/run/.containerenv"
     if not ($file | path exists) {
-        error make { msg: "Exiting. Not inside a container" }
+        error make {msg: "Exiting. Not inside a container"}
     }
     open $file | get name
 }

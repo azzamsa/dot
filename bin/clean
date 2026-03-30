@@ -4,27 +4,27 @@
 # Clean system
 #
 
-def task-kondo [] {
+def task-kondo []: any -> string {
     print "🧽 Cleaning dependencies and build artifacts"
-    kondo $env.HOME --older 2w --ignored-dirs ($env.HOME | path join ".local/bin/node") --all
+    kondo $env.HOME --older 2w --ignored-dirs ($env.HOME | path join .local/bin/node) --all
 }
 
-def task-system [] {
+def task-system []: any -> string {
     print "🧽 Cleaning package manager cache"
     sudo dnf autoremove
 }
 
-def task-flatpak [] {
+def task-flatpak []: any -> string {
     print "🧽 Cleaning unused flatpak packages"
     flatpak uninstall --unused
 }
 
-def task-cargo [] {
+def task-cargo []: any -> string {
     print "🧽 Cleaning cargo cache"
     cargo cache --autoclean
 }
 
-def task-container [] {
+def task-container []: any -> string {
     print "🧽 Cleaning container cache"
     podman system prune
 }
@@ -41,7 +41,7 @@ def task-container [] {
 # }
 
 
-def run-all [] {
+def run-all []: any -> string {
     task-kondo
     task-flatpak
     task-container
@@ -65,10 +65,10 @@ def main [
         run-all
     } else {
         for task in $tasks {
-            if ($task in ($tasks_map | columns)) {
-                do ($tasks_map | get $task)
+            if ($tasks_map has $task) {
+                do ($tasks_map | get --optional $task)
             } else {
-                error make { msg: $"Unknown task: ($task)" }
+                error make {msg: $"Unknown task: ($task)"}
             }
         }
     }

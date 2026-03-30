@@ -12,10 +12,10 @@ def main [
     --file:  path (-f)   # Path to a custom quotes file (one quote per line)
 ] {
     let file = ($file | default ("~/.config/meta/quotes.txt" | path expand))
-    let quotes = (open $file | lines | where { |l| ($l | str trim) != "" })
+    let quotes = (open $file | lines | where ($it | str trim) != "")
 
     let index = (random int 0..<($quotes | length))
-    mut quote = ($quotes | get $index)
+    mut quote = ($quotes | get --optional $index)
 
     if $period { $quote = $"($quote)." }
     if $quoted { $quote = $'"($quote)"' }

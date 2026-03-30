@@ -1,4 +1,4 @@
-#!/usr/bin/env nu
+#!/usr/bin/env -S nu --stdin
 
 #
 # Random Font
@@ -6,12 +6,11 @@
 
 let fonts_file = ("~/.config/meta/fonts" | path expand)
 
-def "main current" [] {
-    ghostty +show-config | grep "font-family"
+def "main current" []: any -> any {
+    ghostty +show-config | find font-family
 }
 
 def main [] {
-    let fonts = (open $fonts_file | lines | where { |l| ($l | str trim) != "" })
-    let font = ($fonts | get (random int 0..<($fonts | length)))
-    $font
+    let fonts = (open $fonts_file | lines | where ($it | str trim) != "")
+    ($fonts | get (random int 0..<($fonts | length)))
 }

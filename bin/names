@@ -15,9 +15,9 @@ def main [
     let names = if ($category | is-empty) {
         $categories | values | flatten
     } else {
-        $categories | get $category
+        $categories | get --optional $category
     }
 
     let index = (random int 0..<($names | length))
-    $names | get $index
+    $names | get --optional $index
 }

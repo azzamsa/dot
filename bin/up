@@ -4,36 +4,36 @@
 # Upgrade everything
 #
 
-def task-flatpak [] {
+def task-flatpak []: any -> string {
     print "📦 Upgrading Flatpak apps"
     flatpak update
 }
 
-def task-appimages [] {
+def task-appimages []: any -> string {
     print "⚙️ List Upgradable Appimages"
     flatpak run it.mijorus.gearlever --list-updates
 }
 
-def task-cargo [] {
+def task-cargo []: any -> string {
     print "🦀 Upgrading Cargo apps"
-    cargo install-update -a | lines | where ($it !~ "No")
+    cargo install-update -a | lines | where ($it !~ No)
     rustup update stable
 }
 
-def task-golang [] {
+def task-golang []: any -> string {
     print "🐹 Upgrading Go apps"
     gup update
 }
 
-def task-system [] {
+def task-system []: any -> string {
     print "🐧 Upgrading System apps"
     sudo dnf update
 }
 
-def task-node [] {
+def task-node []: any -> any {
     print "🦖 Upgrading Node apps"
     do {
-       cd ($env.HOME | path join ".local/bin/node")
+       cd ($env.HOME | path join .local/bin/node)
        npx taze major --write
        npm install
     }
@@ -65,10 +65,10 @@ def main [
         run-all
     } else {
         for task in $tasks {
-            if ($task in ($tasks_map | columns)) {
+            if ($tasks_map has $task) {
                 do ($tasks_map | get $task)
             } else {
-                error make { msg: $"Unknown task: ($task)" }
+                error make {msg: $"Unknown task: ($task)"}
             }
         }
     }

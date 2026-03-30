@@ -2,8 +2,6 @@
 
 alias f := fmt
 alias l := lint
-alias c := comply
-alias k := check
 alias p := deploy
 
 [doc('List available commands')]
@@ -19,16 +17,16 @@ deploy:
     just --justfile utils/snacks/justfile deploy
     dotter deploy
 
-[doc('Comply, then check')]
-qq: comply check
+[doc('Complete quality check')]
+qq: qa _lint-nu meta
+
+[doc('Quick quality check')]
+qa: fmt-check lint
+    just --justfile utils/snacks/justfile check
 
 [doc('Enforce rules')]
-comply: _update-example fmt lint
+fix: _update-example fmt lint
     just --justfile utils/snacks/justfile comply
-
-[doc('Check rules')]
-check: fmt-check lint
-    just --justfile utils/snacks/justfile check
 
 [doc('Format the codebase')]
 fmt:
@@ -41,16 +39,20 @@ fmt-check:
     stylua . --allow-hidden --check
 
 [doc('Lint the codebase')]
-lint: fmt-check
+lint: fmt-check _lint-nu
     typos
     selene . --quiet
+
+[doc('Lint the Nushell codebase.')]
+_lint-nu:
+    nu-lint bin/ --fix
 
 [doc('Create a new release. Example: just release v2.2.0')]
 release version:
     ./release {{ version }}
 
 [doc('Check dependencies health. Pass `--write` to upgrade dependencies')]
-up arg="":
+up:
     cargo upgrade --incompatible --recursive --verbose
     cargo update
     dprint config update

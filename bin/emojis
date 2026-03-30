@@ -15,9 +15,9 @@ def main [
     let emojis = if ($category | is-empty) {
         $categories | values | flatten
     } else {
-        $categories | get $category
+        $categories | get --optional $category
     }
 
     let index = (random int 0..<($emojis | length))
-    $emojis | get $index
+    $emojis | get --optional $index
 }

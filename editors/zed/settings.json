@@ -1,9 +1,6 @@
 {
-  "buffer_font_family": "IntoneMono Nerd Font Mono",
+  "buffer_font_family": "{{ font }}",
   // https://github.com/intel/intel-one-mono#activating-programming-ligatures-in-code-editors
-  "buffer_font_features": {
-    "ss01": true, // ~~>
-  },
   "vim_mode": true,
   "helix_mode": false,
   "vim": {

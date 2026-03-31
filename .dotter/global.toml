@@ -69,6 +69,9 @@ depends = ["shell"]
 [helix.files]
 "editors/helix" = "~/.config/helix"
 
+[zed.files]
+"editors/zed/settings.json" = "~/.var/app/dev.zed.Zed/config/zed/settings.json"
+
 #
 # VCS
 [git.files]

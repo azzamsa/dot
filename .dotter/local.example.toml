@@ -20,6 +20,7 @@ packages = [
     # Editor
     "helix",
     "neovide",
+    "zed",
 
     # Scripts
     "bin",
@@ -52,6 +53,5 @@ terminal_font_size = 21.5
 # Available theme can be found in shells/fish/colors.fish
 theme = "modus_vivendi"
 
-# font = "Maple Mono NF"
-font = "IntoneMono Nerd Font Mono"
-# font = "0xProto Nerd Font",
+font = "Maple Mono NF"
+# font = "0xProto Nerd Font"

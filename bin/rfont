@@ -4,13 +4,14 @@
 # Random Font
 #
 
-let fonts_file = ("~/.config/meta/fonts" | path expand)
-
 def "main current" []: any -> any {
     ghostty +show-config | find font-family
 }
 
 def main [] {
-    let fonts = (open $fonts_file | lines | where ($it | str trim) != "")
-    ($fonts | get (random int 0..<($fonts | length)))
+    let fonts_file = ("~/.config/meta/fonts.toml" | path expand)
+    let fonts = (open $fonts_file | get font)
+    let font = $fonts | get (random int 0..<($fonts | length))
+    $font.name
 }
+

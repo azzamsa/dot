@@ -16,11 +16,11 @@ def main [
     let quotes = if ($category | is-empty) {
         $data | values | flatten
     } else {
-        $data | get $category
+        $data | get --optional $category
     }
 
     let index = (random int 0..<($quotes | length))
-    mut quote = ($quotes | get $index)
+    mut quote = ($quotes | get --optional $index)
 
     if $period { $quote = $"($quote)." }
     if $quoted { $quote = $'"($quote)"' }

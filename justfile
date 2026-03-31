@@ -1,7 +1,5 @@
 #!/usr/bin/env -S just --justfile
 
-alias f := fmt
-alias l := lint
 alias p := deploy
 
 [doc('List available commands')]
@@ -21,35 +19,35 @@ deploy:
 qqq: qa _lint-nu meta
 
 [doc('Quality check')]
-qq: qa _lint-nu
+qq: qa
 
 [doc('Quick quality check')]
 qa: fmt-check lint
-    just --justfile utils/snacks/justfile check
+    just --justfile utils/snacks/justfile qa
 
 [doc('Fix before check')]
 qc: fix qq
 
 [doc('Enforce rules')]
 fix: _update-example fmt lint
-    just --justfile utils/snacks/justfile comply
+    # just --justfile utils/snacks/justfile fix
 
-[doc('Format the codebase')]
+[doc('Format')]
 fmt:
     dprint fmt
     stylua . --allow-hidden
 
-[doc('Check if the codebase is properly formatted')]
+[doc('Check formatting')]
 fmt-check:
     dprint check
     stylua . --allow-hidden --check
 
-[doc('Lint the codebase')]
-lint: fmt-check _lint-nu
+[doc('Lint')]
+lint: fmt-check
     typos
     selene . --quiet
 
-[doc('Lint the Nushell codebase.')]
+[doc('Lint Nushell code')]
 _lint-nu:
     nu-lint bin/ --fix
 
@@ -57,10 +55,8 @@ _lint-nu:
 release version:
     ./release {{ version }}
 
-[doc('Check dependencies health. Pass `--write` to upgrade dependencies')]
+[doc('Upgrade dependencies')]
 up:
-    cargo upgrade --incompatible --recursive --verbose
-    cargo update
     dprint config update
 
 [doc('Keep example up-to-date.')]

@@ -3,11 +3,6 @@
 set dotenv-load := true
 
 alias d := dev
-alias f := fmt
-alias l := lint
-alias t := test
-alias c := comply
-alias k := check
 alias p := deploy
 
 [doc('List available commands')]
@@ -19,51 +14,51 @@ _default:
 setup:
     cargo binstall cargo-edit cargo-outdated dprint git-cliff bacon typos-cli
 
-[doc('Comply, then check')]
-qq: comply check
+[doc('Quality check')]
+qq: qa test
+
+[doc('Quick quality check')]
+qa: fmt-check lint
+
+[doc('Fix before check')]
+qc: fix qq
 
 [doc('Enforce rules')]
-comply: fmt lint test
+fix: fmt lint
 
-[doc('Check rules')]
-check: fmt-check lint test
+[doc('Publish')]
+deploy: qa test
 
-[doc('Publish the binaries')]
-deploy: check
-
-[doc('Develop the app')]
+[doc('Develop')]
 dev:
     bacon
-    just comply
+    just qc
 
-[doc('Format the codebase.')]
+[doc('Format')]
 fmt:
     cargo fmt --all
 
-[doc('Check is the codebase properly formatted')]
+[doc('Check formatting')]
 fmt-check:
     cargo fmt --all -- --check
 
-[doc('Lint the codebase')]
+[doc('Lint')]
 lint:
     cargo clippy --all-targets --all-features --quiet
     typos
 
-[doc('Test the codebase')]
+[doc('Test')]
 test:
     cargo test --quiet
 
-[doc('Check dependencies health. Pass `--write` to upgrade dependencies')]
-up arg="":
-    if [ "{{ arg }}" = "--write" ]; then \
-        cargo upgrade --incompatible --recursive --verbose && \
-        cargo update && \
-        dprint config update; \
-    else \
-        cargo outdated --root-deps-only; \
-    fi
+[doc('Upgrade dependencies')]
+up:
+    cargo upgrade --incompatible --recursive --verbose
+    cargo update
+    dprint config update
 
 [doc('Dependency analysis')]
 meta:
     cargo +nightly udeps
     cargo audit
+    cargo outdated --root-deps-only

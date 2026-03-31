@@ -1,49 +1,47 @@
 includes = [".dotter/include/fedora.toml"]
 
 packages = [
-    #
     # Shell
     "shell",
     "fish",
     "nushell",
-    #
+
     # Terminals
-    # "alacritty",
-    # "zellij",
     "wezterm",
     "kitty",
     "ghostty",
     "starship",
     "atuin",
-    #
+    # "zellij",
+
     # Fetchers
     "fastfetch",
-    #
+
     # Editor
     "helix",
     "neovide",
-    #
+
     # Scripts
     "bin",
-    #
-    # VSC
+
+    # VCS
     "git",
     "jj",
-    #
+
     # Utils
     "fontconfig",
     "gnupg",
-    # "zellij",
     "yazi",
     # "lla",
     "eget",
     "jjui",
-    #
-    # Browsers
-    # "tridactyl",
-    #
+    # "sane-break" # sane-break doesn't work with symlink
+
     # Programming Languages
     "cargo",
+
+    # Browsers
+    # "tridactyl",
 ]
 
 [variables]
@@ -51,8 +49,9 @@ multiplexer = "zellij"
 editor = "hx"
 terminal_font_size = 21.5
 
-# font = "Maple Mono NF"
-font = "IntoneMono Nerd Font"
-
 # Available theme can be found in shells/fish/colors.fish
 theme = "modus_vivendi"
+
+# font = "Maple Mono NF"
+font = "IntoneMono Nerd Font Mono"
+# font = "0xProto Nerd Font",

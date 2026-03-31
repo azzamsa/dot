@@ -17,12 +17,18 @@ deploy:
     just --justfile utils/snacks/justfile deploy
     dotter deploy
 
-[doc('Complete quality check')]
-qq: qa _lint-nu meta
+[doc('Exhaustive quality check')]
+qqq: qa _lint-nu meta
+
+[doc('Quality check')]
+qq: qa _lint-nu
 
 [doc('Quick quality check')]
 qa: fmt-check lint
     just --justfile utils/snacks/justfile check
+
+[doc('Fix before check')]
+qc: fix qq
 
 [doc('Enforce rules')]
 fix: _update-example fmt lint

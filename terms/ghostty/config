@@ -11,7 +11,7 @@ adjust-cursor-thickness = 200%
 maximize = true
 
 # Fonts
-font-family = {{ command_output "rfont" }}
+font-family = {{ font }}
 font-size = {{ terminal_font_size }}
 
 # UI

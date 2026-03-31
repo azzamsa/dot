@@ -2,12 +2,12 @@
 
 function fish_greeting
     set -l emoji  (emojis nature)
-    set -l quote (quotes --period --file ~/.config/meta/quotes.txt)
+    set -l quote (quotes --period)
     echo "$(set_color magenta)$emoji $quote$(set_color normal)"
 end
 
 # Auto-deploy dotfiles on terminal start
-cd dot && dotter deploy; and cd -
+cd ~/dot && dotter deploy; and cd -
 
 # Force true-color support; otherwise, the Neovim Terminal inside Neovide
 # (not the case with Neovim inside the Terminal) will use slightly different colors,

@@ -14,7 +14,65 @@ source "$CARGO_HOME/env"
 cargo install cargo-binstall
 
 pkgs=(
-    cargo-audit cargo-binstall cargo-cache cargo-deny cargo-edit cargo-generate cargo-nextest cargo-outdated cargo-release cargo-sort cargo-tarpaulin cargo-udeps cargo-update
+  # core
+  starship
+  atuin
+  eza
+  zoxide
+  dotter
+  nu
+  zellij
+
+  # dailies
+  bat
+  yazi-fm
+  just
+  git-cliff
+  hurl
+  jj-cli
+  typos-cli
+  fd-find
+
+  # Utils
+  fnm
+  kondo
+  bandwhich
+  bottom
+  dua-cli
+  hyperfine
+  jaq
+  resvg
+  sd
+  tokei
+  typst-cli
+  typstyle
+  watchexec-cli
+  mdfried
+  ttyper
+  beancount-language-server
+  bob
+  goup
+  stylua
+  selene
+  trunk
+  emacs-lsp-booster
+
+  # Rust ecosystem tools
+  bacon
+  diesel_cli
+  dioxus-cli
+  cargo-audit
+  cargo-cache
+  cargo-deny
+  cargo-edit
+  cargo-generate
+  cargo-nextest
+  cargo-outdated
+  cargo-release
+  cargo-sort
+  cargo-tarpaulin
+  cargo-udeps
+  cargo-update
 )
 
 for pkg in "${pkgs[@]}"; do

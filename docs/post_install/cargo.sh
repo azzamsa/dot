@@ -49,13 +49,12 @@ pkgs=(
   watchexec-cli
   mdfried
   ttyper
-  beancount-language-server
   bob
   goup
   stylua
   selene
   trunk
-  emacs-lsp-booster
+  hurlfmt
 
   # Rust ecosystem tools
   bacon
@@ -73,6 +72,10 @@ pkgs=(
   cargo-tarpaulin
   cargo-udeps
   cargo-update
+
+  # lsp
+  beancount-language-server
+  emacs-lsp-booster
 )
 
 for pkg in "${pkgs[@]}"; do

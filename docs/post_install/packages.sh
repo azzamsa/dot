@@ -15,16 +15,19 @@ editors=(
 )
 
 # programming
-# - https://docs.rs/openssl/latest/openssl/#automatic
 code=(
   clang mold
+  # openssl
   pkgconf perl-FindBin perl-IPC-Cmd openssl-devel
+  # hurlfmt
+  libxml2-devel
   podman-compose
 )
 
 # utils
 utils=(
   gnome-tweaks
+  # pano/copyous
   ddcutil libgda libgda-sqlite
   fastfetch
 )

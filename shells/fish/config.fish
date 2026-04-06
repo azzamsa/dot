@@ -50,12 +50,10 @@ alias j just
 alias f nyazi
 alias x scratch
 
-alias hld hledger
-alias fd fdfind
-
 #
 # Apps
 #
+
 zoxide init --cmd cd fish | source
 starship init fish | source
 fnm env --use-on-cd | source

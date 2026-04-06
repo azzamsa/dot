@@ -29,6 +29,8 @@ utils=(
   gnome-tweaks
   # pano/copyous
   ddcutil libgda libgda-sqlite
+  # yazi
+  ffmpeg p7zip p7zip-plugins jq poppler-utils fzf ImageMagick
   fastfetch
 )
 

@@ -114,7 +114,7 @@ depends = ["shell"]
 #
 # Programming Languages
 [cargo.files]
-"langs/cargo/config.toml" = "~/local/share/cargo/config.toml"
+"langs/cargo/config.toml" = "~/.local/share/cargo/config.toml"
 
 #
 # utils

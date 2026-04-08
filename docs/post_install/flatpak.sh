@@ -28,6 +28,7 @@ code=(
 
 # Utilities
 utils=(
+  io.github.alainm23.planify
   org.gnome.Evolution
   com.github.finefindus.eyedropper
   io.gitlab.news_flash.NewsFlash

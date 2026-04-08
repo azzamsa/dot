@@ -27,6 +27,8 @@ code=(
 # utils
 utils=(
   gnome-tweaks
+  # appimages
+  fuse fuse-libs
   # pano/copyous
   ddcutil libgda libgda-sqlite
   # yazi

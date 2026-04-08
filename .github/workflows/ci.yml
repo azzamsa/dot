@@ -24,6 +24,6 @@ jobs:
         run: |
           dprint --version
 
-      - name: Check
+      - name: Quality Check
         run: |
-          just check
+          just qq

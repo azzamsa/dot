@@ -29,8 +29,8 @@ qa: fmt-check lint
 qc: fix qq
 
 [doc('Enforce rules')]
-fix: _update-example fmt lint
-    # just --justfile utils/snacks/justfile fix
+fix: fmt lint
+    just --justfile utils/snacks/justfile fix
 
 [doc('Format')]
 fmt:

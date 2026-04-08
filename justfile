@@ -67,3 +67,4 @@ _update-example:
 meta:
     pnpx actions-up
     actionlint
+    zizmor .github/workflows/*

@@ -5,56 +5,51 @@ on:
     tags:
       - "v*"
 env:
-  PROJECT_NAME: dotfiles
+  PROJECT_NAME: dot
 
 jobs:
   release:
     name: Release
     runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    environment: release
     steps:
+
       - name: Checkout source code
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          # It is a must. To generate a changelog.
-          # this operation is chap. It took less than one second.
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Set the release version
         shell: bash
-        run: echo "RELEASE_VERSION=${GITHUB_REF:11}" >> "$GITHUB_ENV"
+        run: echo "RELEASE_VERSION=${GITHUB_REF:10}" >> "$GITHUB_ENV"
 
       - name: Show release version
         shell: bash
-        run: echo ${{ env.RELEASE_VERSION }}
-
-      - name: Extract repository information
-        shell: bash
-        run: echo "PROJECT_NAME=${{ env.PROJECT_NAME }}" >> "$GITHUB_ENV"
+        run: echo "$RELEASE_VERSION"
 
       - name: Create tarball
         id: package
+        shell: bash
         run: |
-          PKG_suffix=".tar.gz"
-          PKG_BASENAME=${PROJECT_NAME}-${RELEASE_VERSION}
-          PKG_NAME=${PKG_BASENAME}${PKG_suffix}
-          echo "PKG_NAME=${PKG_NAME}" >> "$GITHUB_OUTPUT"
-
+          PKG_SUFFIX=".tar.gz"
+          PKG_BASENAME="${PROJECT_NAME}-${RELEASE_VERSION}"
+          PKG_NAME="${PKG_BASENAME}${PKG_SUFFIX}"
           PKG_STAGING="/tmp/package"
-          ARCHIVE_DIR="${PKG_STAGING}/${PKG_BASENAME}/"
+          ARCHIVE_DIR="${PKG_STAGING}/${PKG_BASENAME}"
           mkdir -p "${ARCHIVE_DIR}"
-
-          cp -r ./* "$ARCHIVE_DIR"
-
-          # Compress
+          # Copy everything except .git to avoid bloating the archive
+          rsync -a --exclude='.git' . "${ARCHIVE_DIR}/"
           pushd "${PKG_STAGING}/" >/dev/null
-          tar czf "${PKG_NAME}" "${PKG_BASENAME}"/
+          tar czf "${PKG_NAME}" "${PKG_BASENAME}/"
           popd >/dev/null
-
-          # Let subsequent steps know where to find the compressed package
+          echo "PKG_NAME=${PKG_NAME}" >> "$GITHUB_OUTPUT"
           echo "PKG_PATH=${PKG_STAGING}/${PKG_NAME}" >> "$GITHUB_OUTPUT"
 
       - name: Generate a changelog
-        uses: orhun/git-cliff-action@e16f179f0be49ecdfe63753837f20b9531642772 # v4.7.0
+        uses: orhun/git-cliff-action@c93ef52f3d0ddcdcc9bd5447d98d458a11cd4f72 # v4.7.1
         id: git-cliff
         with:
           config: .cliff.toml
@@ -63,14 +58,33 @@ jobs:
           OUTPUT: CHANGELOG.md
 
       - name: Print the changelog
-        run: cat "${{ steps.git-cliff.outputs.changelog }}"
+        env:
+          CHANGELOG: ${{ steps.git-cliff.outputs.changelog }}
+        run: cat "$CHANGELOG"
+
+      - name: Set prerelease flag
+        shell: bash
+        env:
+          GIT_REF: ${{ github.ref }}
+        run: |
+          if [[ "$GIT_REF" == *alpha* ]] || [[ "$GIT_REF" == *beta* ]]; then
+            echo "PRERELEASE_FLAG=--prerelease" >> "$GITHUB_ENV"
+          else
+            echo "PRERELEASE_FLAG=" >> "$GITHUB_ENV"
+          fi
 
       - name: Release
-        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2.5.0
-        with:
-          token: ${{ secrets.GH_TOKEN }}
-          name: "v${{ env.RELEASE_VERSION }}"
-          files: ${{ steps.package.outputs.PKG_NAME }}
-          prerelease: ${{ contains(github.ref, 'alpha') || contains(github.ref, 'beta') }}
-          generate_release_notes: true
-          body_path: "${{ steps.git-cliff.outputs.changelog }}"
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          PKG_PATH: ${{ steps.package.outputs.PKG_PATH }}
+          CHANGELOG: ${{ steps.git-cliff.outputs.changelog }}
+        run: |
+          RELEASE_ARGS=()
+          [[ -n "$PRERELEASE_FLAG" ]] && RELEASE_ARGS+=("$PRERELEASE_FLAG")
+
+          gh release create "$RELEASE_VERSION" \
+            "$PKG_PATH" \
+            --title "$RELEASE_VERSION" \
+            --notes-file "$CHANGELOG" \
+            "${RELEASE_ARGS[@]}"

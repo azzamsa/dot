@@ -1,0 +1,14 @@
+#!/usr/bin/env nu
+
+# Set brightness based on time
+
+let hour = date now | format date %H | into int
+
+let level = if $hour >= 6 and $hour < 18 {
+  50
+} else {
+  35
+}
+
+ddcutil setvcp 10 $level
+print $"(if $level >= 50 { '🔆' } else { '🔅' }) Brightness: ($level)%"

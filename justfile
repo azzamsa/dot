@@ -51,7 +51,7 @@ lint: fmt-check
 _lint-nu:
     nu-lint bin/ --fix
 
-[doc('Create a new release. Example: just release v2.2.0')]
+[doc('Create a new release')]
 release version:
     ./release {{ version }}
 
@@ -59,7 +59,7 @@ release version:
 up:
     dprint config update
 
-[doc('Keep example up-to-date.')]
+[doc('Keep example up-to-date')]
 _update-example:
     cp -f .dotter/local.toml .dotter/local.example.toml
 

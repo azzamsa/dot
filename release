@@ -1,14 +1,19 @@
 #!/usr/bin/env nu
+
 #
-# Create a release
+# Create a release with the given tag
 #
 
-# Create a release with the given tag
 def main [tag: string] {
-    # Check for untracked files
-    let untracked = (git ls-files . --exclude-standard --others | str trim)
-    if $untracked != "" {
-        error make { msg: "Error: Please stash or remove the untracked files!" }
+    # Validate tag
+    if ($tag | str trim) == "" {
+        error make { msg: "Error: tag must not be empty" }
+    }
+
+    # Check for dirty working tree (covers untracked, modified, and staged files)
+    let dirty = (git status --porcelain | str trim)
+    if $dirty != "" {
+        error make { msg: "Error: Working tree is dirty. Stash or commit changes first." }
     }
 
     # Update the changelog
@@ -25,6 +30,8 @@ def main [tag: string] {
     git add --all
     git commit --message $tag
     git show
+
+    # Sign and annotate the tag (requires GPG key to be available)
     git tag --sign --annotate $tag --message "For details, see the CHANGELOG.md"
     git tag --verify $tag
 }

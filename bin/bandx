@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+sudo ~/.local/share/cargo/bin/bandwhich -d 1.1.1.1  --processes

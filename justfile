@@ -6,9 +6,15 @@ alias p := deploy
 _default:
     just --list --unsorted
 
-[doc('Set up the repository')]
-setup:
-    cp -f .scripts/hooks/pre-commit .git/hooks/
+[doc('Setup the project')]
+setup: _hooks
+    cargo binstall stylua selene
+
+_hooks:
+    #!/usr/bin/env bash
+    for hook in .hooks/*; do \
+        ln -sf "../../$hook" ".git/hooks/$(basename $hook)"; \
+    done
 
 [doc('Publish the binaries')]
 deploy:

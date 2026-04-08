@@ -22,3 +22,7 @@ language-servers = ["uwu_colors"]
 [[language]]
 name = "markdown"
 language-servers = ["marksman", "markdown-oxide", "rumdl", "uwu_colors", "fs_watcher_lsp"]
+
+[[language]]
+name = "css"
+language-servers = ["vscode-css-language-server", "uwu_colors"]

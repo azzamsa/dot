@@ -49,7 +49,6 @@ pkgs=(
   watchexec-cli
   mdfried
   ttyper
-  bob
   goup
   stylua
   selene

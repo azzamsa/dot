@@ -46,7 +46,8 @@ packages = [
 ]
 
 [variables]
-editor = "hx"
+editor = "nvim"
 terminal_font_size = 21.5
 theme = "modus_vivendi"
 font = "Maple Mono NF"
+atuin_server = "https://shell.me.com"

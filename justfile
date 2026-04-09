@@ -25,7 +25,7 @@ deploy:
 qqq: qa _lint-nu meta
 
 [doc('Quality check')]
-qq: qa
+qq: qa _update-example
 
 [doc('Quick quality check')]
 qa: fmt-check lint
@@ -67,7 +67,9 @@ up:
 
 [doc('Keep example up-to-date')]
 _update-example:
+    #!/usr/bin/env bash
     cp -f .dotter/local.toml .dotter/local.example.toml
+    sed -i 's|atuin_server = ".*"|atuin_server = "https://shell.me.com"|' .dotter/local.example.toml
 
 [doc('Dependency analysis')]
 meta:

@@ -4,7 +4,7 @@
         "indentWidth": 4,
     },
     "json": {},
-    "includes": ["**/*.{md,toml}"],
+    "includes": ["**/*.{md,toml}", ".dotter/local.example.toml"],
     "excludes": ["CHANGELOG.md", ".cliff.toml"],
     "plugins": [
         "https://plugins.dprint.dev/markdown-0.21.1.wasm",

@@ -2,7 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## [7.0.1](https://github.com/azzamsa/dot/compare/v7.0.0..v7.0.1) - 2026-04-08
+## [7.0.1](https://github.com/azzamsa/dot/compare/v7.0.0..v7.0.1) - 2026-04-09
+
+### 🐛 Bug Fixes
+
+- Improve handling of private environment variables - ([25f1666](https://github.com/azzamsa/dot/commit/25f1666d94c787a7ee079c4766a126100ee6c7ed))
 
 ### 📚 Documentation
 
@@ -10,7 +14,9 @@ All notable changes to this project will be documented in this file.
 
 ### ⚙️ Miscellaneous Tasks
 
-- Better CHANGELOG format - ([a73a781](https://github.com/azzamsa/dot/commit/a73a781bce12edd76b638c5de674dd6275294a5f))
+- No changelog in Github release - ([c42167e](https://github.com/azzamsa/dot/commit/c42167ef3f1265c54eb9b13b679e9ee86de4155b))
+- Better locations for git hooks - ([bfa3f54](https://github.com/azzamsa/dot/commit/bfa3f54d061f06a83f52cdab619a4b007ba51e08))
+- Better CHANGELOG format - ([2a43713](https://github.com/azzamsa/dot/commit/2a437135d81605e72e10523fe1933ae1f5d6da2a))
 
 
 ## [7.0.0](https://github.com/azzamsa/dot/compare/v6.0.0..v7.0.0) - 2026-04-08

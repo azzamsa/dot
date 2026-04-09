@@ -10,8 +10,8 @@ format = '($style)'
 
 [custom.container_name]
 disabled = true
-command = "container_name"
-when = "container_name"
+command = "container-name"
+when = "container-name"
 symbol = '🫙'
 style = 'bold blue dimmed'
 format = "[$symbol $output]($style) "

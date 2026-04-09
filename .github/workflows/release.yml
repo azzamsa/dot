@@ -4,13 +4,33 @@ on:
   push:
     tags:
       - "v*"
-env:
-  PROJECT_NAME: dot
 
 jobs:
+  changelog:
+    name: Generate changelog
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    outputs:
+      release_body: ${{ steps.git-cliff.outputs.content }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0 # required for git-cliff
+          persist-credentials: false
+
+      - name: Generate a changelog
+        uses: orhun/git-cliff-action@c93ef52f3d0ddcdcc9bd5447d98d458a11cd4f72 # v4.7.1
+        id: git-cliff
+        with:
+          config: .cliff.toml
+          args: -vv --strip header --latest --no-exec --github-repo ${{ github.repository }}
+
   release:
     name: Release
     runs-on: ubuntu-24.04
+    needs: changelog
     permissions:
       contents: write
     environment: release
@@ -19,7 +39,6 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          fetch-depth: 0
           persist-credentials: false
 
       - name: Set the release version
@@ -33,9 +52,11 @@ jobs:
       - name: Create tarball
         id: package
         shell: bash
+        env:
+          REPO_NAME: ${{ github.event.repository.name }}
         run: |
           PKG_SUFFIX=".tar.gz"
-          PKG_BASENAME="${PROJECT_NAME}-${RELEASE_VERSION}"
+          PKG_BASENAME="${REPO_NAME}-${RELEASE_VERSION}"
           PKG_NAME="${PKG_BASENAME}${PKG_SUFFIX}"
           PKG_STAGING="/tmp/package"
           ARCHIVE_DIR="${PKG_STAGING}/${PKG_BASENAME}"
@@ -47,20 +68,6 @@ jobs:
           popd >/dev/null
           echo "PKG_NAME=${PKG_NAME}" >> "$GITHUB_OUTPUT"
           echo "PKG_PATH=${PKG_STAGING}/${PKG_NAME}" >> "$GITHUB_OUTPUT"
-
-      - name: Generate a changelog
-        uses: orhun/git-cliff-action@c93ef52f3d0ddcdcc9bd5447d98d458a11cd4f72 # v4.7.1
-        id: git-cliff
-        with:
-          config: .cliff.toml
-          args: -vv --strip header --current
-        env:
-          OUTPUT: CHANGELOG.md
-
-      - name: Print the changelog
-        env:
-          CHANGELOG: ${{ steps.git-cliff.outputs.changelog }}
-        run: cat "$CHANGELOG"
 
       - name: Set prerelease flag
         shell: bash
@@ -78,13 +85,18 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           PKG_PATH: ${{ steps.package.outputs.PKG_PATH }}
-          CHANGELOG: ${{ steps.git-cliff.outputs.changelog }}
+          CHANGELOG: ${{ needs.changelog.outputs.release_body }}
         run: |
+          set -euo pipefail
+
           RELEASE_ARGS=()
-          [[ -n "$PRERELEASE_FLAG" ]] && RELEASE_ARGS+=("$PRERELEASE_FLAG")
+          [[ -n "${PRERELEASE_FLAG:-}" ]] && RELEASE_ARGS+=("$PRERELEASE_FLAG")
+
+          CHANGELOG_FILE="$(mktemp)"
+          printf "%s\n" "$CHANGELOG" > "$CHANGELOG_FILE"
 
           gh release create "$RELEASE_VERSION" \
             "$PKG_PATH" \
             --title "$RELEASE_VERSION" \
-            --notes-file "$CHANGELOG" \
+            --notes-file "$CHANGELOG_FILE" \
             "${RELEASE_ARGS[@]}"

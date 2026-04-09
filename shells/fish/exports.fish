@@ -19,6 +19,12 @@ set -gx VISUAL "{{ editor }}"
 set -gx EDITOR "{{ editor }}"
 
 #
+# Private envs
+if test -f ~/.config/meta/env.fish
+    source ~/.config/meta/env.fish
+end
+
+#
 # Paths
 fish_add_path ~/.local/bin
 fish_add_path ~/.local/share/go/bin

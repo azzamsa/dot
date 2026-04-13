@@ -1,0 +1,14 @@
+#!/usr/bin/env nu
+
+# Capitalize a string and copy it to the clipboard via wl-copy
+def main [
+    ...words: string  # The string(s) to capitalize and copy
+] {
+    let input = $words | str join " "
+    let capitalized = $input | split words | each { str capitalize } | str join " "
+
+    $capitalized | wl-copy
+
+    print $"Capitalized: ($capitalized)"
+    print "Copied to clipboard!"
+}

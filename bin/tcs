@@ -1,6 +1,10 @@
 #!/usr/bin/env nu
 
-# Capitalize a string and copy it to the clipboard via wl-copy
+#
+# Titlecase
+#
+
+# Titlecase a string and copy it to the clipboard via wl-copy
 def main [
     ...words: string  # The string(s) to capitalize and copy
 ] {

@@ -10,6 +10,7 @@ _default:
 setup: _hooks
     cargo binstall stylua selene
 
+[doc('Setup Git hooks')]
 _hooks:
     #!/usr/bin/env bash
     for hook in .hooks/*; do \

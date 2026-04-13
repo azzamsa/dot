@@ -1,0 +1,53 @@
+#!/usr/bin/env -S nu --stdin
+
+let config    = "~/.config/meta/age.toml" | path expand | open
+let people    = $config.people
+let marriage  = $config.marriage
+let companies = $config.companies
+
+def humanize-duration [dob: string] {
+  let now    = (date now)
+  let birth  = ($dob | into datetime)
+  let years  = ($now - $birth) | $in / 1day / 365.25 | math floor
+  let months = ($now - $birth) | $in / 1day / 30.44 | math floor | $in mod 12
+  $"($years) years, ($months) months"
+}
+
+def birthdays [] {
+  for person in $people {
+    print $"👶🏼 (ansi magenta_bold)($person.name) (ansi reset)"
+    let dob     = $"(ansi default_underline)($person.dob | format date '%a, %d %b %Y')(ansi reset)"
+    let precise = (humanize-duration $person.dob)
+    print $"Born at: ($dob)"
+    print $"Age: ($person.dob | date humanize) \(($precise)\) \n"
+  }
+}
+
+def marriage [] {
+    let date    = $marriage.date
+    let precise = (humanize-duration $date)
+    print $"(ansi magenta_bold)💍 Marriage (ansi reset)"
+    let pretty_date = ($date | format date '%a, %d %b %Y')
+    print $"You got married on (ansi default_underline)($pretty_date)(ansi reset)"
+    print $"It has been ($date | date humanize) \(($precise)\) \n"
+}
+
+def jobs [] {
+  for company in $companies {
+    let precise = (humanize-duration $company.join_date)
+    print $"(ansi magenta_bold)🛠  Work️ (ansi reset)"
+    let company_name = $"(ansi default_underline)($company.name)(ansi reset)"
+    let join_date    = $"(ansi default_underline)($company.join_date | format date '%a, %d %b %Y')(ansi reset)"
+    print $"You began your career at ($company_name) on ($join_date)"
+    print $"It has been ($company.join_date | date humanize) \(($precise)\)"
+    if not ($company == ($companies | last)) {
+      print ""
+    }
+  }
+}
+
+def main []: nothing -> nothing {
+  birthdays
+  marriage
+  jobs
+}

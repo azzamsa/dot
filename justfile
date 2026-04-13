@@ -56,7 +56,7 @@ lint: fmt-check
 
 [doc('Lint Nushell code')]
 _lint-nu:
-    nu-lint bin/ --fix
+    nu-lint bin/
 
 [doc('Create a new release')]
 release version:

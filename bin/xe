@@ -14,17 +14,26 @@ def humanize_usd [n: float] {
     $"($whole).($cents | fill -a right -c '0' -w 2)"
 }
 
-# Currency converter
-def main [
-    choice: string  # 1 = USD→IDR, 2 = IDR→USD
-    amount: float   # Amount to convert
-] {
+def fetch_rate [] {
     let api_url = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json"
-    let rate = (http get $api_url).usd.idr
+    (http get $api_url).usd.idr
+}
 
-    match $choice {
-        "1" => { print $"USD (humanize_usd $amount) = IDR (humanize_idr ($amount * $rate))" }
-        "2" => { print $"IDR (humanize_idr $amount) = USD (humanize_usd ($amount / $rate))" }
-        _ =>  { print "Invalid choice." }
-    }
+# Convert USD to IDR
+def "main to-idr" [amount: float] {
+    let rate = fetch_rate
+    print $"USD (humanize_usd $amount) = IDR (humanize_idr ($amount * $rate))"
+}
+
+# Convert IDR to USD
+def "main to-usd" [amount: float] {
+    let rate = fetch_rate
+    print $"IDR (humanize_idr $amount) = USD (humanize_usd ($amount / $rate))"
+}
+
+# Currency converter: USD ↔ IDR
+def main [] {
+    print "Usage: xe <subcommand> <amount>"
+    print "  xe to-idr <amount>   Convert USD → IDR"
+    print "  xe to-usd <amount>   Convert IDR → USD"
 }

@@ -7,10 +7,10 @@
 # Get a random name
 def main [
     category?: string  # islamic, lotr, ghibli, stars
-    _file?: path       # Path to a custom names file
+    file?: path       # Path to a custom names file
 ] {
-    let file = ($file | default ("~/.config/meta/names.toml" | path expand))
-    let categories = (open $file)
+    let file = $file | default ("~/.config/meta/names.toml" | path expand)
+    let categories = open $file
 
     let names = if ($category | is-empty) {
         $categories | values | flatten
@@ -18,6 +18,6 @@ def main [
         $categories | get --optional $category
     }
 
-    let index = (random int 0..<($names | length))
+    let index = random int 0..<($names | length)
     $names | get --optional $index
 }

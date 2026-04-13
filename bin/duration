@@ -1,0 +1,34 @@
+#!/usr/bin/env nu
+
+# Calculate duration between two times in "HH:MM-HH:MM" format
+# Usage: nu duration.nu "07:37-09:46"
+
+def to-minutes [t: string]: any -> int {
+    let p = $t | split row :
+    ($p | get --optional 0 | into int) * 60 + ($p | get --optional 1 | into int)
+}
+
+def main [
+    time_range: string  # Time range in "HH:MM-HH:MM" format (e.g. 07:37-09:46)
+] {
+    let parts = $time_range | split row "-"
+    let start = $parts | get --optional 0
+    let end   = $parts | get --optional 1
+
+    let start_minutes = to-minutes $start
+    let end_minutes   = to-minutes $end
+
+    let diff = if $end_minutes >= $start_minutes {
+        $end_minutes - $start_minutes
+    } else {
+        (1440 - $start_minutes) + $end_minutes
+    }
+
+    let hours   = $diff // 60
+    let minutes = $diff mod 60
+
+    print $"Start  : ($start)
+End    : ($end)
+────────────────
+Duration: ($hours)h ($minutes)m  \(($diff) minutes total\)"
+}

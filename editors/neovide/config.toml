@@ -1,5 +1,5 @@
 maximized = true # default: false
-neovim-bin = "/home/azzamsa/.local/bin/appimages/nvim"
+neovim-bin = "/home/user/.local/share/bob/nvim-bin/nvim"
 
 [box-drawing]
 mode = "selected-native"

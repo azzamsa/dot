@@ -47,6 +47,7 @@ utils=(
   org.gnome.Firmware
   org.gnome.World.PikaBackup
   org.inkscape.Inkscape
+  org.kde.kdenlive
   org.kde.okular
   org.videolan.VLC
   io.gitlab.news_flash.NewsFlash

@@ -130,6 +130,11 @@ Custom shortcut:
   - command: `flatpak run be.alexandervanhee.gradia --screenshot=INTERACTIVE`
   - shortcut: `Ctrl + PrtScn`
 
+- Task
+  - name: `Task`
+  - command: `flatpak run --command=io.github.alainm23.planify.quick-add io.github.alainm23.planify`
+  - shortcut: `Super + t`
+
 ### Multitasking
 
 - Workspace: Fixed number. 4 workspaces.

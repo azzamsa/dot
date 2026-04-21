@@ -27,16 +27,14 @@ end
 #
 # Paths
 fish_add_path ~/.local/bin
-fish_add_path ~/.local/share/go/bin
 fish_add_path ~/.local/bin/appimages
-fish_add_path ~/.local/bin/node/node_modules/.bin
 
-# Rust
-fish_add_path ~/.local/share/cargo/bin
-fish_add_path ~/.cargo/bin
 # Nvim
 fish_add_path ~/.local/share/bob/nvim-bin
 
+# Cargo / Rust
+fish_add_path ~/.local/share/cargo/bin
+fish_add_path ~/.cargo/bin
 set -gx CARGO_HOME "$XDG_DATA_HOME/cargo"
 set -gx RUSTUP_HOME "$XDG_DATA_HOME/rustup"
 
@@ -46,7 +44,13 @@ set -gx IPYTHONDIR "$XDG_CONFIG_HOME/ipython"
 fish_add_path "$XDG_DATA_HOME/rye/shims"
 
 # Golang
+fish_add_path ~/.local/share/go/bin
 set -gx GOPATH "$XDG_DATA_HOME/go"
+
+# Node
+fish_add_path ~/.local/bin/node/node_modules/.bin
+fish_add_path ~/.local/share/pnpm
+set -gx PNPM_HOME "$XDG_DATA_HOME/pnpm"
 
 # Emacs
 set -gx EMACSDIR "$XDG_CONFIG_HOME/emacs"

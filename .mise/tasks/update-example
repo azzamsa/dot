@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#MISE description="Keep example up-to-date"
+
+cp -f .dotter/local.toml .dotter/local.example.toml
+sed -i 's|atuin_server = ".*"|atuin_server = "https://shell.me.com"|' .dotter/local.example.toml

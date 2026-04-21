@@ -1,0 +1,59 @@
+[env]
+_.file = ".env"
+
+[tasks.qc]
+description = "Fix then check"
+run = ["mise run fix", "mise run qq"]
+
+[tasks.qq]
+description = "Quality check"
+depends = ["qa", "test"]
+
+[tasks.qa]
+description = "Quick quality check"
+depends = ["fmt-check", "lint"]
+
+[tasks.fix]
+description = "Enforce rules"
+run = ["mise run fmt", "mise run lint"]
+
+[tasks.deploy]
+alias = "p"
+description = "Publish"
+depends = ["qa", "test"]
+
+[tasks.dev]
+alias = "d"
+description = "Develop"
+run = ["bacon", "mise run qc"]
+
+[tasks.fmt]
+description = "Format"
+run = "cargo fmt --all"
+
+[tasks.fmt-check]
+description = "Check formatting"
+run = "cargo fmt --all -- --check"
+
+[tasks.lint]
+description = "Lint"
+run = ["cargo clippy --all-targets --all-features --quiet", "typos"]
+
+[tasks.test]
+description = "Test"
+run = "cargo test --quiet"
+
+[tasks.up]
+description = "Upgrade dependencies"
+run = [
+    "cargo upgrade --incompatible --recursive --verbose",
+    "cargo update",
+]
+
+[tasks.meta]
+description = "Dependency analysis"
+run = [
+    "cargo +nightly udeps",
+    "cargo audit",
+    "cargo outdated --root-deps-only",
+]

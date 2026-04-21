@@ -1,0 +1,78 @@
+[tools]
+stylua = "latest"
+"aqua:Kampfkarren/selene" = "latest"
+typos = "latest"
+dprint = "latest"
+actionlint = "latest"
+zizmor = "latest"
+
+[tasks.setup]
+confirm = 'Are you sure?'
+description = "Setup the project"
+depends = ["hooks"]
+
+[tasks.hooks]
+hide = true
+description = "Setup Git hooks"
+run = "mise hooks"
+
+[tasks.qc]
+description = "Fix before check"
+depends = ["fix", "qq"]
+
+[tasks.qqq]
+description = "Exhaustive quality check"
+depends = ["qa", "lint-nu", "meta"]
+
+[tasks.qq]
+description = "Quality check"
+depends = ["qa", "update-example"]
+
+[tasks.qa]
+description = "Quick quality check"
+depends = ["fmt-check", "lint"]
+run = "mise run --cd utils/snacks qa"
+
+[tasks.fix]
+description = "Enforce rules"
+depends = ["fmt", "lint"]
+run = "mise run --cd utils/snacks fix"
+
+[tasks.fmt]
+description = "Format"
+run = ["dprint fmt", "stylua . --allow-hidden"]
+
+[tasks.fmt-check]
+description = "Check formatting"
+run = ["dprint check", "stylua . --allow-hidden --check"]
+
+[tasks.lint]
+description = "Lint"
+depends = ["fmt-check"]
+run = "typos && selene . --quiet"
+
+[tasks.lint-nu]
+description = "Lint Nushell code"
+run = "nu-lint bin/"
+
+[tasks.release]
+description = "Create a new release"
+run = "./release $1"
+
+[tasks.deploy]
+alias = "p"
+description = "Publish the binaries"
+run = ["mise run --cd utils/snacks deploy", "dotter deploy"]
+
+[tasks.up]
+description = "Upgrade dependencies"
+run = "dprint config update"
+
+[tasks.update-example]
+hide = true
+description = "Keep example up-to-date"
+run = "mise update-example"
+
+[tasks.meta]
+description = "Dependency analysis"
+run = ["pnpx actions-up", "actionlint", "zizmor .github/workflows/*"]

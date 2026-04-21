@@ -1,8 +1,5 @@
 #!/usr/bin/env nu
-
-#
-# Create a release with the given tag
-#
+#MISE description="Create a release with the given tag"
 
 def main [tag: string] {
     # Validate tag

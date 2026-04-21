@@ -15,15 +15,17 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: taiki-e/install-action@80e6af7a2ec7f280fffe2d0a9d3a12a9d11d86e9 # v2.75.1
+      - uses: jdx/mise-action@1648a7812b9aeae629881980618f079932869151 # v4.0.1
         with:
-          tool: just,dprint,typos,stylua,selene
+          install: true
+          cache: true
 
       - name: Show version information
         shell: bash
         run: |
+          mise --version
           dprint --version
 
       - name: Quality Check
         run: |
-          just qq
+          mise qq

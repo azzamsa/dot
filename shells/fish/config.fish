@@ -46,8 +46,10 @@ alias cp 'cp -i'
 alias mv 'mv -i'
 alias mkdir 'mkdir -pv'
 
-alias j just
-alias f nyazi
+# alias r just
+alias r 'mise run' # runner
+alias f nyazi # file
+alias rr root
 alias x scratch
 
 #
@@ -99,7 +101,7 @@ end
 
 #
 # toor
-function r # root
+function root
     set project_root (toor 2>/dev/null)
 
     if test -n "$project_root"

@@ -16,20 +16,8 @@ if [ $theme = modus_vivendi ] || [ $theme = modus_vivendi_tinted ]
     end
 end
 
-# https://github.com/folke/tokyonight.nvim
-if [ $theme = tokyonight_night ] || [ $theme = tokyonight_black ]
-    set -g red     "ff757f"  # 8.10:1   #f7768e
-    set -g green   "c3e88d"  # 15.25:1  #9ece6a
-    set -g yellow  "ffc777"  # 13.69:1  #e0af68
-    set -g orange  "ff966c"  # 9.83:1   #ff9e64
-    set -g purple  "fca7ea"  # 11.85:1  #9d7cd8
-    set -g cyan    "86e1fc"  # 14.19:1  #7dcfff
-    set -g pink    "c099ff"  # 9.24:1   #bb9af7
-    set -g comment "9aa5ce"  # 8.65:1   #9aa5ce
-end
-
-
-if [ $theme = tokyonight_moon ]
+# Based on folke's tokyonight moon
+if [ $theme = tokyo_black ]
     set -g red     "ff757f"  # 8.1:1    #ff757f
     set -g green   "c3e88d"  # 15.24:1  #c3e88d
     set -g yellow  "ffc777"  # 13.68:1  #ffc777

@@ -48,6 +48,7 @@ packages = [
 [variables]
 editor = "nvim"
 terminal_font_size = 21.5
-theme = "modus_vivendi_tinted"
+# theme = "modus_vivendi_tinted"
+theme = "tokyonight_black"
 font = "Maple Mono NF"
 atuin_server = "https://shell.me.com"

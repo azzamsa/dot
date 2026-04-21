@@ -1,14 +1,26 @@
 #!/usr/bin/env nu
 
-# Set brightness based on time
-
-let hour = date now | format date %H | into int
-
-let level = if $hour >= 6 and $hour < 18 {
-  50
-} else {
-  35
+def brightness_icon [level: int] {
+  if $level >= 50 { '🔆' } else { '🔅' }
 }
 
-ddcutil setvcp 10 $level
-print $"(if $level >= 50 { '🔆' } else { '🔅' }) Brightness: ($level)%"
+def get_brightness [] {
+  ddcutil getvcp 10
+    | parse --regex "current value =\\s+(?P<val>\\d+)"
+    | get val.0
+    | into int
+}
+
+def set_brightness [level: int] {
+  ddcutil setvcp 10 $level
+}
+
+def target_brightness [] {
+  let hour = (date now | format date %H | into int)
+  if $hour >= 6 and $hour < 18 { 50 } else { 35 }
+}
+
+let prev = get_brightness
+let level = target_brightness
+set_brightness $level
+print $"(brightness_icon $prev) ($prev)% -> (brightness_icon $level) ($level)%"

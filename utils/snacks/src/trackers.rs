@@ -46,7 +46,7 @@ pub(crate) fn run() -> anyhow::Result<()> {
     }
 
     // Sort the vector by count (highest to lowest)
-    stats.sort_by(|a, b| b.2.cmp(&a.2));
+    stats.sort_by_key(|b| std::cmp::Reverse(b.2));
 
     for (label, emoji, count) in stats {
         let share = if total > 0 {

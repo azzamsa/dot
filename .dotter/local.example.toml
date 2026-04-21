@@ -20,7 +20,7 @@ packages = [
     # Editor
     "helix",
     "neovide",
-    "zed",
+    # "zed", two way edits
 
     # Scripts
     "bin",
@@ -48,6 +48,6 @@ packages = [
 [variables]
 editor = "nvim"
 terminal_font_size = 21.5
-theme = "modus_vivendi"
+theme = "modus_vivendi_tinted"
 font = "Maple Mono NF"
 atuin_server = "https://shell.me.com"

@@ -33,7 +33,7 @@ utils=(
   ddcutil libgda libgda-sqlite
   # yazi
   ffmpeg p7zip p7zip-plugins jq poppler-utils fzf ImageMagick
-  fastfetch
+  fastfetch tuptime
 )
 
 # combine all arrays

@@ -1,4 +1,4 @@
-# Installation Guide
+# Fresh Installation Guide (Distro Hopping Guile)
 
 The steps I need to install fresh GNU/Linux distro on my machine.
 

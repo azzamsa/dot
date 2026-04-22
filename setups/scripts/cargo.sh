@@ -15,23 +15,15 @@ cargo install cargo-binstall
 
 pkgs=(
   # core
-  starship
-  atuin
-  eza
-  zoxide
   dotter
   nu
-  zellij
 
   # dailies
-  bat
-  yazi-fm
   just
   git-cliff
   hurl
   jj-cli
   typos-cli
-  fd-find
 
   # Utils
   fnm

@@ -19,7 +19,6 @@ core=(
 
 # Code
 code=(
-  dev.zed.Zed
   io.dbeaver.DBeaverCommunity
   org.gnome.meld
   org.sqlitebrowser.sqlitebrowser

@@ -2,10 +2,13 @@
 
 # Upgrade the OS
 sudo dnf update -y
+sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
 
 # cores
 cores=(
-  fish
+  fish starship atuin eza
+  zoxide bat yazi fd-find
+  ghostty
 )
 
 # editors

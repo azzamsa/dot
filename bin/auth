@@ -1,0 +1,4 @@
+#!/usr/bin/env fish
+
+eval (ssh-agent -c)
+ssh-add ~/.ssh/github

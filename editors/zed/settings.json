@@ -1,6 +1,5 @@
 {
-  "buffer_font_family": "{{ font }}",
-  // https://github.com/intel/intel-one-mono#activating-programming-ligatures-in-code-editors
+  "buffer_font_family": "Maple Mono NF",
   "vim_mode": true,
   "helix_mode": false,
   "vim": {
@@ -33,15 +32,17 @@
   "theme": {
     "mode": "dark",
     "light": "Modus Operandi Tinted",
-    "dark": "Modus Vivendi",
+    "dark": "Tokyo Black",
   },
   "ui_font_features": {
     "calt": true,
   },
   "theme_overrides": {
-    "Modus Vivendi": {
+    "GitHub Dark": {
       // Editor
-      // "editor.gutter.background": "#0d0e1c", // bg-main
+      "editor.background": "#000000",
+    },
+    "Modus Vivendi": {
       // Tab
       "tab_bar.background": "#000000",
       "tab.inactive_background": "#000000",
@@ -57,5 +58,28 @@
       "tab.inactive_background": "#000000",
       "tab.active_background": "#0d0e1c", // bg-main
     },
+  },
+  "auto_install_extensions": {
+    "basher": true,
+    "catppuccin-icons": true,
+    "color-highlight": true,
+    "dockerfile": true,
+    "elisp": true,
+    "fish": true,
+    "git-firefly": true,
+    "graphql": true,
+    "html": true,
+    "jsonnet": true,
+    "just": true,
+    "make": true,
+    "modus-themes": true,
+    "nu": true,
+    "nu-lint": true,
+    "scss": true,
+    "sql": true,
+    "svelte": true,
+    "toml": true,
+    "typst": true,
+    "vue": true,
   },
 }

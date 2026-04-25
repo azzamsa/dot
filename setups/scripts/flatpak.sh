@@ -53,15 +53,6 @@ utils=(
   us.zoom.Zoom
 )
 
-# Optionals (not installed by default)
-optionals=(
-  com.github.huluti.Curtail
-  fr.romainvigier.MetadataCleaner
-  org.bleachbit.BleachBit
-  org.freecad.FreeCAD
-  org.gramps_project.Gramps
-)
-
 # Combine selected tiers
 pkgs=(
   "${core[@]}"

@@ -70,7 +70,7 @@ run = "typos && selene . --quiet"
 [tasks.lint-shell]
 hide = true
 description = "Lint shell scripts"
-run = ["grep -lE '^#!.*(bash|sh)$' bin/* | xargs -r shellcheck"]
+run = ["grep -lE '^#!.*(bash|sh)$' bin/* .mise/tasks/* setups/scripts/* | xargs -r shellcheck"]
 
 [tasks.lint-nu]
 hide = true

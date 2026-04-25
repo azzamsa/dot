@@ -6,6 +6,7 @@
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup default stable
 rustup component add rust-analyzer
+# shellcheck source=/dev/null
 source "$CARGO_HOME/env"
 
 #
@@ -72,6 +73,3 @@ pkgs=(
 for pkg in "${pkgs[@]}"; do
     cargo binstall --no-confirm --no-symlinks --secure "$pkg"
 done
-
-# Optionals
-# cargo install --locked cargo-nextest

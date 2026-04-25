@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+#
+# Build a release tarball.
+#
+# - Stages the repo contents (minus .git) into /tmp/package/<name>-<version>/
+# - Creates a gzipped tarball of that directory
+# - Emits the resulting filename and path as GitHub Actions outputs (when run in CI)
+#MISE description="Build a release tarball"
+set -euo pipefail
+
+# Validate required inputs up front.
+: "${REPO_NAME:?REPO_NAME is required}"
+: "${RELEASE_VERSION:?RELEASE_VERSION is required}"
+
+# Derive archive naming.
+PKG_BASENAME="${REPO_NAME}-${RELEASE_VERSION}"
+PKG_NAME="${PKG_BASENAME}.tar.gz"
+
+# Staging directory.
+PKG_STAGING="/tmp/package"
+ARCHIVE_DIR="${PKG_STAGING}/${PKG_BASENAME}"
+mkdir -p "${ARCHIVE_DIR}"
+
+# Copy everything except .git to avoid bloating the archive.
+rsync -a --exclude='.git' . "${ARCHIVE_DIR}/"
+
+# Compress the archive.
+tar -czf "${PKG_STAGING}/${PKG_NAME}" -C "${PKG_STAGING}" "${PKG_BASENAME}"
+
+# Expose outputs to later workflow steps when running under GitHub Actions.
+if [[ -n "${GITHUB_OUTPUT:-}" ]]; then
+  {
+    echo "PKG_NAME=${PKG_NAME}"
+    echo "PKG_PATH=${PKG_STAGING}/${PKG_NAME}"
+  } >> "${GITHUB_OUTPUT}"
+fi

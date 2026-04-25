@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+#MISE description="Publish a GitHub release"
+
+#
+# Publish a GitHub release.
+#
+# - Uploads the prebuilt package as a release asset
+# - Uses the provided changelog as the release notes
+# - Optionally marks the release as a prerelease
+
+set -euo pipefail
+
+# Validate required inputs up front.
+: "${RELEASE_VERSION:?RELEASE_VERSION is required}"
+: "${PKG_PATH:?PKG_PATH is required}"
+: "${CHANGELOG:?CHANGELOG is required}"
+
+# Assemble optional flags (e.g. --prerelease) without tripping `set -u`.
+RELEASE_ARGS=()
+[[ -n "${PRERELEASE_FLAG:-}" ]] && RELEASE_ARGS+=("$PRERELEASE_FLAG")
+
+# Write the changelog to a temp file so gh can consume it as --notes-file.
+CHANGELOG_FILE="$(mktemp)"
+trap 'rm -f "$CHANGELOG_FILE"' EXIT
+printf "%s\n" "$CHANGELOG" > "$CHANGELOG_FILE"
+
+gh release create "$RELEASE_VERSION" \
+  "$PKG_PATH" \
+  --title "$RELEASE_VERSION" \
+  --notes-file "$CHANGELOG_FILE" \
+  "${RELEASE_ARGS[@]}"

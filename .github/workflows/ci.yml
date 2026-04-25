@@ -4,12 +4,11 @@ on: [push, pull_request]
 
 jobs:
   ci:
-    name: Check code quality
+    name: Code Quality
     runs-on: ubuntu-24.04
     permissions:
       contents: read
     steps:
-
       - name: Checkout source code
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:

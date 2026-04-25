@@ -7,7 +7,7 @@ on:
 
 jobs:
   changelog:
-    name: Generate changelog
+    name: Generate Changelog
     runs-on: ubuntu-24.04
     permissions:
       contents: read

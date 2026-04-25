@@ -18,13 +18,6 @@ for pkg in "${pkgs[@]}"; do
 done
 
 #
-# Node
-#
-fnm use v25
-# To get LTS version, see https://endoflife.date/nodejs
-npm install --prefix "$HOME/.local/bin/node"
-
-#
 # ddcutil
 #
 # https://github.com/daitj/gnome-display-brightness-ddcutil

@@ -19,17 +19,9 @@ pkgs=(
   dotter
   nu
 
-  # dailies
-  just
-  git-cliff
-  hurl
-  jj-cli
-  typos-cli
-
   # Utils
-  fnm
+  jj-cli
   kondo
-  bandwhich
   bottom
   dua-cli
   hyperfine
@@ -43,27 +35,6 @@ pkgs=(
   mdfried
   ttyper
   goup
-  stylua
-  selene
-  trunk
-  hurlfmt
-
-  # Rust ecosystem tools
-  bacon
-  diesel_cli
-  dioxus-cli
-  cargo-audit
-  cargo-cache
-  cargo-deny
-  cargo-edit
-  cargo-generate
-  cargo-nextest
-  cargo-outdated
-  cargo-release
-  cargo-sort
-  cargo-tarpaulin
-  cargo-udeps
-  cargo-update
 
   # lsp
   beancount-language-server

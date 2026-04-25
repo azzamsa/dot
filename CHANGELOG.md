@@ -2,6 +2,68 @@
 
 All notable changes to this project will be documented in this file.
 
+## [7.1.0](https://github.com/azzamsa/dot/compare/v7.0.1..v7.1.0) - 2026-04-25
+
+### ⛰️  Features
+
+- *(bin)* Keyring is buggy - ([a368b7e](https://github.com/azzamsa/dot/commit/a368b7ecf91ae74d6d0ed18cc5d8722b52bd5cab))
+- *(bin)* Tell previous value - ([d045dcb](https://github.com/azzamsa/dot/commit/d045dcba2be2983c1cd689f95faf29ff95625f07))
+- *(bin)* Currency converter - ([55f7c56](https://github.com/azzamsa/dot/commit/55f7c564cdddfa7e35370bcc6f090c9cb841c81a))
+- *(bin)* Tz - ([532206a](https://github.com/azzamsa/dot/commit/532206a7f12e2be9af32642029a17637ba2c059f))
+- *(bin)* Age - ([e60d094](https://github.com/azzamsa/dot/commit/e60d094d09e12e73d455d645ef6e44a5c2f7a86d))
+- *(bin)* Capitalize strings - ([9f5c11c](https://github.com/azzamsa/dot/commit/9f5c11c27d89c8198f4d0ae99e29d47b4e4e89e1))
+- *(bin)* Duration calculator - ([de72a93](https://github.com/azzamsa/dot/commit/de72a933d497ce7e1cb0d37f13c5f8fdfc4bdc96))
+- *(editors/zed)* Auto install extensions - ([edb1104](https://github.com/azzamsa/dot/commit/edb110490de50454801d3c3a2fea35d60dcbb820))
+- *(shell/fish)* Support `pnpm` - ([799f2e1](https://github.com/azzamsa/dot/commit/799f2e12bd0ba5026acc12a040b28eed44e12c39))
+
+### 🐛 Bug Fixes
+
+- *(bin)* Better name - ([618f065](https://github.com/azzamsa/dot/commit/618f065874c6bc851b258cf66427636e8c872196))
+- *(bin)* Sniffnet is better than bandwhich - ([289f64e](https://github.com/azzamsa/dot/commit/289f64ec16a01837c4db119984bbedff578b960a))
+- *(editors/neovide)* Update user path - ([5fa6e04](https://github.com/azzamsa/dot/commit/5fa6e0478d8cf45b068dc5c193104d58a5c03c5d))
+- *(setups)* Move some packages to Terra - ([7561e31](https://github.com/azzamsa/dot/commit/7561e31aa768efeae20e6c47a4839d8f8be0a507))
+- Release script - ([35378f3](https://github.com/azzamsa/dot/commit/35378f305b49faa98408f7ddd1478e25e8e242ed))
+
+### 📚 Documentation
+
+- Legends for scripts - ([042061a](https://github.com/azzamsa/dot/commit/042061a6a36a85ff802f7e287e8cc7d624456bd0))
+- Add more packages - ([0081d64](https://github.com/azzamsa/dot/commit/0081d646da5eeaf276657926c53449ef51f18eae))
+- Add kdenlive - ([9ed2fbb](https://github.com/azzamsa/dot/commit/9ed2fbbb28eadfac80a8a1ef9e6f1ac4879369c9))
+- Planify shortcut - ([a1a466e](https://github.com/azzamsa/dot/commit/a1a466e87e027cb1d8387311ae3101a58d825e67))
+- Sort app alphabetically - ([311b0fd](https://github.com/azzamsa/dot/commit/311b0fd6bd561c218441c9677de11b77b8b08ff6))
+- Keep example file up-to-date while redacting secrets - ([3aab864](https://github.com/azzamsa/dot/commit/3aab864f531aa31d3743c3bb977dcb229d24ac97))
+
+### 🚜 Refactor
+
+- *(bin)* Use shorter names - ([6ae1944](https://github.com/azzamsa/dot/commit/6ae1944dccac186b4766814d8c522af20fbbe281))
+- *(bin)* Number as arg is hard to remember - ([debf46c](https://github.com/azzamsa/dot/commit/debf46c6016297d4ff22119c5e75a3780df3e89c))
+- *(bin)* Better code - ([5601388](https://github.com/azzamsa/dot/commit/56013887ae67680e4cd552e06c36afce9afb32a7))
+- *(setups)* Better location - ([fa2b858](https://github.com/azzamsa/dot/commit/fa2b858f0f8336f8cb2bfe8e96b62f2ee3c9e2a5))
+- *(utils/snacks)* New clippy lint - ([8cc7eb9](https://github.com/azzamsa/dot/commit/8cc7eb91c0188d1a306e781a755bd71cfc1c3aaa))
+- Make nu-lint happy - ([811b660](https://github.com/azzamsa/dot/commit/811b660ee3e980aaf446bd237ad4a03af0d6acfc))
+- Use `nushell` convention for command name - ([104b1ef](https://github.com/azzamsa/dot/commit/104b1ef68cd28194342895a30ef34e346192ef83))
+
+### 🎨 Styling
+
+- *(utils/sane-break)* Use modus-theme - ([3c9493f](https://github.com/azzamsa/dot/commit/3c9493f2493d54cdb1be3eb30aa82f03a4fc86f5))
+- Use Tokyo Black - ([24acd9f](https://github.com/azzamsa/dot/commit/24acd9fb3b27228ea08ef31781bd7178d015b05c))
+- The OG modus is enough - ([59d8779](https://github.com/azzamsa/dot/commit/59d8779551c03890f6eeb0d648ca925319d4fc98))
+- Build the black variant based on moon - ([29d57bf](https://github.com/azzamsa/dot/commit/29d57bfb8e05ce65ced8195382d93d308a9b3d11))
+- I miss the greenery of Tokyo Night - ([e0d8fd3](https://github.com/azzamsa/dot/commit/e0d8fd380546783cb06e554a127a96310ddedc35))
+
+### ⚙️ Miscellaneous Tasks
+
+- Better name - ([21566eb](https://github.com/azzamsa/dot/commit/21566ebc422636ccc1fad2f4f91d3e92bcad6a75))
+- Better release workflow - ([269831f](https://github.com/azzamsa/dot/commit/269831f5e7e237804a39a3e4bf7ff1271785e327))
+- `nu-lint` is not mature enough - ([7574dc1](https://github.com/azzamsa/dot/commit/7574dc12e5edb4894de92d51711a5bad9d61d7d8))
+- More docs - ([1cf3ef3](https://github.com/azzamsa/dot/commit/1cf3ef38409c4e7d7f3fa8396e461a65bf215e9c))
+
+### Build
+
+- Migrate to `mise` - ([2fa1992](https://github.com/azzamsa/dot/commit/2fa1992f75535960f4ce57937de7469dc4965f14))
+- Try `mise` - ([fcfa2c3](https://github.com/azzamsa/dot/commit/fcfa2c3df83e3ffd2d0fa4f943ec83f73e9f54e1))
+
+
 ## [7.0.1](https://github.com/azzamsa/dot/compare/v7.0.0..v7.0.1) - 2026-04-09
 
 ### 🐛 Bug Fixes

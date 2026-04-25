@@ -1,25 +1,29 @@
 #!/usr/bin/env -S nu --stdin
 #MISE description="Create a release with the given tag"
 
-def main []: string -> nothing {
+def main [
+    tag: string  # The release tag. e.g. `v7.1.0`.
+]: nothing -> nothing {
     # Check for dirty working tree
     if (git status --porcelain | str trim) != "" {
         error make {msg: "Error: working tree is dirty"}
     }
 
     # Update the changelog
-    git-cliff --config .cliff.toml --tag $in --output CHANGELOG.md
+    git-cliff --config .cliff.toml --tag $tag --output CHANGELOG.md
 
     # Format the newly created changelog file
     mise run fmt
 
     # Write the new version to a file 'version'
-    $in | save --force version
+    $tag | save --force version
 
     # Commit a release
     git add --all
-    git commit --message $in
+    git commit --message $tag
+    git show
 
     # Sign and annotate the tag (requires GPG key to be available)
-    git tag --sign --annotate $in --message "For details, see the CHANGELOG.md"
+    git tag --sign --annotate $tag --message "For details, see the CHANGELOG.md"
+    git tag --verify $tag
 }

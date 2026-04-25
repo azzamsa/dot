@@ -3,7 +3,7 @@
 ## Create a New Release
 
 ```bash
-just release v2.0.0
+mise run release v2.0.0
 ```
 
 - Check the Git log.

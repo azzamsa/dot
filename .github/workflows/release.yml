@@ -74,4 +74,4 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PKG_PATH: ${{ steps.package.outputs.PKG_PATH }}
           CHANGELOG: ${{ needs.changelog.outputs.release_body }}
-        run: mise run release
+        run: mise run github-release

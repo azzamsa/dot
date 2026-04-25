@@ -32,7 +32,7 @@ $ just deploy # or dotter deploy
 
 ## Uh Oh! Where is Your Old Configuration?
 
-See [WHY.md](WHY.md)
+See [Why](docs/Why.md)
 
 ## Contribution
 

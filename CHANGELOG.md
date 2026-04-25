@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [7.1.1](https://github.com/azzamsa/dot/compare/v7.1.0..v7.1.1) - 2026-04-25
+
+### 🐛 Bug Fixes
+
+- *(setup)* Let mise manage these packages - ([8c5c614](https://github.com/azzamsa/dot/commit/8c5c61458e812430d39febf06a3b55a52931b6b6))
+
+### 📚 Documentation
+
+- Don't clutter root dir - ([359aac7](https://github.com/azzamsa/dot/commit/359aac78e4f8ee7cf91dc1b4f6f5e25bb9739241))
+
+### ⚙️ Miscellaneous Tasks
+
+- Fix wrong command - ([7b252d4](https://github.com/azzamsa/dot/commit/7b252d440ddcc99cba81e8f3b07248f3b187c5ca))
+- Disable git-cliff typo correction in changelog - ([5ddde5b](https://github.com/azzamsa/dot/commit/5ddde5b399954fbb99480cc0c77686277f89de7e))
+
+
 ## [7.1.0](https://github.com/azzamsa/dot/compare/v7.0.1..v7.1.0) - 2026-04-25
 
 ### ⛰️  Features
@@ -97,6 +113,7 @@ All notable changes to this project will be documented in this file.
 
 ### ⛰️  Features
 
+- *(Wezterm)* Add a helper function to conver internal theme name - ([977d81d](https://github.com/azzamsa/dot/commit/977d81d8c3ce83506685bf784cdf3aab6c3858dc))
 - *(alacritty)* Initial config - ([8a9cd4a](https://github.com/azzamsa/dot/commit/8a9cd4a8aeea45deff07cf99d51b567439b475cc))
 - *(bin)* Bandwhich - ([bb43256](https://github.com/azzamsa/dot/commit/bb43256fde37869e99cd0f0ebe24aba9e8bda251))
 - *(bin)* Set default brightness level - ([b39a843](https://github.com/azzamsa/dot/commit/b39a843ced16b02074259dce5945354cbcbfa4af))
@@ -113,7 +130,7 @@ All notable changes to this project will be documented in this file.
 - *(bin)* Migrate to wezterm - ([fbdf5c4](https://github.com/azzamsa/dot/commit/fbdf5c4fd7b0cb5ace1e1b8a78c86c4bf1ff2a94))
 - *(bin)* Clean all docker images - ([7295ad5](https://github.com/azzamsa/dot/commit/7295ad5b0d9c49b24a61a7f13af1b8749a04339d))
 - *(bin)* `/run/.containerenv` is a valid TOML file - ([1fbf058](https://github.com/azzamsa/dot/commit/1fbf058b0adadc4da0c9a8637b15d24067ad989d))
-- *(bin)* Show the country alongside the city name - ([1604aae](https://github.com/azzamsa/dot/commit/1604aae1bb52c0ed72a241b943cb2473958183af))
+- *(bin)* Show the contry alongside the city name - ([1604aae](https://github.com/azzamsa/dot/commit/1604aae1bb52c0ed72a241b943cb2473958183af))
 - *(bin)* Use 12H format - ([2ba2a5c](https://github.com/azzamsa/dot/commit/2ba2a5c18cdab3643cfb31e575df582faf7069ba))
 - *(bin)* Upgrade node apps - ([f4ed811](https://github.com/azzamsa/dot/commit/f4ed81145666105f7355dad3566401ead777371e))
 - *(bin)* Topgrade is overkill for my needs - ([7f8806b](https://github.com/azzamsa/dot/commit/7f8806b85d24314032f32a580184962d8c1a7de8))
@@ -148,7 +165,6 @@ All notable changes to this project will be documented in this file.
 - *(post_install)* More packages - ([cd8bb87](https://github.com/azzamsa/dot/commit/cd8bb873c19b203967beb83f95201db21f83a861))
 - *(post_install)* Add more packages - ([8f11133](https://github.com/azzamsa/dot/commit/8f111333a4ea10ac676a2c58ee7f7fc47962a370))
 - *(post_install)* More package - ([6cf3c0c](https://github.com/azzamsa/dot/commit/6cf3c0cebc9210783a57a328330994d6e0f5fd21))
-- *(post_install)* More packages - ([0a0fdb7](https://github.com/azzamsa/dot/commit/0a0fdb7ff462db18153f5bce68e74d121de90582))
 - *(post_install)* Add more packages - ([8d36147](https://github.com/azzamsa/dot/commit/8d3614710e0efc2cf31a351414ed6d37f3762890))
 - *(post_install)* Add more packages - ([c8f2e2c](https://github.com/azzamsa/dot/commit/c8f2e2c7b6df4226acc88268d0b4c454cce50f7c))
 - *(post_install)* More packages - ([eef64d9](https://github.com/azzamsa/dot/commit/eef64d9bbbcb16d88f51c70f2f65772a232d46e5))
@@ -156,6 +172,7 @@ All notable changes to this project will be documented in this file.
 - *(post_install)* Add more packages - ([06d1f4e](https://github.com/azzamsa/dot/commit/06d1f4e33c73a26fc906aaf2f703476f45f3b23a))
 - *(post_install)* Add more packages - ([9add1c1](https://github.com/azzamsa/dot/commit/9add1c18d31c345d2bf46e66da6eddb83c0fb103))
 - *(post_install)* Add `cargo-cache` - ([65821ce](https://github.com/azzamsa/dot/commit/65821cef6cc12a994f4c2f7c511d16c11b719a52))
+- *(post_intall)* More packages - ([0a0fdb7](https://github.com/azzamsa/dot/commit/0a0fdb7ff462db18153f5bce68e74d121de90582))
 - *(rio)* Improve config - ([cd962d8](https://github.com/azzamsa/dot/commit/cd962d87c3f67b03d00b8a334fc5ae2c175dab68))
 - *(shell)* Support Golang - ([a82fb60](https://github.com/azzamsa/dot/commit/a82fb60d6bc0cf037d4ffcf17725a56399bdc5cb))
 - *(shell/bash)* Load secret env - ([8eaa025](https://github.com/azzamsa/dot/commit/8eaa025476f6b8e4ffa9ed79259658d1afc4693f))
@@ -173,7 +190,7 @@ All notable changes to this project will be documented in this file.
 - *(terms/ghostty)* Better keybindings - ([b8ffa38](https://github.com/azzamsa/dot/commit/b8ffa388dcb73bce130d558caa4d166d520e8e8a))
 - *(terms/kitty)* Initial config - ([c18d9ea](https://github.com/azzamsa/dot/commit/c18d9eaa416b7532cc23b60bb422bc13ec537f3b))
 - *(utils/atuin)* Move services to the internal network - ([bd51a06](https://github.com/azzamsa/dot/commit/bd51a06b051820dfb531dc175ed68834858fd2cf))
-- *(utils/jjui)* Initial config - ([939b158](https://github.com/azzamsa/dot/commit/939b158c866bce137adb488e95b514899107328b))
+- *(utils/jjui)* Inital config - ([939b158](https://github.com/azzamsa/dot/commit/939b158c866bce137adb488e95b514899107328b))
 - *(utils/sane-break)* Initial config - ([ff91e78](https://github.com/azzamsa/dot/commit/ff91e78c2fd7f47abc016b823c3a630af7c8605f))
 - *(utils/snacks)* Check upgradable appimages - ([71b4c31](https://github.com/azzamsa/dot/commit/71b4c31ac4bd0c92cf35bfc52999645516987f93))
 - *(utils/snacks)* Percent - ([1f042bf](https://github.com/azzamsa/dot/commit/1f042bf402adbb1fce45dca3c79e3cdc725f3195))
@@ -210,7 +227,7 @@ All notable changes to this project will be documented in this file.
 - `rfont` research is done - ([78a1a6b](https://github.com/azzamsa/dot/commit/78a1a6b2d69d3928eaf6e2c9a786bad14c25f43d))
 - Auto-configure Emacs font - ([174bfee](https://github.com/azzamsa/dot/commit/174bfee7c6432194eaf1a61eb7778a5219279521))
 - Random font in each session - ([60fef15](https://github.com/azzamsa/dot/commit/60fef156830539cb5f4f548e9ab926855d2bfeec))
-- Set Fish as default $SHELL - ([0db5f65](https://github.com/azzamsa/dot/commit/0db5f6599ddae8c950000453333573945e9a17b4))
+- Set Fish as defaul $SHELL - ([0db5f65](https://github.com/azzamsa/dot/commit/0db5f6599ddae8c950000453333573945e9a17b4))
 - Export dconf settings to ease distro hopping - ([b4bde26](https://github.com/azzamsa/dot/commit/b4bde268a9e24e245bf90a6fbd03ffc78f239573))
 - Minimize command changes when distro hopping - ([4514f2a](https://github.com/azzamsa/dot/commit/4514f2a7d38f1d51050481edabef00d52c048a5b))
 - Zoom keymap for some apps - ([cc3d1a2](https://github.com/azzamsa/dot/commit/cc3d1a21e82cc4de3a835248ddbbc74dc2e634d6))
@@ -223,7 +240,7 @@ All notable changes to this project will be documented in this file.
 
 - *(alacritty)* Migrate to Alacritty v0.14.0 - ([886536f](https://github.com/azzamsa/dot/commit/886536f1eb1e21fa891855602aa5b82acc8abf0f))
 - *(alacritty)* Alacritty needs zellij - ([047e553](https://github.com/azzamsa/dot/commit/047e55395a9e2adcbda2974ffe043e7e2573578a))
-- *(atuin)* 1h sync frequency is too fast - ([10d453d](https://github.com/azzamsa/dot/commit/10d453daed2b8d92d380d94853f3aef58e25cd66))
+- *(atuin)* 1h sync frequncy is too fast - ([10d453d](https://github.com/azzamsa/dot/commit/10d453daed2b8d92d380d94853f3aef58e25cd66))
 - *(bin)* Remove unused script - ([8088849](https://github.com/azzamsa/dot/commit/808884928507788de5c9e6c833c10330440dd6a0))
 - *(bin)* Remove newline from `pwdc` output. - ([5983bfe](https://github.com/azzamsa/dot/commit/5983bfec946cedf371366e7b156960b960c5f5ad))
 - *(bin)* `git_gone` fails to find correct branch - ([5fe0724](https://github.com/azzamsa/dot/commit/5fe0724d1ed0330e28cbed07b956e1092ea25b50))
@@ -371,7 +388,7 @@ All notable changes to this project will be documented in this file.
 - *(bin)* Use shorter approach for `container_name` - ([10a46b1](https://github.com/azzamsa/dot/commit/10a46b1d270085f66fed1ef1677e7f860569af4e))
 - *(bin)* Use unique short name - ([ad405f9](https://github.com/azzamsa/dot/commit/ad405f939d96fc31f91365de981f58be4e765c2c))
 - *(docs)* Bash is readable enough for simple script - ([4c4fdd7](https://github.com/azzamsa/dot/commit/4c4fdd7dfb12bf1f0a7660c0bd72eabdf2ee59ad))
-- *(examples)* Use modules - ([69a709e](https://github.com/azzamsa/dot/commit/69a709e89a04ba8b0cc477588290fc1edf04a888))
+- *(examples)* Use modulues - ([69a709e](https://github.com/azzamsa/dot/commit/69a709e89a04ba8b0cc477588290fc1edf04a888))
 - *(fish)* Put themes in one place - ([5cef594](https://github.com/azzamsa/dot/commit/5cef594f89f4c4db41b1262bc630a463eaf21439))
 - *(fish)* Avoid code duplication - ([a366b38](https://github.com/azzamsa/dot/commit/a366b38aaead69dd5fc6ff730eaed689e9e7dc5b))
 - *(fish)* Remove unused commands - ([2f1673d](https://github.com/azzamsa/dot/commit/2f1673dd9d7526634b16c96f853e392a05dd88d0))
@@ -430,9 +447,8 @@ All notable changes to this project will be documented in this file.
 - *(utils/zellij)* Most color is unreadable on green bg but dark red - ([aa4fd66](https://github.com/azzamsa/dot/commit/aa4fd66e80d85e0a7504f2e9e408db251460fcdf))
 - *(utils/zellij)* Red text on `selected ribbon` is unreadable - ([6d08c24](https://github.com/azzamsa/dot/commit/6d08c2468b1ae889f66a6605b33a3c2e419e6f97))
 - *(wezterm)* Holistic experience for `catppuccin` - ([5ddae40](https://github.com/azzamsa/dot/commit/5ddae4065820249d8ac59b073b870799d11f8b48))
-- *(wezterm)* Make cursor more noticeable - ([3afb001](https://github.com/azzamsa/dot/commit/3afb001bb7f6ce7a4bdefdc54534dea87ca2c578))
+- *(wezterm)* Make cursor more noticable - ([3afb001](https://github.com/azzamsa/dot/commit/3afb001bb7f6ce7a4bdefdc54534dea87ca2c578))
 - *(yazi)* Use flavor instead of theme - ([48ae8cb](https://github.com/azzamsa/dot/commit/48ae8cbec4f0dd24219deb782253db275e7e2222))
-- *(yazi)* Update theme - ([21bdf62](https://github.com/azzamsa/dot/commit/21bdf62149647b08be196b2cccbdcccccfdde4ff))
 - *(yazi)* Use upstream version of tokyonight-moon - ([ca5af4f](https://github.com/azzamsa/dot/commit/ca5af4f64ea42107c2e60968ca09d922835f1d36))
 - *(zellij)* Remove unused themes - ([01309a7](https://github.com/azzamsa/dot/commit/01309a7ac89f477ee055b2fe2578c5d701903eeb))
 - *(zellij)* I don't want to loose the fancy arrow font - ([dd02921](https://github.com/azzamsa/dot/commit/dd029216e6c87b49a09da288d2162b3b3a89a3a2))
@@ -493,7 +509,7 @@ All notable changes to this project will be documented in this file.
 - Add ef-night - ([eb759cf](https://github.com/azzamsa/dot/commit/eb759cf7f3c0bea9ac1f63bb04014050f16d242d))
 - Don't hard-code theme - ([c9d2dad](https://github.com/azzamsa/dot/commit/c9d2dadeda00488ce7408740a830eb4e68bdb3dd))
 - Don't hard-code font name - ([3607f12](https://github.com/azzamsa/dot/commit/3607f12b6338f008e7fe0ca31d2d4c2b6aa2dde9))
-- Apply `Tokyonight` upstream changes - ([40272d2](https://github.com/azzamsa/dot/commit/40272d247aa9fa0df674c40d314f30f465658fc1))
+- Aplly `Tokyonight` upstream changes - ([40272d2](https://github.com/azzamsa/dot/commit/40272d247aa9fa0df674c40d314f30f465658fc1))
 - Catppuccin - ([ffe215b](https://github.com/azzamsa/dot/commit/ffe215bf6c1dbe65423e0e3f17133598a5815e76))
 - Modus Vivendi - ([7c7e701](https://github.com/azzamsa/dot/commit/7c7e70163d01eb323cc305d96acbcb19a1f26b4a))
 
@@ -538,11 +554,20 @@ All notable changes to this project will be documented in this file.
 - Ignore some dirs from `typos` - ([8e778ae](https://github.com/azzamsa/dot/commit/8e778aeb25a6f3041fb1a2ac19585cbb5733eaf4))
 - Ignore spelling on themes - ([f5a86cd](https://github.com/azzamsa/dot/commit/f5a86cd88ac432a0a98ab7ac78751f14ef4f9e76))
 
+### Refector
+
+- *(post_install)* Add optional packeges - ([1f59de6](https://github.com/azzamsa/dot/commit/1f59de615b90cdc1f74c94a448bc1c12a82fdcb1))
+
+### Sytle
+
+- *(yazi)* Update theme - ([21bdf62](https://github.com/azzamsa/dot/commit/21bdf62149647b08be196b2cccbdcccccfdde4ff))
+
 
 ## [6.0.0](https://github.com/azzamsa/dot/compare/v5.0.0..v6.0.0) - 2024-08-02
 
 ### 🚚 Migrations
 
+- *(wezterm)* Migrate back to GNOME - ([3275834](https://github.com/azzamsa/dot/commit/3275834a7d32a769b7d4531af3f04340b6811d26))
 - From `Iosevka` to JetBrains Mono - ([ebcf633](https://github.com/azzamsa/dot/commit/ebcf6330d78cda23070b22231ac422d9198d5798))
 - Use `Tokyo Night` theme - ([783a327](https://github.com/azzamsa/dot/commit/783a3270bad344d20f470ef781131ea5fa655e29))
 - Refactor Kangawa theme - ([3535d5a](https://github.com/azzamsa/dot/commit/3535d5aa83c582b4647182f6998e48a1c12c7eab))
@@ -715,7 +740,7 @@ All notable changes to this project will be documented in this file.
 - *(xtool)* Upgrade dependencies - ([6098ad3](https://github.com/azzamsa/dot/commit/6098ad39db9e86e5a0f0936243085b913cd4f729))
 - *(xtool)* Upgrade dependencies - ([1c18bc4](https://github.com/azzamsa/dot/commit/1c18bc4965f4da7be7744c52b08aaadcbb09a58c))
 - *(xtool)* Bacon is better than `cargo-watch` - ([3ff91ff](https://github.com/azzamsa/dot/commit/3ff91ff7db8fdb6fb7ee28efe0ca510a6c718dea))
-- *(xtool)* Upgrade dependencies - ([17d7b37](https://github.com/azzamsa/dot/commit/17d7b376b348a4a3dcb145a3b91c19e49ead06e2))
+- *(xtool)* Upgrade dependecies - ([17d7b37](https://github.com/azzamsa/dot/commit/17d7b376b348a4a3dcb145a3b91c19e49ead06e2))
 - Remove outdated command - ([bb675c6](https://github.com/azzamsa/dot/commit/bb675c6b7e33cd0141dff9fab27decf9c412ab45))
 - Revert back to prettier - ([c8fbda7](https://github.com/azzamsa/dot/commit/c8fbda7930c6f969bd47b516774ee64f05992f92))
 - Replace prettier with biome - ([f7240f2](https://github.com/azzamsa/dot/commit/f7240f21205b5ebad1b5034c05e6125f43f676ca))
@@ -777,11 +802,12 @@ All notable changes to this project will be documented in this file.
 - Use `dconf` for gnome-terminal - ([74a203e](https://github.com/azzamsa/dot/commit/74a203e45642287bfdc3b904459fc0f85cb47304))
 - Use full power on PC - ([973dab2](https://github.com/azzamsa/dot/commit/973dab2a7c60749c8ebe71a1a07337c2f8b01044))
 - Add rust tooling - ([9272928](https://github.com/azzamsa/dot/commit/9272928c3351c155711357ce34f046e361582390))
-- `BlackBox` cause huge memory consumption in `flatpak` - ([10d99f9](https://github.com/azzamsa/dot/commit/10d99f98ce4ace7c59d0580328d9d506f8961ce8))
+- `BlackBox` cause huge memory consumtion in `flatpak` - ([10d99f9](https://github.com/azzamsa/dot/commit/10d99f98ce4ace7c59d0580328d9d506f8961ce8))
+- Use latest nautilus - ([241d0c3](https://github.com/azzamsa/dot/commit/241d0c322a1511daa7253fea934c072cd05e68c5))
 - Fix `Your clock is n seconds behind` - ([7413fd0](https://github.com/azzamsa/dot/commit/7413fd078615f8c80e12a5dbb41c5950b01447ac))
 - Specify `eget` asset - ([ae2533c](https://github.com/azzamsa/dot/commit/ae2533caf3c908c40fba492093a6e893192dc9e7))
 - Install `poetry` using `rye` - ([1e8dbc8](https://github.com/azzamsa/dot/commit/1e8dbc86d5ddd7a9ffdd3626cff5b7aa3c0cbdc1))
-- `cargo-udeps` needs old dependencies - ([8475684](https://github.com/azzamsa/dot/commit/847568463f751e84e91645e90ad594dee95b7829))
+- `cargo-udeps` needs old dependecies - ([8475684](https://github.com/azzamsa/dot/commit/847568463f751e84e91645e90ad594dee95b7829))
 - Use latest `mold` - ([3975b7f](https://github.com/azzamsa/dot/commit/3975b7f54c99b68b10e8867ad37f1fa252c82da1))
 - Add more steps - ([4d2d5a4](https://github.com/azzamsa/dot/commit/4d2d5a417747fddf871929cdad8693371773f278))
 - Fix terrible fonts in Flatpak version of Firefox and Thunderbird when using Wayland - ([62c67b6](https://github.com/azzamsa/dot/commit/62c67b62d12969bfda32571412a0c9b6d285aeca))
@@ -845,7 +871,7 @@ All notable changes to this project will be documented in this file.
 - *(post-install)* Add indonesian dictionary - ([7d08fc1](https://github.com/azzamsa/dot/commit/7d08fc1d7cd4f4dc2f2630cdcec8f590ff20113c))
 - Add commit body to changelog - ([6261e29](https://github.com/azzamsa/dot/commit/6261e296e6ae38fc968211a2805f8c1166c9c4da))
 - Brave browser is missing - ([1685ad4](https://github.com/azzamsa/dot/commit/1685ad4d3879213ef129e26ff7d7c48d2d8a733f))
-- Arrange apps - ([4543ab3](https://github.com/azzamsa/dot/commit/4543ab38b5834cd1e4ba549436220c02310264dd))
+- Arrage apps - ([4543ab3](https://github.com/azzamsa/dot/commit/4543ab38b5834cd1e4ba549436220c02310264dd))
 - Use `eget` to install binary - ([30a13b3](https://github.com/azzamsa/dot/commit/30a13b36d82728226b9f2fdec79028f8a85727b2))
 - Setting up font - ([cb7d16c](https://github.com/azzamsa/dot/commit/cb7d16c5d037154d7189ea1f607e0d55d7224101))
 - Add more packages - ([54c0d8f](https://github.com/azzamsa/dot/commit/54c0d8fe8db64c2de6817da85cc57326d60a10e6))
@@ -1158,7 +1184,7 @@ All notable changes to this project will be documented in this file.
 - *(nushell)* Always remove to trash - ([972f3e5](https://github.com/azzamsa/dot/commit/972f3e57381cae621086146ed28cb4f77fcedff0))
 - *(nushell)* Use keybinding for history - ([e6c43af](https://github.com/azzamsa/dot/commit/e6c43af0f900d59b0fb7615951dd30c3275f0f4f))
 - *(nushell)* Initial commit - ([b46551b](https://github.com/azzamsa/dot/commit/b46551b0c5e997ad6debce8c057c9e898017bb1d))
-- *(picom)* Initial commit - ([065097e](https://github.com/azzamsa/dot/commit/065097e23afff287de69337c6d8cd56dc33debd4))
+- *(picom)* Intial commit - ([065097e](https://github.com/azzamsa/dot/commit/065097e23afff287de69337c6d8cd56dc33debd4))
 - *(polybar)* Manage volume level from the bar - ([5bd85c9](https://github.com/azzamsa/dot/commit/5bd85c996241b092996976f65585cade225a22a1))
 - *(polybar)* Brighten and dim screen from bar - ([5156895](https://github.com/azzamsa/dot/commit/5156895498a182783c3915b58a84e42190df6d47))
 - *(polybar)* Toggle speaker status from the bar - ([1aed542](https://github.com/azzamsa/dot/commit/1aed542eaf67ed8ae42cfe0f8f15667381c7c33b))
@@ -1179,7 +1205,7 @@ All notable changes to this project will be documented in this file.
 - *(wezterm)* Support fallback fonts - ([24c9f0e](https://github.com/azzamsa/dot/commit/24c9f0eeb60ceeb45a73463aafe4ab1402fd4ff3))
 - *(wezterm)* Use the similar keymap with the current window manager - ([ec33cfa](https://github.com/azzamsa/dot/commit/ec33cfaf671bd318a67f0c5089df77b042319bd2))
 - *(zsh)* Initial configuration - ([bfb9686](https://github.com/azzamsa/dot/commit/bfb9686a6bbd8c46010dac0c0505432dcc4fef12))
-- Play well both in light and dark mode - ([272c16a](https://github.com/azzamsa/dot/commit/272c16a14b99c5be1eba7d8f5a22c2401857e1f9))
+- Play well both in ligth and dark mode - ([272c16a](https://github.com/azzamsa/dot/commit/272c16a14b99c5be1eba7d8f5a22c2401857e1f9))
 - Support atuin - ([fc3bdf9](https://github.com/azzamsa/dot/commit/fc3bdf939594570c5dc677521873f6a49017c9e9))
 - Strip any credentials from window title - ([9e38fc6](https://github.com/azzamsa/dot/commit/9e38fc694213373d9febd614843d21010a88933a))
 - Sfetch - ([f4af5e5](https://github.com/azzamsa/dot/commit/f4af5e52fda74cd82b60f23f4a0971bdd3e3d78d))
@@ -1190,7 +1216,7 @@ All notable changes to this project will be documented in this file.
 - Add bspwm steps to post install - ([3a66a30](https://github.com/azzamsa/dot/commit/3a66a307bc74ed00d5183666af19893238c7fc8e))
 - Merge most used script here - ([d0d4df6](https://github.com/azzamsa/dot/commit/d0d4df63a3106c3be4e98cae3a756e87c3373830))
 - Use homerow for workspace number - ([47c64d4](https://github.com/azzamsa/dot/commit/47c64d459bc45983df5b15905d83094c99ffa2df))
-- Move  move all the workspace to second monitor - ([74e3768](https://github.com/azzamsa/dot/commit/74e3768dcf2d791240d90a999c48b95ab3a26cda))
+- Move  move all the workspace to second montior - ([74e3768](https://github.com/azzamsa/dot/commit/74e3768dcf2d791240d90a999c48b95ab3a26cda))
 - Brightness based on monitors and time - ([4949354](https://github.com/azzamsa/dot/commit/4949354f0b974f10d73548c08659244ece5a18e6))
 - Hide empty workspaces - ([2378ff0](https://github.com/azzamsa/dot/commit/2378ff0206c25c62088b3627e014b24f12cd137e))
 - Support external monitors - ([e567199](https://github.com/azzamsa/dot/commit/e56719975389c8cf6065788b39f3c4e56f19aad7))
@@ -1254,7 +1280,7 @@ All notable changes to this project will be documented in this file.
 - *(polybar)* Can't set foreground color on ramp - ([bbf9e9e](https://github.com/azzamsa/dot/commit/bbf9e9ee690c6bc362ffc4a89227def71ee56df3))
 - *(polybar)* Use native xwindow module - ([76bcc42](https://github.com/azzamsa/dot/commit/76bcc426f954c4829e74a6ae0f906861ec58d7c5))
 - *(polybar)* Use xwindo again to show title - ([d13fc7b](https://github.com/azzamsa/dot/commit/d13fc7bdc0f6f6ccd7d1b6637e69b53007407fba))
-- *(polybar)* 12 hour format is more readable for merge - ([90456e1](https://github.com/azzamsa/dot/commit/90456e11c6a25699f8babb6bde29d311fd22882f))
+- *(polybar)* 12 hour format is more redable for merge - ([90456e1](https://github.com/azzamsa/dot/commit/90456e11c6a25699f8babb6bde29d311fd22882f))
 - *(polybar)* Use regular date module. `interval` not supported in ipc module - ([fae7e98](https://github.com/azzamsa/dot/commit/fae7e98dbb484383ace8329c1a5580c14c1ad07d))
 - *(starship)* No space after python version - ([1e8850a](https://github.com/azzamsa/dot/commit/1e8850aa0943186b06c2ab32c3ed88b49cf0f41a))
 - *(starship)* Node prompt has no whitespace at the end - ([5ab8c45](https://github.com/azzamsa/dot/commit/5ab8c45347980bdc2a91011295f69e7e8b251e6c))
@@ -1317,7 +1343,7 @@ All notable changes to this project will be documented in this file.
 - *(bspwm)* Move independent scripts to bin - ([4af5759](https://github.com/azzamsa/dot/commit/4af5759a4c15415105c7891bb6db38c58139145a))
 - *(bspwm)* Adhere to bspwm vocabularies - ([3833cd1](https://github.com/azzamsa/dot/commit/3833cd1ab0d88d257f51eafb0030083c4e69d143))
 - *(bspwm)* Use more sensible function name - ([c44d875](https://github.com/azzamsa/dot/commit/c44d8756a6094cc39c9c126cf1c4394e4ec8e41b))
-- *(bspwm)* Use full parameter name for more readability - ([74857b1](https://github.com/azzamsa/dot/commit/74857b14d537ab677a694203a2a0371272975d7b))
+- *(bspwm)* Use full parameter name for more readablity - ([74857b1](https://github.com/azzamsa/dot/commit/74857b14d537ab677a694203a2a0371272975d7b))
 - *(polybar)* Use simpler logic to get active monitor - ([e8cf0ea](https://github.com/azzamsa/dot/commit/e8cf0eadc8b4ac7e48e11430d262b3ca6607e0a1))
 - *(sxhkd)* Duplicate entries - ([04c27c4](https://github.com/azzamsa/dot/commit/04c27c495a963405f4af4ac4dda5ca8ff25060e3))
 - *(sxhkd)* Make all the spaces consistent - ([91cb191](https://github.com/azzamsa/dot/commit/91cb19157eef517c8484eeb74b7a081e00286fc8))
@@ -1387,7 +1413,7 @@ All notable changes to this project will be documented in this file.
 - Add fisher to fish - ([f77d455](https://github.com/azzamsa/dot/commit/f77d455e5ff2e97d4f9f5ea224b66968bd505cbf))
 - Add `zman` to status bar - ([307f84e](https://github.com/azzamsa/dot/commit/307f84ea8fd4a4126ce83f33526486968d14806c))
 - Add lava and zenburn color scheme fish shell - ([3b19309](https://github.com/azzamsa/dot/commit/3b1930974f03ac992f1691a7abcbfc6fcb16f313))
-- Add more fish utilities - ([154c843](https://github.com/azzamsa/dot/commit/154c8436bf932d45a398674eeb5c5ee08531470d))
+- Add more fish utilites - ([154c843](https://github.com/azzamsa/dot/commit/154c8436bf932d45a398674eeb5c5ee08531470d))
 - Add `docker_ip` function - ([35093b3](https://github.com/azzamsa/dot/commit/35093b331ca318c13cfbf1dba13d788c5d240e9c))
 - Use JSON version of ~bilal~ output in status bar - ([fa0d18e](https://github.com/azzamsa/dot/commit/fa0d18e3a845a06afb0c1ca21c54549854f5306a))
 - Add default $EDITOR - ([e56d03d](https://github.com/azzamsa/dot/commit/e56d03df2b4ee361326010025d5dec40a5cbbf0a))
@@ -1413,7 +1439,7 @@ All notable changes to this project will be documented in this file.
 - Remove unused virtualfish prompt config - ([07d9797](https://github.com/azzamsa/dot/commit/07d9797ded53cece2ec1bcab5f96f6d30a431ec3))
 - Use the arrow key again in i3wm - ([2774b52](https://github.com/azzamsa/dot/commit/2774b52374691cf0d2885c1274047ed488311e98))
 - Use the number at the home-row position - ([e183622](https://github.com/azzamsa/dot/commit/e1836225e63e87abc839af5d3b9d848483a2b168))
-- Use more accessible menu key in i3wm - ([9a7f5de](https://github.com/azzamsa/dot/commit/9a7f5deb88deb72bfbe1618360390bd363b908ee))
+- Use more accesible menu key in i3wm - ([9a7f5de](https://github.com/azzamsa/dot/commit/9a7f5deb88deb72bfbe1618360390bd363b908ee))
 - Wezterm doesn't need any fallback font - ([0f75bdb](https://github.com/azzamsa/dot/commit/0f75bdb762f138e7a38ef1e3e694e6ce9c143bc3))
 - Nodejs character positioned incorrectly - ([230d177](https://github.com/azzamsa/dot/commit/230d177eacf7a7bd2a0851eb457add3f43015ecf))
 - Remove battery in status bar - ([feafd15](https://github.com/azzamsa/dot/commit/feafd15d7325b9b3a1488703277c131c0c61240b))
@@ -1436,12 +1462,13 @@ All notable changes to this project will be documented in this file.
 - `mousedragend1pane` fixed in 3.3 - ([280b191](https://github.com/azzamsa/dot/commit/280b191ae422a87c5949b0513f3668ecbdce3959))
 - Remove auto move window based on the title - ([85b766e](https://github.com/azzamsa/dot/commit/85b766eef50945d1fa4b10262976123b6d9fc6ed))
 - Copied word using a mouse not sent to clipboard - ([6a25653](https://github.com/azzamsa/dot/commit/6a2565324ea0f800a15717bdb33d4cec665ef9f4))
-- Tmux keybindings is weird - ([65595eb](https://github.com/azzamsa/dot/commit/65595eb6d69e645931cfbe6463118e908a409515))
+- Tmux keybindings is wierd - ([65595eb](https://github.com/azzamsa/dot/commit/65595eb6d69e645931cfbe6463118e908a409515))
 - Change floating window keybinding - ([5847de3](https://github.com/azzamsa/dot/commit/5847de33bc9b131c5c79f36ba9265ede703fde5a))
 - Add missing default layout in menu - ([dfc6e1d](https://github.com/azzamsa/dot/commit/dfc6e1d8ed2484d3508211fc792539abbaf09772))
 - Remove unused colors - ([054e8be](https://github.com/azzamsa/dot/commit/054e8be3903c96fb2ddf57e37ac44e91e1113210))
 - Set workspace in startup program - ([0f2efd0](https://github.com/azzamsa/dot/commit/0f2efd0f2663441fc2d3ab1d092e66e4061a9609))
 - For emacs-style `copy-mode` is enough - ([af43c13](https://github.com/azzamsa/dot/commit/af43c13baf43e86cad8a3cd258d4efb9a4741f96))
+- Don't rever to default mode after floating window toggle - ([e15fc27](https://github.com/azzamsa/dot/commit/e15fc27ca3e9d3283475618312af4f84cb26440d))
 - Recent version of st terminal doesn't send selection correctly to clipboard - ([2bf69db](https://github.com/azzamsa/dot/commit/2bf69db1de080c60fe9ad1edda3993c05824340a))
 - Grenclip doesn't accept copy selection from tmux - ([5bdcb77](https://github.com/azzamsa/dot/commit/5bdcb77c5d7dfa59168000565ce393694290dea9))
 - Remove unused tmux custom keymap - ([adbf9c7](https://github.com/azzamsa/dot/commit/adbf9c70ca444283f29d1f223d8d5f0d7cd70530))
@@ -1450,7 +1477,7 @@ All notable changes to this project will be documented in this file.
 - `workrave` typo - ([bef770a](https://github.com/azzamsa/dot/commit/bef770a714e1301e772b83e3942da36853b8beb7))
 - Remove keymap modification - ([6558128](https://github.com/azzamsa/dot/commit/655812841696a9252dea2c689bce3d4a56c4dd0f))
 - Strive to use sticky key all the way down - ([a4a5642](https://github.com/azzamsa/dot/commit/a4a5642cd82e09368ccaf129b3e8c87e68a9780f))
-- Firefox logo does not shown correctly after migration to bullseye - ([d37f580](https://github.com/azzamsa/dot/commit/d37f5800908eeb8dc99fef8ff1dc891bce2b5569))
+- Firefox logo does not shown correcly after migration to bullseye - ([d37f580](https://github.com/azzamsa/dot/commit/d37f5800908eeb8dc99fef8ff1dc891bce2b5569))
 - Remove i3-gaps config - ([602c73a](https://github.com/azzamsa/dot/commit/602c73a42409fa996fa43e662f69e8cb6ae231e0))
 - Make emacs keybinding consistent in rofi - ([b6285b3](https://github.com/azzamsa/dot/commit/b6285b3039e6108819a277eed38a45757150cc7d))
 - Emoji without space doesn't work in some social app - ([085be33](https://github.com/azzamsa/dot/commit/085be3353ac94f1c796cbde55d55e8ca188ab02b))
@@ -1479,7 +1506,7 @@ All notable changes to this project will be documented in this file.
 - Override up and down icon in network i3status - ([43763df](https://github.com/azzamsa/dot/commit/43763df44276ef1c8bf5347d95fee848d3618d9e))
 - Emacs tramp hang over fish prompt - ([3831315](https://github.com/azzamsa/dot/commit/3831315c191b05806a152453892c365073e5907b))
 - Utilities path not found - ([312193e](https://github.com/azzamsa/dot/commit/312193e90ef4f653a9fcba167abf973d3a6320fa))
-- Disable transparency in st terminal - ([3b04b6a](https://github.com/azzamsa/dot/commit/3b04b6a645457ca6b1aad90c327a9feb7019b14a))
+- Disable transparancy in st terminal - ([3b04b6a](https://github.com/azzamsa/dot/commit/3b04b6a645457ca6b1aad90c327a9feb7019b14a))
 - Color warning on tmux - ([fce5f32](https://github.com/azzamsa/dot/commit/fce5f328a6679fb65dacc3db6bdb6eb780192752))
 - Switch to light theme. - ([29fd2b9](https://github.com/azzamsa/dot/commit/29fd2b99cc617e045734c2fe4b381d0d37e58e07))
 - Drop lava color scheme. Prefers Zenburn. - ([5d3ed3e](https://github.com/azzamsa/dot/commit/5d3ed3ea63f18a9c3efe234b6471fb636ed0cc36))

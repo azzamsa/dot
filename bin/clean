@@ -4,61 +4,57 @@
 # Clean system
 #
 
-def task-kondo []: any -> string {
-    print "🧽 Cleaning dependencies and build artifacts"
+def task-kondo []: nothing -> nothing {
     kondo $env.HOME --older 2w --ignored-dirs ($env.HOME | path join .local/bin/node) --all
 }
 
-def task-system []: any -> string {
-    print "🧽 Cleaning package manager cache"
+def task-system []: nothing -> nothing {
     sudo dnf autoremove
 }
 
-def task-flatpak []: any -> string {
-    print "🧽 Cleaning unused flatpak packages"
+def task-flatpak []: nothing -> nothing {
     flatpak uninstall --unused
 }
 
-def task-cargo []: any -> string {
-    print "🧽 Cleaning cargo cache"
+def task-cargo []: nothing -> nothing {
     cargo cache --autoclean
 }
 
-def task-container []: any -> string {
-    print "🧽 Cleaning container cache"
+def task-container []: nothing -> nothing {
     podman system prune
 }
 
-# def task-dirs [] {
-#     print "🧽 Cleaning ~/Downloads, ~/Pictures/Screenshots dirs"
-#     let dirs = [
-#         ($env.HOME | path join "Downloads")
-#         ($env.HOME | path join "Pictures/Screenshots")
-#     ]
-#     for dir in $dirs {
-#         ls $dir | each { |f| rm -rf $f.name }
-#     }
-# }
+def section [msg: string]: nothing -> nothing {
+    print $"\n🧽 ($msg)"
+}
 
-
-def run-all []: any -> string {
+def run-all []: nothing -> nothing {
+    section "Cleaning dependencies and build artifacts"
     task-kondo
+
+    section "Cleaning unused flatpak packages"
     task-flatpak
+
+    section "Cleaning container cache"
     task-container
+
+    section "Cleaning cargo cache"
     task-cargo
+
+    section "Cleaning package manager cache"
     task-system
 }
 
 
 def main [
     ...tasks: string  # kondo, flatpak, container, cargo, system (default: all)
-] {
+]: nothing -> nothing {
     let tasks_map = {
         kondo:     { task-kondo }
         flatpak:   { task-flatpak }
         container: { task-container }
         cargo:     { task-cargo }
-        system:        { task-system }
+        system:    { task-system }
     }
 
     if ($tasks | is-empty) {

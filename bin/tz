@@ -1,6 +1,9 @@
 #!/usr/bin/env -S nu --stdin
 
-def show-clock [--width: int, row: record] {
+def show-clock [
+    width: int    # Column width for the location label
+    row: record   # Row with `tz` and `loc` fields
+]: nothing -> nothing {
     let now   = (date now | date to-timezone $row.tz)
     let hour  = ($now | format date %H | into int)
     let time  = ($now | format date "%I:%M %p")
@@ -13,12 +16,11 @@ def show-clock [--width: int, row: record] {
     print $"($loc_p) : ($color)($time)(ansi reset)"
 }
 
-def main [] {
+def main []: nothing -> nothing {
     let file      = "~/.config/meta/tz.toml" | path expand
     let locations = open $file | get locations
-
     let width = ($locations | get loc | each {|l| $l | str length } | math max)
     for row in $locations {
-        show-clock --width $width $row
+        show-clock $width $row
     }
 }

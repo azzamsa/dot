@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-#MISE description="Build the CLI"
+#MISE description="Setup Git hooks"
 
 for hook in .hooks/*; do
-    ln -sf "../../$hook" ".git/hooks/$(basename $hook)"
+    ln -sf "../../$hook" ".git/hooks/$(basename "$hook")"
 done

@@ -1,39 +1,42 @@
 #!/usr/bin/env -S nu --stdin
-
 #
 # Currency converter
 #
 
-def humanize_idr [n: float] {
+def humanize-idr [n: float]: nothing -> string {
     $n | math round | into int | into string --group-digits
 }
 
-def humanize_usd [n: float] {
+def humanize-usd [n: float]: nothing -> string {
     let whole = ($n | math floor | into int | into string --group-digits)
     let cents = ($n * 100 | math round | into int) mod 100
-    $"($whole).($cents | fill -a right -c '0' -w 2)"
+    $"($whole).($cents | fill --alignment right --character '0' --width 2)"
 }
 
-def fetch_rate [] {
+def fetch-rate []: nothing -> float {
     let api_url = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json"
     (http get $api_url).usd.idr
 }
 
 # Convert USD to IDR
-def "main to-idr" [amount: float] {
-    let rate = fetch_rate
-    print $"USD (humanize_usd $amount) = IDR (humanize_idr ($amount * $rate))"
+def "main to-idr" [
+    amount: float  # Amount in USD to convert to IDR
+]: nothing -> nothing {
+    let rate = fetch-rate
+    print $"USD (humanize-usd $amount) = IDR (humanize-idr ($amount * $rate))"
 }
 
 # Convert IDR to USD
-def "main to-usd" [amount: float] {
-    let rate = fetch_rate
-    print $"IDR (humanize_idr $amount) = USD (humanize_usd ($amount / $rate))"
+def "main to-usd" [
+    amount: float  # Amount in IDR to convert to USD
+]: nothing -> nothing {
+    let rate = fetch-rate
+    print $"IDR (humanize-idr $amount) = USD (humanize-usd ($amount / $rate))"
 }
 
 # Currency converter: USD ↔ IDR
-def main [] {
-    print "Usage: xe <subcommand> <amount>"
-    print "  xe to-idr <amount>   Convert USD → IDR"
-    print "  xe to-usd <amount>   Convert IDR → USD"
+def main []: nothing -> nothing {
+    print "Usage: xe <subcommand> <amount>
+  xe to-idr <amount>   Convert USD → IDR
+  xe to-usd <amount>   Convert IDR → USD"
 }

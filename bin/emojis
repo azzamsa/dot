@@ -9,7 +9,11 @@ def main [
     category?: string  # foods, nature, animals
     --file: path       # Path to a custom emojis file
 ] {
-    let file = ($file | default ("~/.config/meta/emojis.toml" | path expand))
+    let file = if $file == null {
+        "~/.config/meta/emojis.toml" | path expand
+    } else {
+        $file
+    }
     let categories = (open $file)
 
     let emojis = if ($category | is-empty) {

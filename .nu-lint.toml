@@ -1,0 +1,8 @@
+[rules]
+catch_builtin_error_try = "off"
+list_param_to_variadic = "off"
+where_closure_drop_parameter = "off"
+add_label_to_error = "off"
+division_to_format_duration = "off"
+unhandled_external_error = "off"
+dont_mix_different_effects = "off"

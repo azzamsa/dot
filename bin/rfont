@@ -4,14 +4,15 @@
 # Random Font
 #
 
-def "main current" []: any -> any {
+def "main current" []: nothing -> list<string> {
     ghostty +show-config | find font-family
 }
 
-def main [] {
+def main []: nothing -> string {
     let fonts_file = ("~/.config/meta/fonts.toml" | path expand)
     let fonts = (open $fonts_file | get font)
-    let font = $fonts | get (random int 0..<($fonts | length))
-    $font.name
+    if ($fonts | is-empty) {
+        error make {msg: $"No fonts in ($fonts_file)"}
+    }
+    $fonts | shuffle | first | get name
 }
-

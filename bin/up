@@ -4,54 +4,61 @@
 # Upgrade everything
 #
 
-def task-flatpak []: any -> string {
-    print "📦 Upgrading Flatpak apps"
+def task-flatpak []: nothing -> nothing {
     flatpak update
 }
 
-def task-appimages []: any -> string {
-    print "⚙️ List Upgradable Appimages"
+def task-appimages []: nothing -> nothing {
     flatpak run it.mijorus.gearlever --list-updates
 }
 
-def task-cargo []: any -> string {
-    print "🦀 Upgrading Cargo apps"
+def task-cargo []: nothing -> nothing {
     cargo install-update -a | lines | where ($it !~ No)
     rustup update stable
 }
 
-def task-golang []: any -> string {
-    print "🐹 Upgrading Go apps"
+def task-golang []: nothing -> nothing {
     gup update
 }
 
-def task-system []: any -> string {
-    print "🐧 Upgrading System apps"
+def task-system []: nothing -> nothing {
     sudo dnf update
 }
 
-def task-node []: any -> any {
-    print "🦖 Upgrading Node apps"
-    do {
+def task-node []: nothing -> nothing {
+    try {
        cd ($env.HOME | path join .local/bin/node)
        npx taze major --write
        npm install
+    } catch {|err|
+       error make {msg: $"task-node failed: ($err.msg)"}
     }
 }
 
-def run-all [] {
+def run-all []: nothing -> nothing {
+    print "📦 Upgrading Flatpak apps"
     task-flatpak
+
+    print "⚙️ List Upgradable Appimages"
     task-appimages
+
+    print "🦀 Upgrading Cargo apps"
     task-cargo
+
+    print "🐹 Upgrading Go apps"
     task-golang
+
+    print "🐧 Upgrading System apps"
     task-system
+
+    print "🦖 Upgrading Node apps"
     task-node
 }
 
 # Upgrade system and apps
 def main [
     ...tasks: string  # cargo, golang, flatpak, appimages, node, system (default: all)
-] {
+]: nothing -> nothing {
     let tasks_map = {
         flatpak:   { task-flatpak }
         appimages: { task-appimages }
@@ -66,7 +73,7 @@ def main [
     } else {
         for task in $tasks {
             if ($tasks_map has $task) {
-                do ($tasks_map | get $task)
+                do ($tasks_map | get --optional $task)
             } else {
                 error make {msg: $"Unknown task: ($task)"}
             }

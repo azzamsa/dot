@@ -5,8 +5,15 @@ typos = "latest"
 dprint = "latest"
 actionlint = "latest"
 zizmor = "latest"
+shellcheck = "latest"
+"cargo:nu-lint" = "latest"
+
+[tasks.default]
+hide = true
+run = ["mise run qq"]
 
 [tasks.setup]
+hide = true
 confirm = 'Are you sure?'
 description = "Setup the project"
 depends = ["hooks"]
@@ -14,50 +21,69 @@ depends = ["hooks"]
 [tasks.hooks]
 hide = true
 description = "Setup Git hooks"
-run = "mise hooks"
-
-[tasks.qc]
-description = "Fix before check"
-depends = ["fix", "qq"]
+run = "mise run hooks"
 
 [tasks.qqq]
+# Deep, thorough checks. Should be run locally.
 description = "Exhaustive quality check"
-depends = ["qa", "lint-nu", "meta"]
+depends = ["qa", "meta"]
 
 [tasks.qq]
+# Primarily used in CI.
 description = "Quality check"
 depends = ["qa", "update-example"]
 
+[tasks.qc]
+# Typically run before pushing. Hand curated.
+description = "Fix before check"
+depends = ["fix", "qq"]
+
 [tasks.qa]
+# Used in git hooks for fast feedback.
+hide = true
 description = "Quick quality check"
 depends = ["fmt-check", "lint"]
 run = "mise run --cd utils/snacks qa"
 
 [tasks.fix]
+hide = true
 description = "Enforce rules"
 depends = ["fmt", "lint"]
 run = "mise run --cd utils/snacks fix"
 
 [tasks.fmt]
+hide = true
 description = "Format"
 run = ["dprint fmt", "stylua . --allow-hidden"]
 
 [tasks.fmt-check]
+hide = true
 description = "Check formatting"
 run = ["dprint check", "stylua . --allow-hidden --check"]
 
 [tasks.lint]
+hide = true
 description = "Lint"
-depends = ["fmt-check"]
+depends = ["fmt-check", "lint-shell", "lint-nu"]
 run = "typos && selene . --quiet"
 
+[tasks.lint-shell]
+hide = true
+description = "Lint shell scripts"
+run = ["grep -lE '^#!.*(bash|sh)$' bin/* | xargs -r shellcheck"]
+
 [tasks.lint-nu]
+hide = true
 description = "Lint Nushell code"
 run = "nu-lint bin/"
 
 [tasks.release]
+hide = true
+confirm = 'Ready to ship?'
 description = "Create a new release"
-run = "./release $1"
+depends = ["qqq"]
+usage = 'arg "<version>" help="Version to release"'
+run = './release ${usage_version?}'
 
 [tasks.deploy]
 alias = "p"
@@ -65,6 +91,7 @@ description = "Publish the binaries"
 run = ["mise run --cd utils/snacks deploy", "dotter deploy"]
 
 [tasks.up]
+hide = true
 description = "Upgrade dependencies"
 run = "dprint config update"
 
@@ -74,5 +101,6 @@ description = "Keep example up-to-date"
 run = "mise update-example"
 
 [tasks.meta]
+hide = true
 description = "Dependency analysis"
 run = ["pnpx actions-up", "actionlint", "zizmor .github/workflows/*"]

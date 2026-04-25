@@ -1,16 +1,21 @@
 #!/usr/bin/env -S nu --stdin
 
-#
 # Inspect or kill process by port
-#
+def main [
+    port: string  # Port number to inspect or kill (e.g. 8080)
+    --kill (-k)   # Kill the process holding the port instead of inspecting
+]: nothing -> nothing {
+    let flag = if $kill { "-t" } else { "" }
+    let result = (lsof $flag $"-i:($port)" | complete)
 
-# Inspect or kill process by port
-def main [port: string, --kill (-k)]: any -> any {
+    if $result.exit_code != 0 {
+        error make {msg: $"No process found on port ($port)"}
+    }
+
     if $kill {
         print $"Killing process at port ($port)"
-        let pid = (lsof -t $"-i:($port)" | str trim)
-        kill $pid
+        kill ($result.stdout | str trim)
     } else {
-        lsof $"-i:($port)"
+        print $result.stdout
     }
 }

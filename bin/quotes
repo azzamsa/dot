@@ -10,7 +10,11 @@ def main [
     --category (-c): string   # Filter by category (e.g. islamic, general)
     --file     (-f): path     # Path to a custom quotes file
 ] {
-    let file = ($file | default ("~/.config/meta/quotes.toml" | path expand))
+    let file = if $file == null {
+        "~/.config/meta/quotes.toml" | path expand
+    } else {
+        $file
+    }
     let data = (open $file)
 
     let quotes = if ($category | is-empty) {

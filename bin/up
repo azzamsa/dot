@@ -4,16 +4,59 @@
 # Upgrade everything
 #
 
-def task-flatpak []: nothing -> nothing {
-    flatpak update
+const SELECTED_SYSTEM_PACKAGES = [
+    fish
+    starship
+    atuin
+    eza
+    zoxide
+    bat
+    yazi
+    fd-find
+    fzf
+    ghostty
+    emacs
+    zed
+    zed-cli
+    podman-compose
+    mold
+    fastfetch
+    tuptime
+]
+
+const SELECTED_FLATPAK_PACKAGES = [
+    app.zen_browser.zen
+    be.alexandervanhee.gradia
+    dev.vencord.Vesktop
+    org.mozilla.Thunderbird
+    io.github.AllanChain.sane-break
+    com.bilingify.readest
+    it.mijorus.gearlever
+    org.gnome.World.PikaBackup
+]
+
+const SELECTED_CARGO_PACKAGES = [
+    dotter
+]
+
+def task-flatpak [--full]: nothing -> nothing {
+    if $full {
+        flatpak update
+    } else {
+        flatpak update ...$SELECTED_FLATPAK_PACKAGES
+    }
 }
 
 def task-appimages []: nothing -> nothing {
     flatpak run it.mijorus.gearlever --list-updates
 }
 
-def task-cargo []: nothing -> nothing {
-    cargo install-update -a | lines | where ($it !~ No)
+def task-cargo [--full]: nothing -> nothing {
+    if $full {
+        cargo install-update -a | lines | where ($it !~ No)
+    } else {
+        cargo install-update ...$SELECTED_CARGO_PACKAGES | lines | where ($it !~ No)
+    }
     rustup update stable
 }
 
@@ -21,64 +64,84 @@ def task-golang []: nothing -> nothing {
     gup update
 }
 
-def task-system []: nothing -> nothing {
-    sudo dnf update
+def task-system [--full]: nothing -> nothing {
+    if $full {
+        sudo dnf update
+    } else {
+        sudo dnf update ...$SELECTED_SYSTEM_PACKAGES
+    }
 }
 
 def task-node []: nothing -> nothing {
     try {
-       cd ($env.HOME | path join .local/bin/node)
-       npx taze major --write
-       npm install
+        cd ($env.HOME | path join .local/bin/node)
+        npx taze major --write
+        npm install
     } catch {|err|
-       error make {msg: $"task-node failed: ($err.msg)"}
+        error make {msg: $"task-node failed: ($err.msg)"}
     }
 }
 
-def run-all []: nothing -> nothing {
+def run-default [--full]: nothing -> nothing {
     print "📦 Upgrading Flatpak apps"
-    task-flatpak
-
-    print "⚙️ List Upgradable Appimages"
-    task-appimages
-
+    task-flatpak --full=$full
     print "🦀 Upgrading Cargo apps"
     task-cargo
+    print "🐧 Upgrading System apps"
+    task-system --full=$full
+}
 
+def run-all [--full]: nothing -> nothing {
+    print "📦 Upgrading Flatpak apps"
+    task-flatpak --full=$full
+    print "⚙️  List Upgradable Appimages"
+    task-appimages
+    print "🦀 Upgrading Cargo apps"
+    task-cargo
     print "🐹 Upgrading Go apps"
     task-golang
-
     print "🐧 Upgrading System apps"
-    task-system
-
+    task-system --full=$full
     print "🦖 Upgrading Node apps"
     task-node
 }
 
-# Upgrade system and apps
+# Upgrade system and apps.
+#
+# By default, runs flatpak, cargo, and system with curated package lists.
+# Use --all to run every task. Use --full to update every package
+# (instead of the curated list) for tasks that support it.
+#
+# Examples:
+#   up                       # flatpak + cargo + system (curated)
+#   up --all                 # every task (still curated for system/flatpak)
+#   up --all --full          # every task, every package
+#   up system                # system only, curated
+#   up system --full         # system only, full dnf update
+#   up flatpak system --full # both tasks, full package lists
 def main [
-    ...tasks: string  # cargo, golang, flatpak, appimages, node, system (default: all)
+    ...tasks: string  # tasks to run: flatpak, appimages, cargo, golang, system, node
+    --all             # run every task (only used when no tasks are listed)
+    --full            # update every package, not just the curated list (affects: system, flatpak)
 ]: nothing -> nothing {
     let tasks_map = {
-        flatpak:   { task-flatpak }
+        flatpak:   { task-flatpak --full=$full }
         appimages: { task-appimages }
-        cargo:     { task-cargo }
+        cargo: { task-cargo --full=$full }
         golang:    { task-golang }
-        system:    { task-system }
+        system:    { task-system --full=$full }
         node:      { task-node }
     }
-
     if ($tasks | is-empty) {
-        run-all
+        if $all { run-all --full=$full } else { run-default --full=$full }
     } else {
         for task in $tasks {
-            if ($tasks_map has $task) {
+            if ($task in $tasks_map) {
                 do ($tasks_map | get --optional $task)
             } else {
                 error make {msg: $"Unknown task: ($task)"}
             }
         }
     }
-
     print "\n✨ You have a new shiny machine!"
 }

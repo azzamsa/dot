@@ -1,5 +1,9 @@
 #!/usr/bin/env -S nu --stdin
 #MISE description="Create a release with the given tag"
+#MISE hide=true
+#MISE hide=true
+#MISE confirm="Ready to ship?"
+#MISE depends=["qqq"]
 
 def main [
     tag: string  # The release tag. e.g. `v7.1.0`.

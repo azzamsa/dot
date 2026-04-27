@@ -106,6 +106,9 @@ depends = ["shell"]
 [jjui.files]
 "utils/jjui" = "~/.config/jjui"
 
+[mise.files]
+"utils/mise" = "~/.config/mise"
+
 #
 # Browsers
 [tridactyl.files]

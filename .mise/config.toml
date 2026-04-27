@@ -8,28 +8,21 @@ zizmor = "latest"
 shellcheck = "latest"
 "cargo:nu-lint" = "latest"
 
-[tasks.default]
-hide = true
-run = ["mise run qq"]
-
 [tasks.setup]
 hide = true
 confirm = 'Are you sure?'
 description = "Setup the project"
 depends = ["hooks"]
 
-[tasks.hooks]
-hide = true
-description = "Setup Git hooks"
-run = "mise run hooks"
-
 [tasks.qqq]
 # Deep, thorough checks. Should be run locally.
+hide = true
 description = "Exhaustive quality check"
 depends = ["qa", "meta"]
 
 [tasks.qq]
 # Primarily used in CI.
+hide = true
 description = "Quality check"
 depends = ["qa", "update-example"]
 
@@ -77,28 +70,15 @@ hide = true
 description = "Lint Nushell code"
 run = "nu-lint bin/"
 
-[tasks.release]
-hide = true
-confirm = 'Ready to ship?'
-description = "Create a new release"
-depends = ["qqq"]
-usage = 'arg "<version>" help="Version to release"'
-run = './release ${usage_version?}'
-
-[tasks.deploy]
+[tasks.publish]
 alias = "p"
-description = "Publish the binaries"
-run = ["mise run --cd utils/snacks deploy", "dotter deploy"]
+description = "Publish configs and binaries"
+run = ["mise run --cd utils/snacks publish", "dotter deploy"]
 
 [tasks.up]
 hide = true
 description = "Upgrade dependencies"
 run = "dprint config update"
-
-[tasks.update-example]
-hide = true
-description = "Keep example up-to-date"
-run = "mise update-example"
 
 [tasks.meta]
 hide = true

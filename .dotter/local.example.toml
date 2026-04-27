@@ -37,6 +37,7 @@ packages = [
     "eget",
     "jjui",
     # "sane-break" # sane-break doesn't work with symlink
+    "mise",
 
     # Programming Languages
     "cargo",
@@ -49,5 +50,5 @@ packages = [
 editor = "nvim"
 terminal_font_size = 21.5
 theme = "tokyo_black"
-font = "Maple Mono NF"
+font = "IoskeleyMono Nerd Font"
 atuin_server = "https://shell.me.com"

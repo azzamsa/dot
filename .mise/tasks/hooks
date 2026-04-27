@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #MISE description="Setup Git hooks"
+#MISE hide=true
 
 for hook in .hooks/*; do
     ln -sf "../../$hook" ".git/hooks/$(basename "$hook")"

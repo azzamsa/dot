@@ -1,0 +1,7 @@
+[settings]
+color_theme = "charm"
+
+[tools]
+"cargo:nu-lint" = "latest"
+pnpm = "latest"
+uv = "latest"

@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+#MISE hide=true
+
+
 #
 # Build a release tarball.
 #

@@ -1,6 +1,3 @@
-[env]
-_.file = ".env"
-
 [tasks.qc]
 description = "Fix then check"
 run = ["mise run fix", "mise run qq"]
@@ -17,7 +14,7 @@ depends = ["fmt-check", "lint"]
 description = "Enforce rules"
 run = ["mise run fmt", "mise run lint"]
 
-[tasks.deploy]
+[tasks.publish]
 alias = "p"
 description = "Publish"
 depends = ["qa", "test"]

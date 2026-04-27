@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #MISE description="Publish a GitHub release"
+#MISE hide=true
 
 #
 # Publish a GitHub release.

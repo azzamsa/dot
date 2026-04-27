@@ -59,7 +59,12 @@ alias x scratch
 zoxide init --cmd cd fish | source
 starship init fish | source
 atuin init fish | source
-mise activate fish | source
+
+if status is-interactive
+    mise activate fish | source
+else
+    mise activate fish --shims | source
+end
 # jj util completion fish | source
 
 source ~/.config/fish/exports.fish

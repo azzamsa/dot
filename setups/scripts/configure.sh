@@ -1,22 +1,5 @@
 #!/usr/bin/env bash
 
-# Atuin
-atuin login
-atuin sync
-
-# Populate the dotfiles
-just --justfile "$HOME/dot/justfile" deploy
-
-#
-# Python (Rye)
-#
-curl -sSf https://rye.astral.sh/get | bash
-
-pkgs=(qmk grip poetry python-lsp-server uv yt-dlp)
-for pkg in "${pkgs[@]}"; do
-  rye install "$pkg"
-done
-
 #
 # ddcutil
 #

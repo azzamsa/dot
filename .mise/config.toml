@@ -102,5 +102,6 @@ run = "mise update-example"
 
 [tasks.meta]
 hide = true
+interactive = true
 description = "Dependency analysis"
 run = ["pnpx actions-up", "actionlint", "zizmor .github/workflows/*"]

@@ -7,12 +7,11 @@ fi
 
 eval "$(starship init bash)"
 eval "$(fnm env --use-on-cd)"
+eval "$(mise activate bash)"
+. "$HOME/.local/share/cargo/env"
 
 #
 # Private envs
 if [ -f "$HOME/.config/meta/env" ]; then
     . "$HOME/.config/meta/env"
 fi
-
-. "$HOME/.local/share/cargo/env"
-. "$HOME/.local/share/rye/env"

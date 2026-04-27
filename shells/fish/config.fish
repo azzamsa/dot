@@ -58,9 +58,9 @@ alias x scratch
 
 zoxide init --cmd cd fish | source
 starship init fish | source
-fnm env --use-on-cd | source
 atuin init fish | source
-jj util completion fish | source
+mise activate fish | source
+# jj util completion fish | source
 
 source ~/.config/fish/exports.fish
 source ~/.local/share/cargo/env.fish

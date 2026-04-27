@@ -20,25 +20,6 @@ pkgs=(
   nu
 
   # Utils
-  jj-cli
-  kondo
-  bottom
-  dua-cli
-  hyperfine
-  jaq
-  resvg
-  sd
-  tokei
-  typst-cli
-  typstyle
-  watchexec-cli
-  mdfried
-  ttyper
-  goup
-
-  # lsp
-  beancount-language-server
-  emacs-lsp-booster
 )
 
 for pkg in "${pkgs[@]}"; do

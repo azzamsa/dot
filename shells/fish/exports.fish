@@ -39,9 +39,7 @@ set -gx CARGO_HOME "$XDG_DATA_HOME/cargo"
 set -gx RUSTUP_HOME "$XDG_DATA_HOME/rustup"
 
 # Python
-set -gx RYE_HOME "$XDG_DATA_HOME/rye"
 set -gx IPYTHONDIR "$XDG_CONFIG_HOME/ipython"
-fish_add_path "$XDG_DATA_HOME/rye/shims"
 
 # Golang
 fish_add_path ~/.local/share/go/bin

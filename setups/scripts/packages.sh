@@ -15,6 +15,7 @@ cores=(
 editors=(
   emacs enchant2-devel
   vim neovim
+  zed
 )
 
 # programming
@@ -24,7 +25,7 @@ code=(
   pkgconf perl-FindBin perl-IPC-Cmd openssl-devel
   # hurlfmt
   libxml2-devel
-  podman-compose
+  podman-compose mise
 )
 
 # utils
@@ -37,6 +38,8 @@ utils=(
   # yazi
   ffmpeg p7zip p7zip-plugins jq poppler-utils fzf ImageMagick
   fastfetch tuptime
+  # socials
+  gurk
 )
 
 # combine all arrays
@@ -49,3 +52,9 @@ pkgs=(
 
 # install packages
 sudo dnf install -y "${pkgs[@]}"
+
+
+#
+# Python
+#
+mise use -g uv@latest

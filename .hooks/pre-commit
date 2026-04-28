@@ -1,3 +1,4 @@
 #!/bin/sh
 
-mise run lint
+export MISE_EXPERIMENTAL=1
+exec mise run lint --verbose

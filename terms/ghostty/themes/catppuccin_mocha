@@ -1,0 +1,33 @@
+# https://github.com/catppuccin/ghostty
+
+background = #000000
+foreground = #ffffff
+cursor-color = #f5e0dc
+cursor-text = #11111b
+selection-background = #353749
+selection-foreground = #cdd6f4
+split-divider-color = #313244
+
+palette = 0=#45475a
+palette = 8=#9399b2
+
+palette = 1=#f38ba8
+palette = 9=#f38ba8
+
+palette = 2=#a6e3a1
+palette = 10=#a6e3a1
+
+palette = 3=#f9e2af
+palette = 11=#f9e2af
+
+palette = 4=#89b4fa
+palette = 12=#89b4fa
+
+palette = 5=#f5c2e7
+palette = 13=#f5c2e7
+
+palette = 6=#94e2d5
+palette = 14=#94e2d5
+
+palette = 7=#a6adc8
+palette = 15=#bac2de

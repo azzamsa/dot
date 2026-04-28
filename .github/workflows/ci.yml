@@ -27,4 +27,4 @@ jobs:
 
       - name: Quality Check
         run: |
-          mise qq
+          mise run check

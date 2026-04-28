@@ -1,56 +1,82 @@
-[tasks.qc]
-description = "Fix then check"
-run = ["mise run fix", "mise run qq"]
-
-[tasks.qq]
-description = "Quality check"
-depends = ["qa", "test"]
-
-[tasks.qa]
-description = "Quick quality check"
-depends = ["fmt-check", "lint"]
-
-[tasks.fix]
-description = "Enforce rules"
-run = ["mise run fmt", "mise run lint"]
-
-[tasks.publish]
-alias = "p"
-description = "Publish"
-depends = ["qa", "test"]
+[tools]
+"cargo:cargo-nextest" = "latest"
 
 [tasks.dev]
-alias = "d"
-description = "Develop"
-run = ["bacon", "mise run qc"]
+interactive = true
+description = "Develop the app"
+run = ["bacon", "mise run verify"]
 
-[tasks.fmt]
-description = "Format"
-run = "cargo fmt --all"
+[tasks.audit]
+# Extras, deep, thorough checks. Should be run locally.
+hide = true
+description = "Exhaustive quality check"
+depends = ["check", "meta"]
 
-[tasks.fmt-check]
-description = "Check formatting"
-run = "cargo fmt --all -- --check"
+[tasks.verify]
+# Apply automatic fixes, then check.
+# Intended for use before commit or push.
+description = "Enforce rules"
+depends = ["fmt", "check"]
+
+[tasks.check]
+# Quality check. Primarily used in CI.
+hide = true
+description = "Quality check"
+depends = ["lint", "test"]
 
 [tasks.lint]
+# Minimal, fast feedback checks.
+hide = true
 description = "Lint"
-run = ["cargo clippy --all-targets --all-features --quiet", "typos"]
-
-[tasks.test]
-description = "Test"
-run = "cargo test --quiet"
-
-[tasks.up]
-description = "Upgrade dependencies"
 run = [
-    "cargo upgrade --incompatible --recursive --verbose",
-    "cargo update",
+    # format
+    "cargo fmt --all -- --check",
+    "dprint check",
+    # lint
+    "cargo clippy --all-targets --all-features",
+    # typos
+    "typos",
 ]
 
+[tasks.fmt]
+hide = true
+description = "Format the codebase"
+run = [
+    "cargo fmt --all",
+    "dprint fmt",
+]
+
+[tasks."cargo:test"]
+hide = true
+description = "Test"
+run = "cargo test --all-features"
+
+[tasks."test"]
+hide = true
+description = "Test"
+run = "cargo nextest run --all-features"
+
 [tasks.meta]
+hide = true
 description = "Dependency analysis"
 run = [
     "cargo +nightly udeps",
     "cargo audit",
     "cargo outdated --root-deps-only",
 ]
+
+[tasks.up]
+hide = true
+description = "Upgrade dependencies"
+run = [
+    "cargo upgrade --incompatible --recursive --verbose",
+    "cargo update",
+    "dprint config update",
+]
+
+[tasks.ci]
+# Some CI providers are slow; avoid pulling and compiling dependencies.
+# Use regular cargo tools.
+hide = true
+description = "Quality check"
+depends = "cargo:test"

@@ -10,62 +10,58 @@ shellcheck = "latest"
 
 [tasks.setup]
 hide = true
-confirm = 'Are you sure?'
+confirm = "⚠️ This command will alter your system. Continue?"
 description = "Setup the project"
 depends = ["hooks"]
 
-[tasks.qqq]
-# Deep, thorough checks. Should be run locally.
+[tasks.audit]
+# Extras, deep, thorough checks. Should be run locally.
 hide = true
 description = "Exhaustive quality check"
-depends = ["qa", "meta"]
-
-[tasks.qq]
-# Primarily used in CI.
-hide = true
-description = "Quality check"
-depends = ["qa", "update-example"]
-
-[tasks.qc]
-# Typically run before pushing. Hand curated.
-description = "Fix before check"
-depends = ["fix", "qq"]
-
-[tasks.qa]
-# Used in git hooks for fast feedback.
-hide = true
-description = "Quick quality check"
-depends = ["fmt-check", "lint"]
-run = "mise run --cd utils/snacks qa"
+depends = ["check", "meta"]
+run = "mise run --cd utils/snacks audit"
 
 [tasks.fix]
-hide = true
+# Apply automatic fixes, then check.
+# Intended for use before commit or push.
 description = "Enforce rules"
-depends = ["fmt", "lint"]
-run = "mise run --cd utils/snacks fix"
+depends = ["fmt", "check"]
+run = "mise run --cd utils/snacks verify"
+
+[tasks.check]
+# Quality check. Primarily used in CI.
+hide = true
+description = "Quality check"
+depends = ["lint"]
+run = "mise run --cd utils/snacks check"
+
+[tasks.lint]
+# Minimal, fast feedback checks.
+hide = true
+description = "Lint"
+run = [
+    # format
+    "dprint check",
+    "stylua . --allow-hidden --check",
+    # lint
+    "selene . --quiet",
+    # typos
+    "typos",
+
+    "mise run --cd utils/snacks lint",
+]
 
 [tasks.fmt]
 hide = true
 description = "Format"
 run = ["dprint fmt", "stylua . --allow-hidden"]
 
-[tasks.fmt-check]
-hide = true
-description = "Check formatting"
-run = ["dprint check", "stylua . --allow-hidden --check"]
-
-[tasks.lint]
-hide = true
-description = "Lint"
-depends = ["fmt-check", "lint-shell", "lint-nu"]
-run = "typos && selene . --quiet"
-
-[tasks.lint-shell]
+[tasks."lint:shell"]
 hide = true
 description = "Lint shell scripts"
 run = ["grep -lE '^#!.*(bash|sh)$' bin/* .mise/tasks/* setups/scripts/* | xargs -r shellcheck"]
 
-[tasks.lint-nu]
+[tasks."lint:nu"]
 hide = true
 description = "Lint Nushell code"
 run = "nu-lint bin/"
@@ -78,10 +74,22 @@ run = ["mise run --cd utils/snacks publish", "dotter deploy"]
 [tasks.up]
 hide = true
 description = "Upgrade dependencies"
-run = "dprint config update"
+run = [
+    "dprint config update",
+    "mise run --cd utils/snacks up",
+]
 
-[tasks.meta]
+[tasks."check:extras"]
 hide = true
 interactive = true
 description = "Dependency analysis"
-run = ["pnpx actions-up", "actionlint", "zizmor .github/workflows/*"]
+run = [
+    # Dependencies
+    "pnpx actions-up",
+
+    # GitHub CI
+    "actionlint",
+    "zizmor .github/workflows/*",
+
+    "mise run --cd utils/snacks 'check:extras'",
+]

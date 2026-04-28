@@ -3,17 +3,12 @@ depends = ["global"]
 
 #
 # Shell
-[shell.files]
+[bash.files]
 # Will always be the default shell,
 # otherwise cause unpopular app to breaks!
 "shells/bash/bashrc" = "~/.bashrc"
 "shells/bash/exports" = "~/.exports"
 "shells/bash/bash_profile" = "~/.bash_profile"
-
-[shell.variables]
-# defined in local variables
-install = "echo not defined"
-uninstall = "echo not defined"
 
 [fish]
 depends = ["shell"]

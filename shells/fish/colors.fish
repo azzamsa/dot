@@ -35,3 +35,32 @@ if [ $theme = catppuccin_mocha ]
     set -g pink    "f5c2e7"  # 13.75:1, #f5c2e7
     set -g comment "9399b2"  # 7.43:1   #9399b2
 end
+
+# Dracula
+# https://draculatheme.com/
+if [ $theme = dracula ]
+    set -g red     "ff5555"  # 6.68:1   #ff5555
+    set -g green   "50fa7b"  # 15.30:1  #50fa7b
+    set -g yellow  "f1fa8c"  # 18.79:1  #f1fa8c
+    set -g orange  "ffb86c"  # 12.32:1  #ffb86c
+    set -g purple  "bd93f9"  # 8.71:1   #bd93f9
+    set -g cyan    "8be9fd"  # 15.17:1  #8be9fd
+    set -g pink    "ff79c6"  # 8.80:1   #ff79c6
+    # set -g comment "6272a4"  # 4.46:1   #6272a4
+    set -g comment "9399b2"  # 7.43:1   #9399b2
+end
+
+# GitHub Dark High Contrast
+# https://github.com/primer/github-vscode-theme
+if [ $theme = github_dark ]
+    set -g red     "ff9492"  # 9.90:1   #ff9492
+    set -g green   "72f088"  # 14.54:1  #72f088
+    set -g yellow  "f0b72f"  # 11.52:1  #f0b72f
+    set -g orange  "ffb757"  # 12.16:1  #ffb757
+    set -g purple  "dbb7ff"  # 12.23:1  #dbb7ff
+    # set -g cyan    "91cbff"  # 12.19:1  #91cbff
+    set -g cyan    "79c0ff"  # 9.73:1   #79c0ff  (GitHub uses blue here)
+    set -g pink    "ff7eb6"  # 8.91:1   #ff7eb6
+    set -g comment "9198a1"  # 7.21:1   #9198a1
+end
+

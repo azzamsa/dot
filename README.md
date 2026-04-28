@@ -13,10 +13,6 @@ My personal .dotfiles 🗃️
 
 ---
 
-## Current Machine
-
-- Debian + GNOME
-
 Refer to [local.toml](.dotter/local.example.toml) to see the tools I'm currently using.
 
 ## Usage

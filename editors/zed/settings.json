@@ -1,5 +1,26 @@
 {
-  "buffer_font_family": "Maple Mono NF",
+  "edit_predictions": {
+    "provider": "zed",
+  },
+  "project_panel": {
+    "dock": "left",
+  },
+  "outline_panel": {
+    "dock": "left",
+  },
+  "collaboration_panel": {
+    "dock": "left",
+  },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "git_panel": {
+    "tree_view": true,
+    "dock": "left",
+  },
+  "buffer_font_family": "IoskeleyMono Nerd Font",
   "vim_mode": true,
   "helix_mode": false,
   "vim": {
@@ -32,31 +53,32 @@
   "theme": {
     "mode": "dark",
     "light": "Modus Operandi Tinted",
-    "dark": "Tokyo Black",
+    "dark": "Modus Vivendi Tinted",
   },
   "ui_font_features": {
     "calt": true,
   },
   "theme_overrides": {
-    "GitHub Dark": {
-      // Editor
-      "editor.background": "#000000",
-    },
     "Modus Vivendi": {
-      // Tab
       "tab_bar.background": "#000000",
       "tab.inactive_background": "#000000",
       "tab.active_background": "#0d0e1c", // bg-main
     },
     "Modus Vivendi Tinted": {
-      // Editor
+      "title_bar.background": "#000000",
+      "status_bar.background": "#000000",
+      "panel.background": "#000000",
       "editor.background": "#000000",
-      "editor.gutter.background": "#0d0e1c", // bg-main
-      "editor.active_line_number": "#ff66ff", // magenta-intense
-      // Tab
+      "editor.gutter.background": "#0d0f12",
       "tab_bar.background": "#000000",
       "tab.inactive_background": "#000000",
-      "tab.active_background": "#0d0e1c", // bg-main
+      "tab.active_background": "#0d0f12",
+    },
+    "GitHub Dark": {
+      "editor.background": "#000000",
+    },
+    "Catppuccin Mocha": {
+      "editor.background": "#000000",
     },
   },
   "auto_install_extensions": {

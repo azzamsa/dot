@@ -5,9 +5,11 @@ if [ -f "$HOME/.exports" ]; then
 	source "$HOME/.exports"
 fi
 
+eval "$(atuin init bash)"
 eval "$(starship init bash)"
-eval "$(fnm env --use-on-cd)"
+eval "$(zoxide init bash)"
 eval "$(mise activate bash)"
+
 . "$HOME/.local/share/cargo/env"
 
 #

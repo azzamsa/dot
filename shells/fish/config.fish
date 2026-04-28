@@ -56,9 +56,9 @@ alias x scratch
 # Apps
 #
 
-zoxide init --cmd cd fish | source
-starship init fish | source
 atuin init fish | source
+starship init fish | source
+zoxide init --cmd cd fish | source
 
 if status is-interactive
     mise activate fish | source

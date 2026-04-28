@@ -1,5 +1,8 @@
 [tools]
 "cargo:cargo-nextest" = "latest"
+"cargo:cargo-udeps" = "latest"
+"cargo:cargo-audit" = "latest"
+"cargo:cargo-outdated" = "latest"
 
 [tasks.dev]
 interactive = true
@@ -10,9 +13,9 @@ run = ["bacon", "mise run verify"]
 # Extras, deep, thorough checks. Should be run locally.
 hide = true
 description = "Exhaustive quality check"
-depends = ["check", "meta"]
+depends = "check"
 
-[tasks.verify]
+[tasks.fix]
 # Apply automatic fixes, then check.
 # Intended for use before commit or push.
 description = "Enforce rules"
@@ -56,11 +59,16 @@ hide = true
 description = "Test"
 run = "cargo nextest run --all-features"
 
-[tasks.meta]
+[tasks.publish]
+alias = "p"
+description = "Publish"
+depends = ["lint", "test"]
+
+[tasks."audit:extras"]
 hide = true
 description = "Dependency analysis"
 run = [
-    "cargo +nightly udeps",
+    "cargo +nightly udeps --all-targets",
     "cargo audit",
     "cargo outdated --root-deps-only",
 ]

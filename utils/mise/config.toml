@@ -1,7 +1,8 @@
 [settings]
-color_theme = "charm"
+color_theme = "catppuccin"
 
 [tools]
+"cargo:dprint" = "latest"
 "cargo:nu-lint" = "latest"
 pnpm = "latest"
 uv = "latest"

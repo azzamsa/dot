@@ -1,3 +1,11 @@
+experimental_monorepo_root = true
+
+[monorepo]
+config_roots = ["utils/snacks"]
+
+[env]
+MISE_EXPERIMENTAL = "1"
+
 [tools]
 stylua = "latest"
 "aqua:Kampfkarren/selene" = "latest"
@@ -18,27 +26,25 @@ depends = ["hooks"]
 # Extras, deep, thorough checks. Should be run locally.
 hide = true
 description = "Exhaustive quality check"
-depends = ["check", "meta"]
-run = "mise run --cd utils/snacks audit"
+depends = ["check", "//:audit:*", "//utils/snacks:audit"]
 
 [tasks.fix]
 # Apply automatic fixes, then check.
 # Intended for use before commit or push.
 description = "Enforce rules"
-depends = ["fmt", "check"]
-run = "mise run --cd utils/snacks verify"
+depends = ["fmt", "check", "//utils/snacks:fix"]
 
 [tasks.check]
 # Quality check. Primarily used in CI.
 hide = true
 description = "Quality check"
-depends = ["lint"]
-run = "mise run --cd utils/snacks check"
+depends = ["lint", "//utils/snacks:check"]
 
 [tasks.lint]
 # Minimal, fast feedback checks.
 hide = true
 description = "Lint"
+depends = ["//:lint:*", "//utils/snacks:lint"]
 run = [
     # format
     "dprint check",
@@ -47,8 +53,6 @@ run = [
     "selene . --quiet",
     # typos
     "typos",
-
-    "mise run --cd utils/snacks lint",
 ]
 
 [tasks.fmt]
@@ -59,7 +63,7 @@ run = ["dprint fmt", "stylua . --allow-hidden"]
 [tasks."lint:shell"]
 hide = true
 description = "Lint shell scripts"
-run = ["grep -lE '^#!.*(bash|sh)$' bin/* .mise/tasks/* setups/scripts/* | xargs -r shellcheck"]
+run = "grep -lE '^#!.*(bash|sh)$' bin/* .mise/tasks/* setups/scripts/* | xargs -r shellcheck"
 
 [tasks."lint:nu"]
 hide = true
@@ -69,27 +73,24 @@ run = "nu-lint bin/"
 [tasks.publish]
 alias = "p"
 description = "Publish configs and binaries"
-run = ["mise run --cd utils/snacks publish", "dotter deploy"]
+depends = ["//utils/snacks:publish"]
+run = "dotter deploy"
 
 [tasks.up]
 hide = true
 description = "Upgrade dependencies"
-run = [
-    "dprint config update",
-    "mise run --cd utils/snacks up",
-]
+depends = ["//utils/snacks:up"]
+run = "dprint config update"
 
-[tasks."check:extras"]
+[tasks."audit:extras"]
 hide = true
 interactive = true
 description = "Dependency analysis"
+depends = ["//utils/snacks:audit:extras"]
 run = [
     # Dependencies
     "pnpx actions-up",
-
     # GitHub CI
     "actionlint",
     "zizmor .github/workflows/*",
-
-    "mise run --cd utils/snacks 'check:extras'",
 ]

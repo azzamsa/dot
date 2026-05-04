@@ -2,7 +2,7 @@ includes = [".dotter/include/fedora.toml"]
 
 packages = [
     # Shell
-    "shell",
+    "bash",
     "fish",
     "nushell",
 
@@ -48,7 +48,8 @@ packages = [
 
 [variables]
 editor = "nvim"
-terminal_font_size = 21.5
-theme = "tokyo_black"
-font = "IoskeleyMono Nerd Font"
+terminal_font_size = 22.5
+theme = "modus_vivendi_tinted"
+font = "0xProto"
+terminal_font = "0xProto"
 atuin_server = "https://shell.me.com"

@@ -44,7 +44,7 @@ depends = ["lint", "//utils/snacks:check"]
 # Minimal, fast feedback checks.
 hide = true
 description = "Lint"
-depends = ["//:lint:*", "//utils/snacks:lint"]
+depends = ["update-example", "//:lint:*", "//utils/snacks:lint"]
 run = [
     # format
     "dprint check",
@@ -73,7 +73,7 @@ run = "nu-lint bin/"
 [tasks.publish]
 alias = "p"
 description = "Publish configs and binaries"
-depends = ["//utils/snacks:publish"]
+depends = ["lint", "//utils/snacks:publish"]
 run = "dotter deploy"
 
 [tasks.up]

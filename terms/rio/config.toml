@@ -1,8 +1,11 @@
+theme = "dracula"
+
 [cursor]
 blinking = true
 shape = 'beam'
 
 [fonts]
 size = 32
-family = "Maple Mono NF"
+family = "{{ terminal_font }}"
 features = []
+fonts.extras = [{ family = "Noto Color Emoji" }]

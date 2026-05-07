@@ -7,19 +7,19 @@ local M = {}
 wezterm.on("update-right-status", function(window, _)
     local name = window:active_key_table()
     if name then
-        name = "⌛" .. name
+        window:set_right_status("⌛" .. name)
     end
-    window:set_right_status(name or "")
 end)
 
 -- Copy text under selection then clear the selection.
 function M.copy_selection(window, pane)
     local has_selection = window:get_selection_text_for_pane(pane) ~= ""
     if has_selection then
-        -- Copy to the clipboard too
         window:perform_action(act.CopyTo("ClipboardAndPrimarySelection"), pane)
-        -- window:perform_action(act.ClearSelection, pane)
         window:set_right_status("📋 Copied to clipboard")
+        wezterm.time.call_after(3, function()
+            window:set_right_status("")
+        end)
     end
 end
 

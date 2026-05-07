@@ -6,7 +6,10 @@ function M.append(config)
     local options = {
         default_cursor_style = "BlinkingBar", -- default: 'SteadyBlock'
         cursor_thickness = 2,
-        font_size = 22, -- default: 12.0
+        -- stylua: ignore start
+        -- selene: allow(undefined_variable)
+        font_size = {{ terminal_font_size }}, -- default: 12.0
+        -- stylua: ignore end
         font = wezterm.font_with_fallback({ "{{ font }}", "Noto Color Emoji" }),
 
         enable_scroll_bar = true, --default: false
@@ -14,22 +17,23 @@ function M.append(config)
 
         -- Padding
         -- Tab bar can't have padding https://github.com/wez/wezterm/issues/3077
-        window_padding = { left = 10, right = 10, top = 0, bottom = 0 },
+        window_padding = { left = 10, right = 10, top = 5, bottom = 10 },
 
         -- Tab Bar Options
         -- GTK tab-bar is looking awful.
         use_fancy_tab_bar = false, -- default: true
 
         -- Hiding the tab-bar also means hiding the right status
-        -- Means you lose viseal feedback of sticky keys.
+        -- Means you lose visual feedback of sticky keys.
         -- It is better to set it to `false`
-        hide_tab_bar_if_only_one_tab = true, -- default: false
+        hide_tab_bar_if_only_one_tab = false, -- default: false
 
         inactive_pane_hsb = {
             saturation = 0.70,
             brightness = 0.70,
         },
 
+        window_decorations = "RESIZE", -- disable the title bar
         window_frame = {
             -- The size of the font in the tab bar.
             font_size = 14.0, -- default: 12.0

@@ -12,7 +12,6 @@ core=(
   dev.vencord.Vesktop
   io.github.flattool.Warehouse
   net.nokyan.Resources
-  org.keepassxc.KeePassXC
   org.mozilla.Thunderbird
   io.github.AllanChain.sane-break
 )
@@ -51,6 +50,7 @@ utils=(
   org.videolan.VLC
   io.gitlab.news_flash.NewsFlash
   us.zoom.Zoom
+  org.localsend.localsend_app
 )
 
 # Combine selected tiers

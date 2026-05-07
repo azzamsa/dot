@@ -18,8 +18,12 @@ pkgs=(
   # core
   dotter
   nu
+  toor
 
   # Utils
+  gitu
+  bilal
+  kondo
 )
 
 for pkg in "${pkgs[@]}"; do

@@ -6,6 +6,9 @@ sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/t
 
 # cores
 cores=(
+  niri dms
+  bibata-cursor-theme
+  satty
   fish starship atuin eza
   zoxide bat yazi fd-find
   ghostty

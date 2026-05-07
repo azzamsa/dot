@@ -43,6 +43,12 @@ depends = ["shell"]
 [kitty.files]
 "terms/kitty" = "~/.config/kitty"
 
+[rio.files]
+"terms/rio" = "~/.config/rio"
+
+[foot.files]
+"terms/foot" = "~/.config/foot"
+
 #
 # Fetchers
 [fastfetch.files]

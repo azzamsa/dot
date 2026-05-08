@@ -36,11 +36,11 @@ M.color_schemes = {
             background = "#000000",
         },
     },
-    ["tokyonight_moon"] = {
+    ["tokyo_black"] = {
         ansi = { "#9399b2", "#ff757f", "#c3e88d", "#ffc777", "#82aaff", "#c099ff", "#86e1fc", "#ffffff" },
         brights = { "#9399b2", "#ff757f", "#c3e88d", "#ffc777", "#82aaff", "#c099ff", "#86e1fc", "#ffffff" },
-        cursor_bg = "#86e1fc",
-        scrollbar_thumb = "#1d2235",
+        cursor_bg = "#c8d3f5",
+        scrollbar_thumb = "#2f334d",
         selection_bg = "#1e1e2e",
     },
 }

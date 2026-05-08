@@ -1,5 +1,5 @@
 themes {
-    tokyonight_moon {
+    tokyo_black {
         text_unselected {
             base 200 211 245
             background 0   0   0

@@ -1,0 +1,12 @@
+include "autostart.kdl"
+include "input.kdl"
+include "output.kdl"
+include "layout.kdl"
+include "binds.kdl"
+
+include "dms/binds.kdl"
+include "dms/alttab.kdl"
+include "dms/colors.kdl"
+include "dms/layout.kdl"
+
+include "rules.kdl"

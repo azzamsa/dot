@@ -1,0 +1,41 @@
+spawn-at-startup "ghostty"
+spawn-at-startup "emacs"
+spawn-at-startup "flatpak" "run" "app.zen_browser.zen"
+// bg
+spawn-at-startup "flatpak" "run" "io.github.AllanChain.sane-break"
+spawn-at-startup "flatpak" "run" "--command=pika-backup-monitor" "org.gnome.World.PikaBackup"
+spawn-at-startup "~/.local/bin/activitywatch/aw-qt"
+
+// Named workspaces
+workspace "do"
+workspace "re"
+workspace "mi"
+
+// do
+window-rule {
+    match app-id="com.mitchellh.ghostty" at-startup=true
+    open-on-workspace "do"
+    open-focused false
+}
+window-rule {
+    match app-id="emacs" at-startup=true
+    open-on-workspace "do"
+    open-focused false
+}
+window-rule {
+    match app-id="app.zen_browser.zen" at-startup=true
+    open-on-workspace "do"
+    open-focused false
+}
+
+// re
+window-rule {
+    match app-id="Silverbullet-app" at-startup=true
+    open-on-workspace "re"
+    open-focused false
+}
+window-rule {
+    match app-id="vesktop" at-startup=true
+    open-on-workspace "re"
+    open-focused false
+}

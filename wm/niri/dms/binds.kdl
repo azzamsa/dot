@@ -1,0 +1,5 @@
+binds {
+  Mod+D hotkey-overlay-title="Run an Application: spotlight" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
+  Super+Alt+L hotkey-overlay-title="Lock the Screen: lock" { spawn "dms" "ipc" "call" "lock" "lock"; }
+  Super+Y hotkey-overlay-title="Clipboard History" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
+}

@@ -3,6 +3,8 @@ depends = ["global"]
 
 #
 # Shell
+#
+
 [bash.files]
 # Will always be the default shell,
 # otherwise cause unpopular app to breaks!
@@ -31,6 +33,8 @@ depends = ["shell"]
 
 #
 # Terminals
+#
+
 [wezterm.files]
 "terms/wezterm" = "~/.config/wezterm"
 
@@ -51,6 +55,8 @@ depends = ["shell"]
 
 #
 # Fetchers
+#
+
 [fastfetch.files]
 "fetchers/fastfetch" = "~/.config/fastfetch"
 
@@ -59,11 +65,15 @@ depends = ["shell"]
 
 #
 # Scripts
+#
+
 [bin.files]
 "bin" = "~/.local/bin"
 
 #
 # Editor
+#
+
 [neovide.files]
 "editors/neovide" = "~/.config/neovide"
 
@@ -75,6 +85,8 @@ depends = ["shell"]
 
 #
 # VCS
+#
+
 [git.files]
 "vcs/git" = "~/.config/git"
 
@@ -83,6 +95,8 @@ depends = ["shell"]
 
 #
 # Utils
+#
+
 [fontconfig.files]
 "utils/fontconfig" = "~/.config/fontconfig"
 
@@ -110,17 +124,32 @@ depends = ["shell"]
 [mise.files]
 "utils/mise" = "~/.config/mise"
 
+[sane-break.files]
+"utils/sane-break/SaneBreak.ini" = "~/.var/app/io.github.AllanChain.sane-break/config/SaneBreak/SaneBreak.ini"
+
+[satty.files]
+"utils/satty" = "~/.config/satty"
+
 #
 # Browsers
+#
+
 [tridactyl.files]
 "browsers/tridactyl" = "~/.config/tridactyl"
 
 #
 # Programming Languages
+#
+
 [cargo.files]
 "langs/cargo/config.toml" = "~/.local/share/cargo/config.toml"
 
 #
-# utils
-[sane-break.files]
-"utils/sane-break/SaneBreak.ini" = "~/.var/app/io.github.AllanChain.sane-break/config/SaneBreak/SaneBreak.ini"
+# Window Managers
+#
+
+[niri.files]
+"wm/niri" = "~/.config/niri"
+
+[dms.files]
+"wm/dms" = "~/.config/DankMaterialShell"

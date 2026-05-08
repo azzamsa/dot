@@ -63,7 +63,7 @@ run = ["dprint fmt", "stylua . --allow-hidden"]
 [tasks."lint:shell"]
 hide = true
 description = "Lint shell scripts"
-run = "grep -lE '^#!.*(bash|sh)$' bin/* .mise/tasks/* setups/scripts/* | xargs -r shellcheck"
+run = "grep -lE '^#!.*\\b(bash|sh)$' bin/* .mise/tasks/* setups/scripts/* | xargs -r shellcheck"
 
 [tasks."lint:nu"]
 hide = true

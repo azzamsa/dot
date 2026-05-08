@@ -10,9 +10,11 @@ packages = [
     "wezterm",
     "kitty",
     "ghostty",
+    "rio",
+    "foot",
     "starship",
     "atuin",
-    # "zellij",
+    "zellij",
 
     # Fetchers
     "fastfetch",
@@ -38,18 +40,23 @@ packages = [
     "jjui",
     # "sane-break" # sane-break doesn't work with symlink
     "mise",
+    "satty",
 
     # Programming Languages
     "cargo",
 
     # Browsers
     # "tridactyl",
+
+    # Window Managers
+    "niri",
+    "dms",
 ]
 
 [variables]
 editor = "nvim"
-terminal_font_size = 22.5
-theme = "modus_vivendi_tinted"
-font = "0xProto"
-terminal_font = "0xProto"
+terminal_font_size = 23
+theme = "tokyo_black"
+font = "0xProto Nerd Font"
+terminal_font = "0xProto Nerd Font"
 atuin_server = "https://shell.me.com"

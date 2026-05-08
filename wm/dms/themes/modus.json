@@ -1,0 +1,42 @@
+{
+  "dark": {
+    "name": "Modus Vivendi",
+    "primary": "#ffffff",
+    "primaryText": "#000000",
+    "primaryContainer": "#303030",
+    "secondary": "#feacd0",
+    "surface": "#000000",
+    "surfaceText": "#ffffff",
+    "surfaceVariant": "#000000",
+    "surfaceVariantText": "#6ae4b9",
+    "surfaceTint": "#989898",
+    "background": "#000000",
+    "backgroundText": "#ffffff",
+    "outline": "#646464",
+    "surfaceContainer": "#000000",
+    "surfaceContainerHigh": "#1e1e2e",
+    "error": "#ff5f59",
+    "warning": "#fec43f",
+    "info": "#6ae4b9"
+  },
+  "light": {
+    "name": "Modus Operandi Tinted",
+    "primary": "#354fcf",
+    "primaryText": "#ffffff",
+    "primaryContainer": "#e9ddd5",
+    "secondary": "#531ab6",
+    "surface": "#ede0cf",
+    "surfaceText": "#000000",
+    "surfaceVariant": "#e9ddd5",
+    "surfaceVariantText": "#584141",
+    "surfaceTint": "#354fcf",
+    "background": "#faf0da",
+    "backgroundText": "#000000",
+    "outline": "#9f9690",
+    "surfaceContainer": "#ede0cf",
+    "surfaceContainerHigh": "#d5c9ba",
+    "error": "#a60000",
+    "warning": "#884900",
+    "info": "#005e8b"
+  }
+}

@@ -54,6 +54,7 @@ packages = [
 ]
 
 [variables]
+user = "strider"
 editor = "nvim"
 terminal_font_size = 23
 theme = "tokyo_black"

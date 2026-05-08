@@ -1,6 +1,10 @@
-#!/usr/bin/env bash
-#MISE description="Keep example up-to-date"
-#MISE hide=true
+#!/usr/bin/env nu
+# MISE description="Keep example up-to-date"
+# MISE hide=true
 
 cp -f .dotter/local.toml .dotter/local.example.toml
-sed -i 's|atuin_server = ".*"|atuin_server = "https://shell.me.com"|' .dotter/local.example.toml
+
+open .dotter/local.example.toml --raw
+| str replace --regex 'atuin_server = ".*"' 'atuin_server = "https://shell.me.com"'
+| str replace --regex 'user = ".*"' 'user = "strider"'
+| save --force .dotter/local.example.toml

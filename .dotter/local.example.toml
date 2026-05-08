@@ -10,7 +10,9 @@ packages = [
     "wezterm",
     "kitty",
     "ghostty",
-    "rio",
+    "alacritty",
+    # "rio",
+
     "foot",
     "starship",
     "atuin",

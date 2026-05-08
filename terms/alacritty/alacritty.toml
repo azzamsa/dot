@@ -16,26 +16,14 @@ shape = "Beam" # Default: "Block"
 blinking = "Always" # Default: "Off"
 
 [font]
-size = 22.5
-
-[font.bold]
-family = "custom-font"
-style = "Heavy"
-
-[font.bold_italic]
-family = "custom-font"
-style = "Heavy Italic"
-
-[font.italic]
-family = "custom-font"
-style = "Medium Italic"
+size = {{ terminal_font_size }}
 
 [font.normal]
-family = "custom-font"
-style = "Medium"
+family = "{{ terminal_font }}"
+style = "Regular"
 
 [window]
-decorations = "buttonless"
+decorations = "None"
 title = ""
 # Don't mess with my terminal title!
 dynamic_title = false # Default: true
@@ -50,3 +38,7 @@ regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|g
 [hints.enabled.mouse]
 enabled = true
 mods = "None"
+
+[terminal.shell]
+program = "/usr/bin/fish"
+args = ["--command=zellij"]

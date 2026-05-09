@@ -7,7 +7,6 @@
 const SELECTED_SYSTEM_PACKAGES = [
     fish
     starship
-    atuin
     eza
     zoxide
     bat
@@ -15,9 +14,9 @@ const SELECTED_SYSTEM_PACKAGES = [
     fd-find
     fzf
     ghostty
-    emacs
     zed
     zed-cli
+    neovide
     podman-compose
     mold
     fastfetch
@@ -33,6 +32,7 @@ const SELECTED_FLATPAK_PACKAGES = [
     com.bilingify.readest
     it.mijorus.gearlever
     org.gnome.World.PikaBackup
+    io.github.alainm23.planify
 ]
 
 const SELECTED_CARGO_PACKAGES = [

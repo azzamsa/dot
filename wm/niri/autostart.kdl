@@ -1,3 +1,4 @@
+spawn-at-startup "qs" "-c" "noctalia-shell"
 spawn-at-startup "ghostty"
 spawn-at-startup "emacs"
 spawn-at-startup "flatpak" "run" "app.zen_browser.zen"

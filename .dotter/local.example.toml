@@ -59,7 +59,9 @@ packages = [
 user = "strider"
 editor = "nvim"
 terminal_font_size = 23
-theme = "tokyo_black"
-font = "0xProto Nerd Font"
-terminal_font = "0xProto Nerd Font"
 atuin_server = "https://shell.me.com"
+theme = "tokyo_black"
+
+# fonts: 0xProto Nerd Font
+font = "Maple Mono NF"
+terminal_font = "Maple Mono NF"

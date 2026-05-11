@@ -1,0 +1,46 @@
+#!/usr/bin/env nu
+
+# Patch the latest systemd-boot entry to enable S3 suspend on ASRock Deskmini X300.
+# Inserts `initrd /acpi_dsdt_override.cpio` before the first `initrd` line.
+# See: https://github.com/lorenz/asrock-x300-s3-fix
+
+let entries_dir = "/boot/loader/entries"
+
+let latest = (
+    sudo ls $entries_dir
+    | lines
+    | where { |f| $f ends-with .conf and $f !~ rescue }
+    | sort
+    | last
+)
+
+let path = $"($entries_dir)/($latest)"
+let bak = $"($path).bak"
+
+let lines = (sudo cat $path | lines)
+
+let already_patched = ($lines | any {|l| $l | str contains acpi_dsdt_override })
+
+if $already_patched {
+    print "Already patched, skipping."
+} else {
+    sudo cp $path $bak
+
+    let first_initrd = ($lines | enumerate | where { |it| $it.item | str starts-with initrd } | first).index
+    let patched = (
+        $lines
+        | enumerate
+        | each {|it|
+            if $it.index == $first_initrd {
+                ["initrd /acpi_dsdt_override.cpio" $it.item]
+            } else {
+                [$it.item]
+            }
+        }
+        | flatten
+        | str join "\n"
+    )
+    $patched | sudo tee $path
+    print $"Patched ($latest)"
+    sudo diff $bak $path | delta
+}

@@ -3,9 +3,13 @@
   "display": {
     "pipe": true,
     "showErrors": true,
-    "noBuffer": true,
+    "noBuffer": true
   },
   "logo": null,
-  // fastfetch --list-modules
-  "modules": ["os", "de", "wm",],
+  "modules": [
+    "os",
+    "kernel",
+    "gpu",
+    "wm",
+  ]
 }

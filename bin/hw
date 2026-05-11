@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-fastfetch -c ~/.config/fastfetch/themes/ci.jsonc
+# Show hardware info, then copy to clipboard
+fastfetch -c ~/.config/fastfetch/themes/ci.jsonc | tee /dev/tty | wl-copy

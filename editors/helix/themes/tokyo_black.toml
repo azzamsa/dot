@@ -1,0 +1,17 @@
+inherits = "tokyonight_moon"
+
+[palette]
+# ── Base ──────────────────────────────────────────
+bg = "#000000"
+bg-inlay = "#0a0a0a"
+bg-selection = "#0d0e1c"
+bg-menu = "#000000"
+bg-focus = "#0d1a3a"
+border = "#0d0e1c"
+border-highlight = "#589ed7"
+
+fg = "#ffffff"
+fg-dark = "#c8d3f5"
+fg-gutter = "#3b4261"
+fg-linenr = "#737aa2"
+fg-selected = "#0d0e1c"

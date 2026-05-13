@@ -6,8 +6,11 @@ binds {
     Mod+Y hotkey-overlay-title="Clipboard Manager" {
         spawn "dms" "ipc" "call" "clipboard" "toggle";
     }
-    Mod+M hotkey-overlay-title="Task Manager" {
-        spawn "dms" "ipc" "call" "processlist" "focusOrToggle";
+    Mod+P hotkey-overlay-title="Clipboard Manager" {
+        spawn "dms" "ipc" "call" "clipboard" "toggle";
+    }
+    Alt+Print hotkey-overlay-title="Screenshot" {
+        spawn-sh "dms screenshot --no-file --stdout | satty --filename -";
     }
 
     // Security

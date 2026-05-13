@@ -1,78 +1,50 @@
 binds {
-    // Open/close the Overview: a zoomed-out view of workspaces and windows.
-    // You can also move the mouse into the top-left hot corner,
-    // or do a four-finger swipe up on a touchpad.
-    Mod+L repeat=false { toggle-overview; }
     Mod+U repeat=false { toggle-overview; }
-    // Mod+TouchpadSwipeUp   repeat=false { toggle-overview; }
     Mod+K repeat=false { close-window; }
 
-    Mod+N     { focus-column-left; }
-    Mod+H     { focus-column-right; }
-    Mod+D     { focus-workspace-up; }
-    Mod+T     { focus-workspace-down; }
-    Mod+Shift+D  { focus-window-down; }
-    Mod+Shift+T  { focus-window-up; }
-    // mirror
-    Mod+A     { focus-column-left; }
-    Mod+I     { focus-column-right; }
-    Mod+O     { focus-workspace-up; }
-    Mod+E     { focus-workspace-down; }
-    Mod+Shift+O  { focus-window-down; }
-    Mod+Shift+E  { focus-window-up; }
+    // or hot corner, or do a four-finger swipe up on a touchpad.
+    Mod+L repeat=false { toggle-overview; }
 
-    Mod+Left  { focus-column-left; }
-    Mod+Down  { focus-window-down; }
+    //
+    // Column & Window
+    //
+    Mod+A        { focus-column-left; }
+    Mod+I        { focus-column-right; }
+    Mod+Left     { focus-column-left; }
+    Mod+Right    { focus-column-right; }
+    // mouse with side scroll wheel
+    Mod+WheelScrollRight      cooldown-ms=150  { focus-column-right; }
+    Mod+WheelScrollLeft       cooldown-ms=150  { focus-column-left; }
+    // I don't have fancy mouse
+    Mod+Shift+WheelScrollDown cooldown-ms=150  { focus-column-right; }
+    Mod+Shift+WheelScrollUp   cooldown-ms=150  { focus-column-left; }
 
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
 
-    Mod+Page_Down      { focus-workspace-down; }
-    Mod+Page_Up        { focus-workspace-up; }
-    Mod+Up    { focus-workspace-up; }
-    Mod+Right { focus-workspace-down; }
+    // I rarely split windows
+    Mod+Ctrl+O     { focus-window-down; }
+    Mod+Ctrl+E     { focus-window-up; }
+    Mod+Ctrl+Up    { focus-window-down; }
+    Mod+Ctrl+Down  { focus-window-up; }
 
-    // You can bind mouse wheel scroll ticks using the following syntax.
-    // These binds will change direction based on the natural-scroll setting.
     //
-    // To avoid scrolling through workspaces really fast, you can use
-    // the cooldown-ms property. The bind will be rate-limited to this value.
-    // You can set a cooldown on any bind, but it's most useful for the wheel.
-    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+    // Workspace
+    //
+    Mod+O        { focus-workspace-up; }
+    Mod+E        { focus-workspace-down; }
+    Mod+Up       { focus-workspace-up; }
+    Mod+Down     { focus-workspace-down; }
     Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
 
-    Mod+WheelScrollRight     cooldown-ms=150 { focus-column-right; }
-    Mod+WheelScrollLeft      cooldown-ms=150 { focus-column-left; }
-    // I don't need fancy mouse
-    Mod+Shift+WheelScrollDown  cooldown-ms=150    { focus-column-right; }
-    Mod+Shift+WheelScrollUp    cooldown-ms=150    { focus-column-left; }
-
-    // Similarly, you can bind touchpad scroll "ticks".
-    // Touchpad scrolling is continuous, so for these binds it is split into
-    // discrete intervals.
-    // These binds are also affected by touchpad's natural-scroll, so these
-    // example binds are "inverted", since we have natural-scroll enabled for
-    // touchpads by default.
-    Mod+TouchpadScrollDown { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+"; }
-    Mod+TouchpadScrollUp   { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02-"; }
-
-    // You can refer to workspaces by index. However, keep in mind that
-    // niri is a dynamic workspace system, so these commands are kind of
-    // "best effort". Trying to refer to a workspace index bigger than
-    // the current workspace count will instead refer to the bottommost
-    // (empty) workspace.
-    //
-    // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
-    // will all refer to the 3rd workspace.
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
     Mod+3 { focus-workspace 3; }
+    // I usually use the mouse
     Mod+Ctrl+1 { move-column-to-workspace 1; }
     Mod+Ctrl+2 { move-column-to-workspace 2; }
     Mod+Ctrl+3 { move-column-to-workspace 3; }
-
-    // Alternatively, there are commands to move just a single window:
-    // Mod+Ctrl+1 { move-window-to-workspace 1; }
 
     // Switches focus between the current and the previous workspace.
     // Mod+Tab { focus-workspace-previous; }
@@ -127,7 +99,7 @@ binds {
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
     // rather than stacked on top of each other.
-    Mod+W { toggle-column-tabbed-display; }
+    Mod+T { toggle-column-tabbed-display; }
 
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
@@ -137,6 +109,12 @@ binds {
 
     // Hints
     Mod+G { spawn "sh" "-c" "wl-kbptr -o modes=tile,click"; }
+
+    //
+    // Media
+    //
+    Mod+TouchpadScrollDown { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+"; }
+    Mod+TouchpadScrollUp   { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02-"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
@@ -159,4 +137,4 @@ binds {
     // but you need to manually put each argument in separate "" quotes.
     XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
-}
+    }

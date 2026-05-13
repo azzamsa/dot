@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Enable fastestmirror + bump parallel downloads
+sudo dnf config-manager setopt fastestmirror=True max_parallel_downloads=10
 # Upgrade the OS
 sudo dnf update -y
 sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
@@ -17,7 +19,7 @@ cores=(
 # editors
 editors=(
   emacs enchant2-devel
-  vim neovim
+  vim
   zed
 )
 

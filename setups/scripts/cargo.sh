@@ -24,6 +24,10 @@ pkgs=(
   gitu
   bilal
   kondo
+
+  # Terra can't catch up
+  atuin
+  bob-nvim
 )
 
 for pkg in "${pkgs[@]}"; do

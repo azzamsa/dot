@@ -16,7 +16,6 @@ const SELECTED_SYSTEM_PACKAGES = [
     ghostty
     zed
     zed-cli
-    neovide
     podman-compose
     mold
     fastfetch

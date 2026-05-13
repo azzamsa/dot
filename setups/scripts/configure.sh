@@ -11,9 +11,11 @@ sudo modprobe i2c-dev
 #
 # Fish Completions
 #
-atuin gen-completions --shell fish --out-dir "$HOME/.config/fish/completions/"
-just --completions fish > "$HOME/.config/fish/completions/just.fish"
-rg --generate complete-fish > "$HOME/.config/fish/completions/rg.fish"
+mkdir -p ~/.config/fish/completions
+atuin gen-completions --shell fish --out-dir ~/.config/fish/completions/
+just --completions fish > ~/.config/fish/completions/just.fish
+rg --generate complete-fish > ~/.config/fish/completions/rg.fish
+bob complete fish > ~/.config/fish/completions/bob.fish
 
 #
 # Remove bloatware

@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
 function fish_greeting
-    set -l emoji  (emojis nature)
+    set -l emoji (emojis nature)
     set -l quote (quotes --period)
     echo "$(set_color magenta)$emoji $quote$(set_color normal)"
 end
@@ -39,12 +39,6 @@ alias out '{{ uninstall }}'
 
 alias cin "cargo binstall --no-confirm --no-symlinks --secure"
 alias cout "cargo remove"
-
-# Safe Versions of rm, cp, mv, and mkdir
-alias rm 'rm -i'
-alias cp 'cp -i'
-alias mv 'mv -i'
-alias mkdir 'mkdir -pv'
 
 # alias r just
 alias r 'mise run' # runner
@@ -143,7 +137,7 @@ end
 #
 # Scratch
 function scratch
-    hx $HOME/.local/share/meta/scratch.md
+    $EDITOR $HOME/.local/share/meta/scratch.md
 end
 
 #

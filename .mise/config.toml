@@ -14,6 +14,7 @@ dprint = "latest"
 actionlint = "latest"
 zizmor = "latest"
 shellcheck = "latest"
+"cargo:nu" = "latest"
 "cargo:nu-lint" = "latest"
 
 [tasks.setup]

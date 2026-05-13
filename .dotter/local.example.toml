@@ -51,13 +51,14 @@ packages = [
     # "tridactyl",
 
     # Window Managers
+    "core",
     "niri",
     "dms",
 ]
 
 [variables]
 user = "strider"
-editor = "nvim"
+editor = "hx"
 terminal_font_size = 23
 atuin_server = "https://shell.me.com"
 theme = "tokyo_black"

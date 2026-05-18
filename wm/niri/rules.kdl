@@ -1,6 +1,15 @@
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
+layout {
+    focus-ring {
+        width 2
+        // tokyo black, white is to plain and tabbed mode in not distinguishable.
+        active-gradient from="#7aa2f7" to="#2ac3de" angle=45
+        inactive-gradient from="#1a1b26" to="#3b4261" angle=45 relative-to="workspace-view"
+        urgent-gradient from="#f7768e" to="#ff9e64" angle=45
+    }
+}
 
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.

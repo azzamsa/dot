@@ -1,9 +1,7 @@
 binds {
-    Mod+U repeat=false { toggle-overview; }
-    Mod+K repeat=false { close-window; }
-
     // or hot corner, or do a four-finger swipe up on a touchpad.
-    Mod+L repeat=false { toggle-overview; }
+    Mod+O repeat=false { toggle-overview; }
+    Mod+X repeat=false { close-window; }
 
     //
     // Column & Window
@@ -16,25 +14,25 @@ binds {
     Mod+WheelScrollRight      cooldown-ms=150  { focus-column-right; }
     Mod+WheelScrollLeft       cooldown-ms=150  { focus-column-left; }
     // I don't have fancy mouse
-    Mod+Shift+WheelScrollDown cooldown-ms=150  { focus-column-right; }
-    Mod+Shift+WheelScrollUp   cooldown-ms=150  { focus-column-left; }
+    Mod+Alt+WheelScrollDown cooldown-ms=150  { focus-column-right; }
+    Mod+Alt+WheelScrollUp   cooldown-ms=150  { focus-column-left; }
 
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
 
     // I rarely split windows
-    Mod+Ctrl+O     { focus-window-down; }
-    Mod+Ctrl+E     { focus-window-up; }
-    Mod+Ctrl+Up    { focus-window-down; }
-    Mod+Ctrl+Down  { focus-window-up; }
+    Mod+Ctrl+Apostrophe  { focus-window-up; }
+    Mod+Ctrl+E           { focus-window-down; }
+    Mod+Ctrl+Up          { focus-window-down; }
+    Mod+Ctrl+Down        { focus-window-up; }
 
     //
     // Workspace
     //
-    Mod+O        { focus-workspace-up; }
-    Mod+E        { focus-workspace-down; }
-    Mod+Up       { focus-workspace-up; }
-    Mod+Down     { focus-workspace-down; }
+    Mod+Apostrophe  { focus-workspace-up; }
+    Mod+E           { focus-workspace-down; }
+    Mod+Up          { focus-workspace-up; }
+    Mod+Down        { focus-workspace-down; }
     Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
     Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
 
@@ -108,7 +106,7 @@ binds {
     Ctrl+Alt+Delete { quit; }
 
     // Hints
-    Mod+G { spawn "sh" "-c" "wl-kbptr -o modes=tile,click"; }
+    Mod+H { spawn "sh" "-c" "wl-kbptr -o modes=tile,click"; }
 
     //
     // Media
@@ -137,4 +135,4 @@ binds {
     // but you need to manually put each argument in separate "" quotes.
     XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
-    }
+}

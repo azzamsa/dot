@@ -6,6 +6,12 @@ binds {
     Mod+Y hotkey-overlay-title="Clipboard Manager" {
         spawn "dms" "ipc" "call" "clipboard" "toggle";
     }
+    Print {
+        spawn-sh "dms screenshot --no-file"
+    }
+    Ctrl+Print {
+        spawn-sh "dms screenshot full"
+    }
     Alt+Print hotkey-overlay-title="Screenshot" {
         spawn-sh "dms screenshot --no-file --stdout | satty --filename -";
     }

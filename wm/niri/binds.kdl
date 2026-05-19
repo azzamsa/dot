@@ -1,40 +1,32 @@
 binds {
     // or hot corner, or do a four-finger swipe up on a touchpad.
     Mod+O repeat=false { toggle-overview; }
-    Mod+X repeat=false { close-window; }
+    Mod+Q repeat=false { close-window; }
 
-    //
-    // Column & Window
-    //
-    Mod+A        { focus-column-left; }
-    Mod+I        { focus-column-right; }
-    Mod+Left     { focus-column-left; }
-    Mod+Right    { focus-column-right; }
+    Mod+Left  { focus-column-left; }
+    Mod+Down  { focus-window-down; }
+    Mod+Up    { focus-window-up; }
+    Mod+Right { focus-column-right; }
+
+    Mod+A           { focus-column-left; }
+    Mod+E           { focus-window-down; }
+    Mod+Apostrophe  { focus-window-up; }
+    Mod+I           { focus-column-right; }
+
     // mouse with side scroll wheel
     Mod+WheelScrollRight      cooldown-ms=150  { focus-column-right; }
     Mod+WheelScrollLeft       cooldown-ms=150  { focus-column-left; }
     // I don't have fancy mouse
-    Mod+Alt+WheelScrollDown cooldown-ms=150  { focus-column-right; }
-    Mod+Alt+WheelScrollUp   cooldown-ms=150  { focus-column-left; }
+    Mod+Alt+WheelScrollDown   cooldown-ms=150  { focus-column-right; }
+    Mod+Alt+WheelScrollUp     cooldown-ms=150  { focus-column-left; }
 
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
 
-    // I rarely split windows
-    Mod+Ctrl+Apostrophe  { focus-window-up; }
-    Mod+Ctrl+E           { focus-window-down; }
-    Mod+Ctrl+Up          { focus-window-down; }
-    Mod+Ctrl+Down        { focus-window-up; }
-
-    //
-    // Workspace
-    //
-    Mod+Apostrophe  { focus-workspace-up; }
-    Mod+E           { focus-workspace-down; }
-    Mod+Up          { focus-workspace-up; }
-    Mod+Down        { focus-workspace-down; }
-    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
-    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+    Mod+Page_Down      { focus-workspace-down; }
+    Mod+Page_Up        { focus-workspace-up; }
+    Mod+C              { focus-workspace-down; }
+    Mod+Slash          { focus-workspace-up; }
 
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
@@ -70,7 +62,7 @@ binds {
     // Makes the column "fill the rest of the space".
     Mod+Ctrl+F { expand-column-to-available-width; }
 
-    Mod+C { center-column; }
+    Mod+Alt+C { center-column; }
 
     // Center all fully visible columns on screen.
     Mod+Ctrl+C { center-visible-columns; }
@@ -99,7 +91,6 @@ binds {
     // rather than stacked on top of each other.
     Mod+T { toggle-column-tabbed-display; }
 
-    Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
@@ -107,6 +98,9 @@ binds {
 
     // Hints
     Mod+H { spawn "sh" "-c" "wl-kbptr -o modes=tile,click"; }
+
+    // Handy (voice input)
+    Mod+X { spawn "sh" "-c" "handy.appimage --toggle-transcription"; }
 
     //
     // Media

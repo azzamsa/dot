@@ -10,7 +10,7 @@
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
 // bg
-spawn-at-startup "flatpak" "run" "io.github.AllanChain.sane-break"
+spawn-at-startup "sane-break"
 spawn-at-startup "flatpak" "run" "--command=pika-backup-monitor" "org.gnome.World.PikaBackup"
 spawn-at-startup "~/.local/bin/activitywatch/aw-qt"
 // app

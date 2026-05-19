@@ -152,4 +152,16 @@ layout {
         // top 64
         // bottom 64
     }
+
+    tab-indicator {
+        // off
+        on
+        // hide-when-single-tab
+        place-within-column
+        gap 5
+        width 5
+        length total-proportion=1.0
+        position "right"
+        gaps-between-tabs 2
+    }
 }

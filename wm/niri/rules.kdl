@@ -33,9 +33,6 @@ window-rule {
 window-rule {
     match app-id="^sane-break$"
     open-floating true
-    border {
-      off
-    }
     focus-ring {
         off
     }
@@ -43,6 +40,12 @@ window-rule {
 
 window-rule {
     match app-id="^steam$"
+    open-floating true
+}
+
+
+window-rule {
+    match app-id="^F5 VPN$"
     open-floating true
 }
 

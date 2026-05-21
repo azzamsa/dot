@@ -13,7 +13,6 @@ core=(
   io.github.flattool.Warehouse
   net.nokyan.Resources
   org.mozilla.Thunderbird
-  io.github.AllanChain.sane-break
 )
 
 # Code
@@ -25,6 +24,7 @@ code=(
 
 # Utilities
 utils=(
+  ca.desrt.dconf-editor
   com.audacityteam.Audacity
   com.bilingify.readest
   com.calibre_ebook.calibre
@@ -35,10 +35,14 @@ utils=(
   com.github.qarmin.czkawka
   com.github.unrud.VideoDownloader
   com.mattjakeman.ExtensionManager
-  ca.desrt.dconf-editor
+  com.saivert.pwvucontrol
+  de.haeckerfelix.Fragments
   io.github.alainm23.planify
   io.github.nokse22.Exhibit
+  io.gitlab.news_flash.NewsFlash
   it.mijorus.gearlever
+  it.mijorus.whisper
+  net.ankiweb.Anki
   org.atheme.audacious
   org.gimp.GIMP
   org.gnome.Evolution
@@ -47,10 +51,9 @@ utils=(
   org.inkscape.Inkscape
   org.kde.kdenlive
   org.kde.okular
-  org.videolan.VLC
-  io.gitlab.news_flash.NewsFlash
-  us.zoom.Zoom
   org.localsend.localsend_app
+  org.videolan.VLC
+  us.zoom.Zoom
 )
 
 # Combine selected tiers

@@ -10,7 +10,7 @@ sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/t
 cores=(
   niri dms bibata-cursor-theme satty
   fish starship atuin eza
-  zoxide bat yazi fd-find
+  zoxide bat yazi fd-find ripgrep
   ghostty kitty
 )
 
@@ -28,7 +28,7 @@ code=(
   pkgconf perl-FindBin perl-IPC-Cmd openssl-devel
   # hurlfmt
   libxml2-devel
-  podman-compose mise
+  podman-compose telnet mise
 )
 
 # utils

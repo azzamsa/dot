@@ -41,6 +41,10 @@ keybind = ctrl+shift+h=new_split:right
 keybind = ctrl+shift+v=unbind
 keybind = ctrl+shift+v=new_split:down
 
+# Misc
+keybind = ctrl+equal=unbind
+keybind = ctrl+equal=reset_font_size
+
 # Theme
 # See https://github.com/mbadolato/iTerm2-Color-Schemes
 theme = {{ theme }}

@@ -13,8 +13,9 @@ prepend_keymap = [
 
     # Goto
     { on = ["g", "h"], run = "cd ~", desc = "~/" },
+    { on = ["g", "."], run = "cd ~/.dot", desc = "~/.dot" },
     { on = ["g", "c"], run = "cd ~/code", desc = "~/code" },
-    { on = ["g", "l"], run = "cd ~/code", desc = "~/labs" },
+    { on = ["g", "l"], run = "cd ~/labs", desc = "~/labs" },
     { on = ["g", "d"], run = "cd ~/Downloads", desc = "~/Downloads" },
     { on = ["g", "t"], run = "cd /tmp", desc = "/tmp" },
     { on = ["g", "f"], run = "cd ~/.config", desc = "~/.config" },

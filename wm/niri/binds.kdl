@@ -8,6 +8,11 @@ binds {
     Mod+Up    { focus-window-up; }
     Mod+Right { focus-column-right; }
 
+    Mod+C  { focus-column-left; }
+    Mod+A  { focus-window-down; }
+    Mod+E  { focus-window-up; }
+    Mod+I  { focus-column-right; }
+
     // mouse with side scroll wheel
     Mod+WheelScrollRight      cooldown-ms=150  { focus-column-right; }
     Mod+WheelScrollLeft       cooldown-ms=150  { focus-column-left; }
@@ -18,8 +23,11 @@ binds {
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
 
-    Mod+Page_Down      { focus-workspace-down; }
-    Mod+Page_Up        { focus-workspace-up; }
+    Mod+Page_Down   { focus-workspace-down; }
+    Mod+Page_Up     { focus-workspace-up; }
+
+    Mod+Slash      { focus-workspace-down; }
+    Mod+Semicolon  { focus-workspace-up; }
 
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
@@ -39,16 +47,15 @@ binds {
     // Makes the column "fill the rest of the space".
     Mod+Ctrl+F { expand-column-to-available-width; }
 
-    Mod+Alt+C { center-column; }
+    Mod+X { center-column; }
     // Center all fully visible columns on screen.
-    Mod+Ctrl+C { center-visible-columns; }
+    Mod+Ctrl+X { center-visible-columns; }
 
-    // Finer width adjustments.
-    Mod+Minus { set-column-width "-10%"; }
-    Mod+Equal { set-column-width "+10%"; }
-    // Finer height adjustments when in column with other windows.
-    Mod+Shift+Minus { set-window-height "-10%"; }
-    Mod+Shift+Equal { set-window-height "+10%"; }
+    // Finer adjustments.
+    Mod+Minus { set-window-height "-10%"; }
+    Mod+Plus  { set-window-height "+10%"; }
+    Mod+Alt+Minus { set-column-width "-10%"; }
+    Mod+Alt+Plus  { set-column-width "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
     Mod+V       { toggle-window-floating; }
@@ -60,8 +67,6 @@ binds {
     Ctrl+Print { screenshot-screen; }
     // Hints
     Mod+H { spawn "sh" "-c" "wl-kbptr -o modes=tile,click"; }
-    // Handy (voice input)
-    Mod+X { spawn "sh" "-c" "handy.appimage --toggle-transcription"; }
 
     //
     // Media

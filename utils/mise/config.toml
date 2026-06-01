@@ -4,6 +4,7 @@ color_theme = "catppuccin"
 [tools]
 "cargo:dprint" = "latest"
 "cargo:nu-lint" = "latest"
+node = "26"
 "pipx:qmk" = "latest"
 pnpm = "latest"
 uv = "latest"

@@ -8,7 +8,7 @@ hotkey-overlay {
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
-prefer-no-csd
+// prefer-no-csd
 
 cursor {
   xcursor-theme "Bibata-Modern-Classic"

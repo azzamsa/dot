@@ -59,7 +59,7 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#7fc8ff"
+        // active-color "#eda792"
 
         // Color of the ring on inactive monitors.
         //
@@ -81,6 +81,11 @@ layout {
         // To do that, set relative-to="workspace-view".
         //
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+
+        // tokyo black, white is to plain and tabbed mode in not distinguishable.
+        active-gradient from="#eda792" to="#fab387" angle=45
+        inactive-gradient from="#1a1b26" to="#3b4261" angle=45 relative-to="workspace-view"
+        urgent-gradient from="#f7768e" to="#f38ba8" angle=45
     }
 
     // You can also add a border. It's similar to the focus ring, but always visible.

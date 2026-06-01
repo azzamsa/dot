@@ -54,6 +54,7 @@ packages = [
     "core",
     "niri",
     "dms",
+    "matugen",
 ]
 
 [variables]

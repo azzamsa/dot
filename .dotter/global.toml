@@ -156,3 +156,7 @@ depends = ["shell"]
 
 [dms.files]
 "wm/dms" = "~/.config/DankMaterialShell"
+
+[matugen.files]
+"wm/matugen" = "~/.config/matugen"
+"wm/matugen/templates" = { target = "~/.config/matugen/templates/", type = "symbolic" }

@@ -1,0 +1,21 @@
+{
+  "name": "Calm Mauve",
+  "primary": "#cba6f7",
+  "primaryText": "#1e1e2e",
+  "primaryContainer": "#2f334d",
+  "secondary": "#a6e3a1",
+  "surfaceTint": "#cba6f7",
+  "surface": "#000000",
+  "surfaceText": "#ffffff",
+  "surfaceVariant": "#0d0d14",
+  "surfaceVariantText": "#cdd6f4",
+  "surfaceContainer": "#000000",
+  "surfaceContainerHigh": "#181825",
+  "surfaceContainerHighest": "#11111b",
+  "background": "#000000",
+  "backgroundText": "#ffffff",
+  "outline": "#c9b8d9",
+  "error": "#f38ba8",
+  "warning": "#fab387",
+  "info": "#a6e3a1"
+}

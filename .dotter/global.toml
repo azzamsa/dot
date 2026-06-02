@@ -130,6 +130,9 @@ depends = ["shell"]
 [satty.files]
 "utils/satty" = "~/.config/satty"
 
+[mpd.files]
+"utils/mpd" = "~/.config/mpd"
+
 #
 # Browsers
 #

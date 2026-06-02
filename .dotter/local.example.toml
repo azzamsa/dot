@@ -43,6 +43,7 @@ packages = [
     # "sane-break" # sane-break doesn't work with symlink
     "mise",
     "satty",
+    "mpd",
 
     # Programming Languages
     "cargo",

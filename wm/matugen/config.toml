@@ -1,5 +1,5 @@
 [config]
 
 [templates.niri]
-input_path = "/home/{{user}}/.config/matugen/templates/niri.kdl"
-output_path = "/home/{{user}}/.config/niri/colors.kdl"
+input_path = "~/.config/matugen/templates/niri.kdl"
+output_path = "~/.config/niri/colors.kdl"

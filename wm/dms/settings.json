@@ -1,7 +1,7 @@
 {
   "currentThemeName": "custom",
   "currentThemeCategory": "generic",
-  "customThemeFile": "/home/{{user}}/.config/DankMaterialShell/themes/calm.json",
+  "customThemeFile": "/home/{{user}}/.config/DankMaterialShell/themes/{{wm_theme}}.json",
   "registryThemeVariants": {},
   "matugenScheme": "scheme-tonal-spot",
   "runUserMatugenTemplates": true,
@@ -295,7 +295,7 @@
   "matugenTemplateQt6ct": false,
   "matugenTemplateFirefox": false,
   "matugenTemplatePywalfox": false,
-  "matugenTemplateZenBrowser": true,
+  "matugenTemplateZenBrowser": false,
   "matugenTemplateVesktop": false,
   "matugenTemplateEquibop": false,
   "matugenTemplateGhostty": false,

@@ -1,10 +1,10 @@
 layout {
-    focus-ring {
-        active-color "{{colors.primary.default.hex}}"
-        inactive-color "{{colors.outline.default.hex}}"
+  focus-ring {
+    active-color "{{primary}}"
+    inactive-color "{{outline}}"
 
-        active-gradient from="{{colors.primary.default.hex}}" to="{{colors.secondary.default.hex}}" angle=45
-        inactive-gradient from="{{colors.outline.default.hex}}" to="{{colors.outline.default.hex}}" angle=45 relative-to="workspace-view"
-        urgent-gradient from="{{colors.error.default.hex}}" to="{{colors.warning.default.hex}}" angle=45
-    }
+    active-gradient from="{{primary}}" to="{{outline}}" angle=45
+    inactive-gradient from="{{outline}}" to="{{outline}}" angle=45 relative-to="workspace-view"
+    urgent-gradient from="{{error}}" to="{{warning}}" angle=45
+  }
 }

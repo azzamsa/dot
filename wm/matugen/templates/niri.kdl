@@ -1,10 +1,19 @@
 layout {
+
   focus-ring {
     active-color "{{primary}}"
     inactive-color "{{outline}}"
-
-    active-gradient from="{{primary}}" to="{{outline}}" angle=45
-    inactive-gradient from="{{outline}}" to="{{outline}}" angle=45 relative-to="workspace-view"
-    urgent-gradient from="{{error}}" to="{{warning}}" angle=45
   }
+
+  tab-indicator {
+    active-color "{{primary}}"
+    inactive-color "{{outline}}"
+  }
+
+  border {
+    active-color "{{primary}}"
+    inactive-color "{{outline}}"
+  }
+
+
 }

@@ -64,8 +64,7 @@ editor = "hx"
 terminal_font_size = 23
 atuin_server = "https://shell.me.com"
 theme = "tokyo_black"
-wm_theme = "calm_salmon"
+wm_theme = "mauve"
 
-# fonts: 0xProto Nerd Font
-font = "Maple Mono NF"
-terminal_font = "Maple Mono NF"
+font = "JetBrains Mono"
+terminal_font = "JetBrainsMono Nerd Font"

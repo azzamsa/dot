@@ -1,5 +1,5 @@
 {
-  "name": "Calm Mauve",
+  "name": "Mauve",
   "primary": "#cba6f7",
   "primaryText": "#1e1e2e",
   "primaryContainer": "#2f334d",
@@ -14,7 +14,7 @@
   "surfaceContainerHighest": "#11111b",
   "background": "#000000",
   "backgroundText": "#ffffff",
-  "outline": "#c9b8d9",
+  "outline": "#9399b2",
   "error": "#f38ba8",
   "warning": "#fab387",
   "info": "#a6e3a1"

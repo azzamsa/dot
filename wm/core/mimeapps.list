@@ -60,6 +60,7 @@ audio/x-opus+ogg=org.videolan.VLC.desktop
 
 # Custom handlers
 x-scheme-handler/readest=readest-handler.desktop
+x-scheme-handler/discord=vesktop.desktop
 
 
 [Added Associations]

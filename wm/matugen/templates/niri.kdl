@@ -1,4 +1,6 @@
 layout {
+  // Set gaps around windows in logical pixels.
+  gaps 12
 
   focus-ring {
     active-color "{{primary}}"
@@ -14,6 +16,5 @@ layout {
     active-color "{{primary}}"
     inactive-color "{{outline}}"
   }
-
 
 }

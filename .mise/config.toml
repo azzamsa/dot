@@ -5,6 +5,7 @@ config_roots = ["utils/snacks"]
 
 [env]
 MISE_EXPERIMENTAL = "1"
+MISE_TASK_MONOREPO_EXCLUDE_DIRS = "utils/mise"
 
 [tools]
 stylua = "latest"

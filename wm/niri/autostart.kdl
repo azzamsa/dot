@@ -14,6 +14,6 @@ spawn-at-startup "sane-break"
 spawn-at-startup "flatpak" "run" "--command=pika-backup-monitor" "org.gnome.World.PikaBackup"
 spawn-at-startup "~/.local/bin/activitywatch/aw-qt"
 // app
-spawn-at-startup "kitty"
+spawn-at-startup "wezterm.appimage"
 spawn-at-startup "emacs"
 spawn-at-startup "flatpak" "run" "app.zen_browser.zen"

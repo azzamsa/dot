@@ -8,12 +8,12 @@ packages = [
 
     # Terminals
     "wezterm",
-    "kitty",
-    "ghostty",
-    "alacritty",
+    # "ghostty",
+    # "kitty",
+    # "alacritty",
     # "rio",
+    # "foot",
 
-    "foot",
     "starship",
     "atuin",
     "zellij",
@@ -63,8 +63,8 @@ user = "strider"
 editor = "hx"
 terminal_font_size = 23
 atuin_server = "https://shell.me.com"
-theme = "tokyo_black"
-wm_theme = "mauve"
+theme = "salmon_black"
+wm_theme = "salmon"
 
 font = "JetBrains Mono"
 terminal_font = "JetBrainsMono Nerd Font"

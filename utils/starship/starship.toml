@@ -1,25 +1,5 @@
 # https://starship.rs/config
 
 [character]
-success_symbol = '[🦄](bold green)'
-error_symbol = '[🙊](bold red)'
-
-[container]
-style = 'bold blue dimmed'
-format = '($style)'
-
-[custom.container_name]
-disabled = true
-command = "container-name"
-when = "container-name"
-symbol = '🫙'
-style = 'bold blue dimmed'
-format = "[$symbol $output]($style) "
-
-[shell]
-disabled = true
-fish_indicator = '🐡'
-nu_indicator = '🦀'
-zsh_indicator = '🦪'
-bash_indicator = '🐚'
-unknown_indicator = 'mystery shell'
+success_symbol = "[󰚩](bold green)"
+error_symbol = "[󰚩](bold red)"

@@ -10,7 +10,13 @@ let latest = (
     sudo ls $entries_dir
     | lines
     | where { |f| $f ends-with .conf and $f !~ rescue }
-    | sort
+    | sort-by {|f|
+        $f
+        | parse --regex '(\d+\.\d+\.\d+)-(\d+)\.'
+        | get --optional capture0.0
+        | split row .
+        | each { into int }
+    }
     | last
 )
 
@@ -44,3 +50,13 @@ if $already_patched {
     print $"Patched ($latest)"
     sudo diff $bak $path | delta
 }
+
+# Remove .bak files that no longer have a corresponding .conf
+sudo ls $entries_dir
+| lines
+| where { |f| $f ends-with .bak }
+| where { |f|
+    let conf = ($f | str replace --regex \.bak$ '')
+    not ($"($entries_dir)/($conf)" | path exists)
+}
+| each {|f| sudo rm $"($entries_dir)/($f)"; print $"Removed orphaned backup: ($f)" }

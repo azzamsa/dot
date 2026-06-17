@@ -17,7 +17,7 @@ function M.append(config)
 
         -- Padding
         -- Tab bar can't have padding https://github.com/wez/wezterm/issues/3077
-        window_padding = { left = 10, right = 10, top = 5, bottom = 10 },
+        window_padding = { left = 10, right = 10, top = 15, bottom = 5 },
 
         -- Tab Bar Options
         -- GTK tab-bar is looking awful.
@@ -33,7 +33,7 @@ function M.append(config)
             brightness = 0.70,
         },
 
-        window_decorations = "RESIZE", -- disable the title bar
+        window_decorations = "NONE", -- disable the title bar
         window_frame = {
             -- The size of the font in the tab bar.
             font_size = 14.0, -- default: 12.0

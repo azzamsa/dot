@@ -61,6 +61,7 @@ function M.append(config)
 
         --
         -- Keyboard mappings
+        -- https://wezterm.org/config/default-keys.html
         --
         keys = {
             -- Clipboard

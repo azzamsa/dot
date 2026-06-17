@@ -28,6 +28,16 @@ if [ $theme = tokyo_black ]
     set -g comment "9aa5ce"  # 8.65:1   #9aa5ce
 end
 
+if [ $theme = salmon_black ]
+    set -g red     "ff757f"  # 8.1:1    #ff757f
+    set -g green   "c3e88d"  # 15.24:1  #c3e88d
+    set -g yellow  "ffc777"  # 13.68:1  #ffc777
+    set -g orange  "ff966c"  # 9.83:1   #ff966c
+    set -g purple  "fca7ea"  # 11.85:1  #fca7ea
+    set -g cyan    "86e1fc"  # 14.18:1  #86e1fc
+    set -g pink    "eda792"  # 10.54:1  #eda792
+    set -g comment "9aa5ce"  # 8.65:1   #9aa5ce
+end
 
 # https://catppuccin.com/palette
 if [ $theme = catppuccin_mocha ]

@@ -16,6 +16,14 @@ M.color_schemes = {
         cursor_bg = "#ffffff",
         scrollbar_thumb = "#4a4f69",
         selection_bg = "#555a66",
+        tab_bar = {
+            background = "#000000",
+            active_tab = { bg_color = "#000000", fg_color = "#00d3d0" },
+            inactive_tab = { bg_color = "#000000", fg_color = "#989898" },
+            inactive_tab_hover = { bg_color = "#000000", fg_color = "#00d3d0" },
+            new_tab = { bg_color = "#000000", fg_color = "#989898" },
+            new_tab_hover = { bg_color = "#000000", fg_color = "#ffffff" },
+        },
     },
     ["modus_vivendi_tinted"] = {
         ansi = {
@@ -34,6 +42,11 @@ M.color_schemes = {
         selection_bg = "#555a66",
         tab_bar = {
             background = "#000000",
+            active_tab = { bg_color = "#000000", fg_color = "#00d3d0" },
+            inactive_tab = { bg_color = "#000000", fg_color = "#989898" },
+            inactive_tab_hover = { bg_color = "#000000", fg_color = "#00d3d0" },
+            new_tab = { bg_color = "#000000", fg_color = "#989898" },
+            new_tab_hover = { bg_color = "#000000", fg_color = "#ffffff" },
         },
     },
     ["tokyo_black"] = {
@@ -42,6 +55,29 @@ M.color_schemes = {
         cursor_bg = "#c8d3f5",
         scrollbar_thumb = "#2f334d",
         selection_bg = "#1e1e2e",
+        tab_bar = {
+            background = "#000000",
+            active_tab = { bg_color = "#000000", fg_color = "#c099ff" },
+            inactive_tab = { bg_color = "#000000", fg_color = "#c8d3f5" },
+            inactive_tab_hover = { bg_color = "#000000", fg_color = "#c099ff" },
+            new_tab = { bg_color = "#000000", fg_color = "#9399b2" },
+            new_tab_hover = { bg_color = "#000000", fg_color = "#ffffff" },
+        },
+    },
+    ["salmon_black"] = {
+        ansi = { "#9399b2", "#ff757f", "#c3e88d", "#ffc777", "#82aaff", "#eda792", "#86e1fc", "#ffffff" },
+        brights = { "#9399b2", "#ff757f", "#c3e88d", "#ffc777", "#82aaff", "#eda792", "#86e1fc", "#ffffff" },
+        cursor_bg = "#eda792",
+        scrollbar_thumb = "#2f334d",
+        selection_bg = "#1e1e2e",
+        tab_bar = {
+            background = "#000000",
+            active_tab = { bg_color = "#000000", fg_color = "#eda792" },
+            inactive_tab = { bg_color = "#000000", fg_color = "#c8d3f5" },
+            inactive_tab_hover = { bg_color = "#000000", fg_color = "#eda792" },
+            new_tab = { bg_color = "#000000", fg_color = "#9399b2" },
+            new_tab_hover = { bg_color = "#000000", fg_color = "#ffffff" },
+        },
     },
 }
 

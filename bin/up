@@ -9,33 +9,23 @@ const SELECTED_SYSTEM_PACKAGES = [
     starship
     eza
     zoxide
-    bat
     yazi
-    fd-find
-    fzf
-    ghostty
     zed
     zed-cli
     podman-compose
     mold
-    fastfetch
-    tuptime
 ]
 
 const SELECTED_FLATPAK_PACKAGES = [
     app.zen_browser.zen
-    be.alexandervanhee.gradia
-    dev.vencord.Vesktop
-    org.mozilla.Thunderbird
-    io.github.AllanChain.sane-break
+    org.mozilla.thunderbird
     com.bilingify.readest
-    it.mijorus.gearlever
     org.gnome.World.PikaBackup
-    io.github.alainm23.planify
 ]
 
 const SELECTED_CARGO_PACKAGES = [
     dotter
+    nu
 ]
 
 def task-flatpak [--full]: nothing -> nothing {
@@ -52,9 +42,9 @@ def task-appimages []: nothing -> nothing {
 
 def task-cargo [--full]: nothing -> nothing {
     if $full {
-        cargo install-update -a | lines | where ($it !~ No)
+        cargo install-update --all --locked
     } else {
-        cargo install-update ...$SELECTED_CARGO_PACKAGES | lines | where ($it !~ No)
+        cargo install-update ...$SELECTED_CARGO_PACKAGES
     }
     rustup update stable
 }
@@ -85,7 +75,7 @@ def run-default [--full]: nothing -> nothing {
     print "📦 Upgrading Flatpak apps"
     task-flatpak --full=$full
     print "🦀 Upgrading Cargo apps"
-    task-cargo
+    task-cargo --full=$full
     print "🐧 Upgrading System apps"
     task-system --full=$full
 }
@@ -96,7 +86,7 @@ def run-all [--full]: nothing -> nothing {
     print "⚙️  List Upgradable Appimages"
     task-appimages
     print "🦀 Upgrading Cargo apps"
-    task-cargo
+    task-cargo --full=$full
     print "🐹 Upgrading Go apps"
     task-golang
     print "🐧 Upgrading System apps"
@@ -126,7 +116,7 @@ def main [
     let tasks_map = {
         flatpak:   { task-flatpak --full=$full }
         appimages: { task-appimages }
-        cargo: { task-cargo --full=$full }
+        cargo:     { task-cargo --full=$full }
         golang:    { task-golang }
         system:    { task-system --full=$full }
         node:      { task-node }

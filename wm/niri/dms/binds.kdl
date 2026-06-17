@@ -7,10 +7,10 @@ binds {
         spawn "dms" "ipc" "call" "clipboard" "toggle";
     }
     Print {
-        spawn-sh "dms screenshot --no-file"
+        spawn-sh "dms screenshot full"
     }
     Ctrl+Print {
-        spawn-sh "dms screenshot full"
+        spawn-sh "dms screenshot"
     }
     Alt+Print hotkey-overlay-title="Screenshot" {
         spawn-sh "dms screenshot --no-file --stdout | satty --filename -";

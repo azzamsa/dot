@@ -64,7 +64,6 @@ binds {
     // Toggle tabbed column display mode.
     Mod+T { toggle-column-tabbed-display; }
 
-    Ctrl+Print { screenshot-screen; }
     // Hints
     Mod+H { spawn "sh" "-c" "wl-kbptr -o modes=tile,click"; }
 

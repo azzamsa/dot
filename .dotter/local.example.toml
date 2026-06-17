@@ -63,8 +63,8 @@ user = "strider"
 editor = "hx"
 terminal_font_size = 23
 atuin_server = "https://shell.me.com"
-theme = "salmon_black"
-wm_theme = "salmon"
+theme = "tokyo_black"
+wm_theme = "one"
 
 font = "JetBrains Mono"
 terminal_font = "JetBrainsMono Nerd Font"

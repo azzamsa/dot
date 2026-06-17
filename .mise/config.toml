@@ -33,7 +33,7 @@ depends = ["check", "//:audit:*", "//utils/snacks:audit"]
 # Apply automatic fixes, then check.
 # Intended for use before commit or push.
 description = "Enforce rules"
-depends = ["fmt", "check", "//utils/snacks:fix"]
+depends = ["update-example", "fmt", "check", "//utils/snacks:fix"]
 
 [tasks.check]
 # Quality check. Primarily used in CI.
@@ -45,7 +45,7 @@ depends = ["lint", "//utils/snacks:check"]
 # Minimal, fast feedback checks.
 hide = true
 description = "Lint"
-depends = ["update-example", "//:lint:*", "//utils/snacks:lint"]
+depends = ["//:lint:*", "//utils/snacks:lint"]
 run = [
     # format
     "dprint check",

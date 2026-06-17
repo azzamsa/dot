@@ -6,6 +6,6 @@ shape = 'beam'
 
 [fonts]
 size = 32
-family = "{{ terminal_font }}"
+family = "{{ font }}"
 features = []
 fonts.extras = [{ family = "Noto Color Emoji" }]

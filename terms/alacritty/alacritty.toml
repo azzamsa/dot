@@ -19,7 +19,7 @@ blinking = "Always" # Default: "Off"
 size = {{ terminal_font_size }}
 
 [font.normal]
-family = "{{ terminal_font }}"
+family = "{{ font }}"
 style = "Regular"
 
 [window]

@@ -1,10 +1,10 @@
 {
   "name": "Calm Salmon",
-  "primary": "#eda792",
+  "primary": "#f2cdcd",
   "primaryText": "#1e1e2e",
   "primaryContainer": "#2f334d",
-  "secondary": "#49ccd2",
-  "surfaceTint": "#eda792",
+  "secondary": "#cba6f7",
+  "surfaceTint": "#f2cdcd",
   "surface": "#000000",
   "surfaceText": "#ffffff",
   "surfaceVariant": "#0d0d14",
@@ -16,6 +16,6 @@
   "backgroundText": "#ffffff",
   "outline": "#9399b2",
   "error": "#f38ba8",
-  "warning": "#fab387",
-  "info": "#49ccd2"
+  "warning": "#f2cdcd",
+  "info": "#cba6f7"
 }

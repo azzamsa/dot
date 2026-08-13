@@ -150,10 +150,6 @@ depends = ["shell"]
 #
 # Window Managers
 #
-
-[core.files]
-"wm/core/mimeapps.list" = "~/.config/mimeapps.list"
-
 [niri.files]
 "wm/niri" = "~/.config/niri"
 

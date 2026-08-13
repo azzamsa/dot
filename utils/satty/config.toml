@@ -3,3 +3,5 @@ output-filename = "~/Pictures/Screenshots/satty-%Y-%m-%d_%H-%M-%S.png"
 initial-tool = "arrow"
 # default: 1.0. It is too big for numbered marker.
 annotation-size-factor = 0.5
+# the notifications hides the toolbar for sometimes
+disable-notifications = true

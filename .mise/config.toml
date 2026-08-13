@@ -1,4 +1,4 @@
-experimental_monorepo_root = true
+monorepo_root = true
 
 [monorepo]
 config_roots = ["utils/snacks"]
@@ -66,11 +66,6 @@ run = ["dprint fmt", "stylua . --allow-hidden"]
 hide = true
 description = "Lint shell scripts"
 run = "grep -lE '^#!.*\\b(bash|sh)$' bin/* .mise/tasks/* setups/scripts/* | xargs -r shellcheck"
-
-[tasks."lint:nu"]
-hide = true
-description = "Lint Nushell code"
-run = "nu-lint bin/"
 
 [tasks.publish]
 alias = "p"

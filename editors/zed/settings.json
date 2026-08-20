@@ -1,107 +1,108 @@
 {
-  "edit_predictions": {
-    "provider": "zed",
-  },
-  "project_panel": {
-    "dock": "left",
-  },
-  "outline_panel": {
-    "dock": "left",
-  },
-  "collaboration_panel": {
-    "dock": "left",
-  },
-  "agent": {
-    "dock": "right",
-    "favorite_models": [],
-    "model_parameters": [],
-  },
-  "git_panel": {
-    "tree_view": true,
-    "dock": "left",
-  },
-  "buffer_font_family": "IoskeleyMono Nerd Font",
-  "vim_mode": true,
-  "helix_mode": false,
-  "vim": {
-    "use_system_clipboard": "always",
-  },
-  "languages": {
-    "Rust": {
-      "inlay_hints": {
-        "enabled": true,
-      },
+    "cli_default_open_behavior": "existing_window",
+    "edit_predictions": {
+        "provider": "zed",
     },
-  },
-  "diagnostics": {
-    "inline": {
-      "enabled": true,
+    "project_panel": {
+        "dock": "left",
     },
-  },
-  "show_edit_predictions": true,
-  "minimap": {
-    "show": "auto",
-  },
-  "soft_wrap": "editor_width",
-  "relative_line_numbers": "enabled",
-  "autosave": "on_focus_change",
-  "icon_theme": "Catppuccin Mocha",
-  "ui_font_size": 19,
-  "buffer_font_size": 24.0,
-  // lsp
-  "lsp_document_colors": "background",
-  "theme": {
-    "mode": "dark",
-    "light": "Modus Operandi Tinted",
-    "dark": "Modus Vivendi Tinted",
-  },
-  "ui_font_features": {
-    "calt": true,
-  },
-  "theme_overrides": {
-    "Modus Vivendi": {
-      "tab_bar.background": "#000000",
-      "tab.inactive_background": "#000000",
-      "tab.active_background": "#0d0e1c", // bg-main
+    "outline_panel": {
+        "dock": "left",
     },
-    "Modus Vivendi Tinted": {
-      "title_bar.background": "#000000",
-      "status_bar.background": "#000000",
-      "panel.background": "#000000",
-      "editor.background": "#000000",
-      "editor.gutter.background": "#0d0f12",
-      "tab_bar.background": "#000000",
-      "tab.inactive_background": "#000000",
-      "tab.active_background": "#0d0f12",
+    "collaboration_panel": {
+        "dock": "left",
     },
-    "GitHub Dark": {
-      "editor.background": "#000000",
+    "agent": {
+        "dock": "right",
+        "favorite_models": [],
+        "model_parameters": [],
     },
-    "Catppuccin Mocha": {
-      "editor.background": "#000000",
+    "git_panel": {
+        "tree_view": true,
+        "dock": "left",
     },
-  },
-  "auto_install_extensions": {
-    "basher": true,
-    "catppuccin-icons": true,
-    "color-highlight": true,
-    "dockerfile": true,
-    "elisp": true,
-    "fish": true,
-    "git-firefly": true,
-    "graphql": true,
-    "html": true,
-    "jsonnet": true,
-    "just": true,
-    "make": true,
-    "modus-themes": true,
-    "nu": true,
-    "nu-lint": true,
-    "scss": true,
-    "sql": true,
-    "svelte": true,
-    "toml": true,
-    "typst": true,
-    "vue": true,
-  },
+    "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+    "vim_mode": false,
+    "helix_mode": true,
+    "vim": {
+        "use_system_clipboard": "always",
+        "cursor_shape": {
+            "normal": "bar",
+            "insert": "block",
+            "replace": "underline",
+            "visual": "block",
+        },
+    },
+    "languages": {
+        "Rust": {
+            "inlay_hints": {
+                "enabled": true,
+            },
+        },
+    },
+    "diagnostics": {
+        "inline": {
+            "enabled": true,
+        },
+    },
+    "show_edit_predictions": true,
+    "minimap": {
+        "show": "auto",
+    },
+    "soft_wrap": "editor_width",
+    "relative_line_numbers": "enabled",
+    "autosave": "on_focus_change",
+    "icon_theme": "Catppuccin Mocha",
+    "ui_font_size": 19,
+    "buffer_font_size": 24.0,
+    // lsp
+    "lsp_document_colors": "background",
+    "theme": {
+        "mode": "dark",
+        "light": "Modus Operandi Tinted",
+        "dark": "Modus Vivendi",
+    },
+    "ui_font_features": {
+        "calt": true,
+    },
+    "theme_overrides": {
+        "Modus Vivendi": {
+            "tab_bar.background": "#000000",
+            "tab.inactive_background": "#000000",
+            "tab.active_background": "#0d0e1c", // bg-main
+        },
+        "Modus Vivendi Tinted": {
+            "title_bar.background": "#000000",
+            "status_bar.background": "#000000",
+            "panel.background": "#000000",
+            "editor.background": "#000000",
+            "editor.gutter.background": "#0d0f12",
+            "tab_bar.background": "#000000",
+            "tab.inactive_background": "#000000",
+            "tab.active_background": "#0d0f12",
+        },
+    },
+    "auto_install_extensions": {
+        "basher": true,
+        "catppuccin-icons": true,
+        "color-highlight": true,
+        "dockerfile": true,
+        "elisp": true,
+        "fish": true,
+        "git-firefly": true,
+        "graphql": true,
+        "html": true,
+        "jsonnet": true,
+        "just": true,
+        "make": true,
+        "modus-themes": true,
+        "nu": true,
+        "nu-lint": true,
+        "scss": true,
+        "sql": true,
+        "svelte": true,
+        "toml": true,
+        "typst": true,
+        "vue": true,
+    },
 }

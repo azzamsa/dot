@@ -10,10 +10,11 @@ const SELECTED_SYSTEM_PACKAGES = [
     eza
     zoxide
     yazi
-    zed
-    zed-cli
     podman-compose
     mold
+    satty
+    tailscale
+    mise
 ]
 
 const SELECTED_FLATPAK_PACKAGES = [
@@ -21,6 +22,7 @@ const SELECTED_FLATPAK_PACKAGES = [
     org.mozilla.thunderbird
     com.bilingify.readest
     org.gnome.World.PikaBackup
+    it.mijorus.gearlever
 ]
 
 const SELECTED_CARGO_PACKAGES = [
@@ -74,6 +76,8 @@ def task-node []: nothing -> nothing {
 def run-default [--full]: nothing -> nothing {
     print "📦 Upgrading Flatpak apps"
     task-flatpak --full=$full
+    print "⚙️ List Upgradable Appimages"
+    task-appimages
     print "🦀 Upgrading Cargo apps"
     task-cargo --full=$full
     print "🐧 Upgrading System apps"
@@ -83,7 +87,7 @@ def run-default [--full]: nothing -> nothing {
 def run-all [--full]: nothing -> nothing {
     print "📦 Upgrading Flatpak apps"
     task-flatpak --full=$full
-    print "⚙️  List Upgradable Appimages"
+    print "⚙️ List Upgradable Appimages"
     task-appimages
     print "🦀 Upgrading Cargo apps"
     task-cargo --full=$full

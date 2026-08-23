@@ -4,8 +4,6 @@ local M = {}
 
 function M.append(config)
     local options = {
-        default_cursor_style = "BlinkingBar", -- default: 'SteadyBlock'
-        cursor_thickness = 2,
         -- stylua: ignore start
         -- selene: allow(undefined_variable)
         font_size = {{ terminal_font_size }}, -- default: 12.0
@@ -33,7 +31,6 @@ function M.append(config)
             brightness = 0.70,
         },
 
-        window_decorations = "NONE", -- disable the title bar
         window_frame = {
             -- The size of the font in the tab bar.
             font_size = 14.0, -- default: 12.0

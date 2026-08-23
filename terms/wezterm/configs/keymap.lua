@@ -66,11 +66,13 @@ function M.append(config)
         keys = {
             -- Clipboard
             { key = "y", mods = "CTRL", action = act({ PasteFrom = "Clipboard" }) },
+            { key = "v", mods = "CTRL", action = act({ PasteFrom = "Clipboard" }) },
 
             -- Font
             { key = "+", mods = "CTRL", action = act.IncreaseFontSize },
             { key = "-", mods = "CTRL", action = act.DecreaseFontSize },
             { key = "=", mods = "CTRL", action = act.ResetFontSize },
+            { key = "0", mods = "CTRL", action = act.ResetFontSize },
 
             -- Pane
             {

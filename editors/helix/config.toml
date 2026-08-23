@@ -1,18 +1,19 @@
-theme = "tokyo_black"
+theme = "modus_vivendi_me"
 
 [editor]
+auto-reload = true
 # Sync clipboard with system clipboard
 default-yank-register = "+"
-
 line-number = "relative"
+
 # Renders a line at the top of the editor displaying open buffers
-bufferline = "multiple"
+# bufferline = "multiple"
 # Remove the annoying vertical ruler. The formatter already handles long lines.
 rulers = []
 
 [editor.cursor-shape]
-insert = "bar"
-normal = "block"
+insert = "block"
+normal = "bar"
 select = "underline"
 
 [editor.file-picker]

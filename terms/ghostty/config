@@ -1,14 +1,5 @@
 command = TERM=xterm-256color /usr/bin/fish
 
-# I wanted to have zero-config, but block cursor signals my brain that I am in Visual mode.
-# as I am using modal editor all the time.
-cursor-style = bar
-# The default is to thin
-adjust-cursor-thickness = 200%
-
-# Otherwise it will start in small window.
-# I always put all apps in maximized mode.
-maximize = true
 
 # Fonts
 font-family = {{ font }}

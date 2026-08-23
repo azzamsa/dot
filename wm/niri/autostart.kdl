@@ -8,12 +8,3 @@
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
-
-// bg
-spawn-at-startup "sane-break"
-spawn-at-startup "flatpak" "run" "--command=pika-backup-monitor" "org.gnome.World.PikaBackup"
-spawn-at-startup "~/.local/bin/activitywatch/aw-qt"
-// app
-spawn-at-startup "wezterm.appimage"
-spawn-at-startup "emacs"
-spawn-at-startup "flatpak" "run" "app.zen_browser.zen"

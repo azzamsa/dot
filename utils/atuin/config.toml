@@ -1,6 +1,10 @@
 sync_address = "{{ atuin_server }}" # default: https://api.atuin.sh
-search_mode = "skim" # default: fuzzy
 # inline_height = 20 # default: 0
 # If enabled, upon hitting enter Atuin will immediately execute the command.
 enter_accept = true # default: false
 sync_frequency = "12h" # default: 1h
+search_mode = "daemon-fuzzy"
+
+[daemon]
+enabled = true
+autostart = true

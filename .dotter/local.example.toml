@@ -8,7 +8,7 @@ packages = [
 
     # Terminals
     "wezterm",
-    # "ghostty",
+    "ghostty",
     # "kitty",
     # "alacritty",
     # "rio",
@@ -52,7 +52,6 @@ packages = [
     # "tridactyl",
 
     # Window Managers
-    "core",
     "niri",
     "dms",
     "matugen",
@@ -62,7 +61,7 @@ packages = [
 user = "strider"
 editor = "hx"
 font = "JetBrainsMono Nerd Font"
-terminal_font_size = 23
+terminal_font_size = 20
 atuin_server = "https://shell.me.com"
 theme = "tokyo_black"
 wm_theme = "one"

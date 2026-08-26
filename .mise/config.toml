@@ -1,10 +1,4 @@
-monorepo_root = true
-
-[monorepo]
-config_roots = ["utils/snacks"]
-
 [env]
-MISE_EXPERIMENTAL = "1"
 MISE_TASK_MONOREPO_EXCLUDE_DIRS = "utils/mise"
 
 [tools]
@@ -28,25 +22,25 @@ depends = ["hooks"]
 # Extras, deep, thorough checks. Should be run locally.
 hide = true
 description = "Exhaustive quality check"
-depends = ["check", "//:audit:*", "//utils/snacks:audit"]
+depends = ["check", "audit:*"]
 
 [tasks.fix]
 # Apply automatic fixes, then check.
 # Intended for use before commit or push.
 description = "Enforce rules"
-depends = ["update-example", "fmt", "check", "//utils/snacks:fix"]
+depends = ["update-example", "fmt", "check"]
 
 [tasks.check]
 # Quality check. Primarily used in CI.
 hide = true
 description = "Quality check"
-depends = ["lint", "//utils/snacks:check"]
+depends = "lint"
 
 [tasks.lint]
 # Minimal, fast feedback checks.
 hide = true
 description = "Lint"
-depends = ["//:lint:*", "//utils/snacks:lint"]
+depends = "lint:*"
 run = [
     # format
     "dprint check",
@@ -70,20 +64,18 @@ run = "grep -lE '^#!.*\\b(bash|sh)$' bin/* .mise/tasks/* setups/scripts/* | xarg
 [tasks.publish]
 alias = "p"
 description = "Publish configs and binaries"
-depends = ["lint", "//utils/snacks:publish"]
+depends = "lint"
 run = "dotter deploy"
 
 [tasks.up]
 hide = true
 description = "Upgrade dependencies"
-depends = ["//utils/snacks:up"]
 run = "dprint config update"
 
 [tasks."audit:extras"]
 hide = true
 interactive = true
 description = "Dependency analysis"
-depends = ["//utils/snacks:audit:extras"]
 run = [
     # Dependencies
     "pnpx actions-up",

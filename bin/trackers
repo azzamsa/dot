@@ -1,0 +1,36 @@
+#!/usr/bin/env -S nu --stdin
+
+def main [path: path] {
+    let content = (open --raw $path)
+    # Stop processing if separator is found
+    let content = ($content | split row "Summary:" | first)
+
+    let items = [
+        ["label", "symbol"];
+        ["Study", "$"],
+        ["Family", "&"],
+        ["Leisure", "#"],
+        ["Sport", "*"],
+        ["Chores", "="],
+        ["Rest", "."]
+    ]
+
+    # Calculate counts
+    let stats = ($items | each { |it|
+        let count = ($content | split row $it.symbol | length | $in - 1)
+        {label: $it.label, symbol: $it.symbol, count: $count}
+    })
+
+    let total = ($stats | get count | math sum)
+
+    # Sort by count (highest to lowest) and print
+    $stats
+    | sort-by count --reverse
+    | each { |s|
+        let share = if $total > 0 { ($s.count / $total) * 100 } else { 0 }
+        print $"- ($s.label) \(($s.symbol)\): ($s.count) hours \(($share | math round -p 1)%\)"
+    }
+    | ignore
+
+    print $"\nTotal: ($total) hours \(100%\)"
+}

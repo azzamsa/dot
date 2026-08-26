@@ -4,6 +4,8 @@ local M = {}
 
 function M.append(config)
     local options = {
+        default_cursor_style = "BlinkingBar", -- default: 'SteadyBlock'
+        cursor_thickness = 2,
         -- stylua: ignore start
         -- selene: allow(undefined_variable)
         font_size = {{ terminal_font_size }}, -- default: 12.0

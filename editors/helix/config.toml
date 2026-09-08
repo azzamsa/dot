@@ -1,27 +1,55 @@
-theme = "modus_vivendi_me"
+theme = "tokyo_black"
 
 [editor]
-auto-reload = true
-# Sync clipboard with system clipboard
-default-yank-register = "+"
 line-number = "relative"
+color-modes = true
+default-yank-register = "+"
+jump-label-alphabet = "nshtcaeimybvjkwfldgou"
+
+auto-reload = true
+rounded-corners = true
 
 # Renders a line at the top of the editor displaying open buffers
 # bufferline = "multiple"
+
 # Remove the annoying vertical ruler. The formatter already handles long lines.
 rulers = []
 
 [editor.cursor-shape]
-insert = "block"
-normal = "bar"
+insert = "bar"
 select = "underline"
 
 [editor.file-picker]
+# Show hidden files in picker. Sometimes they are important!
+# Currently, there is no support for toggling hidden files.
+# You can use `:open` for hidden files, but it is tedious.
 hidden = false
-
-[keys.normal]
-esc = ["collapse_selection", "keep_primary_selection"]
 
 [editor.auto-save]
 focus-lost = true # default: false
 after-delay.enable = true # default: false
+
+[editor.indent-guides]
+render = true
+
+[editor.cmdline]
+# "popup" (noice.nvim style)
+style = "popup"
+
+[editor.gradient-borders]
+enable = true
+
+[editor.notifications]
+enable = true # Enable notification system
+style = "popup" # "popup" (noice-style) or "statusline" (traditional)
+position = "top-right"
+
+[editor.lsp]
+# Enable/disable color swatches display (default: true)
+display-color-swatches = true
+
+# Customize the color swatch symbol (default: "■")
+color-swatches-string = "●"
+
+[keys.normal]
+esc = ["collapse_selection", "keep_primary_selection"]

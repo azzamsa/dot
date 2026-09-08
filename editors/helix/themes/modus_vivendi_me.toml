@@ -3,6 +3,8 @@ inherits = "modus_vivendi_tinted"
 
 # "ui.linenr.selected" = { fg = "magenta-intense", bg = "bg-dim" }
 "ui.statusline" = { fg = "fg-mode-line-active", bg = "bg-dim" }
+"ui.popup" = { fg = "fg-main", bg = "bg-main" }
+"ui.menu" = { fg = "fg-main", bg = "bg-main" }
 
 [palette]
 # Basic values

@@ -1,17 +1,15 @@
 inherits = "tokyonight_moon"
 
 [palette]
-# ── Base ──────────────────────────────────────────
+comment = "#9399b2" # Overlay2
+border-highlight = "#cdd6f4" # Border color on popup menu.
+
 bg = "#000000"
-bg-inlay = "#0a0a0a"
-bg-selection = "#0d0e1c"
-bg-menu = "#000000"
-bg-focus = "#0d1a3a"
-border = "#0d0e1c"
-border-highlight = "#589ed7"
+bg-selection = "#45475a" # Surface1. Surface0 hard to distinguish. Active selection.
+bg-menu = "#000000" # ui.popup bg.
+bg-focus = "#313244" #  Surface0. active selection on popup menu.
 
 fg = "#ffffff"
-fg-dark = "#c8d3f5"
-fg-gutter = "#3b4261"
-fg-linenr = "#737aa2"
-fg-selected = "#0d0e1c"
+fg-dark = "#cdd6f4" # Text, subtext is too subtle. Modeline
+fg-gutter = "#a6adc8" # Subtext1 is too bright. Inactive line number.
+fg-linenr = "#fca7ea" # Active line number.

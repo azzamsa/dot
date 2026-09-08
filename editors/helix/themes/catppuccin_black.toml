@@ -1,0 +1,9 @@
+inherits = "catppuccin_mocha"
+
+"ui.popup" = { fg = "text", bg = "base" }
+"ui.menu" = { fg = "overlay2", bg = "base" }
+
+[palette]
+base = "#000000"
+mantle = "#000000"
+crust = "#000000"

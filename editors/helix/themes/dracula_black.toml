@@ -1,0 +1,6 @@
+inherits = "dracula_at_night"
+
+[palette]
+background = "#000000"
+background_dark = "#181825"
+comment = "#9399b2" # Catppuccin Overlay2

@@ -1,9 +1,8 @@
 #!/usr/bin/env fish
 
 function fish_greeting
-    set -l emoji (emojis nature)
     set -l quote (quotes --period)
-    echo "$(set_color magenta)$emoji $quote$(set_color normal)"
+    echo "$(set_color magenta)$quote$(set_color normal)"
 end
 
 # Force true-color support; otherwise, the Neovim Terminal inside Neovide

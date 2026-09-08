@@ -6,6 +6,10 @@ binds {
     Mod+Y hotkey-overlay-title="Clipboard Manager" {
         spawn "dms" "ipc" "call" "clipboard" "toggle";
     }
+    Mod+Shift+P hotkey-overlay-title="Color Piker" {
+        spawn-sh "dms color pick --autocopy --lowercase";
+    }
+
     Print {
         spawn-sh "dms screenshot full"
     }

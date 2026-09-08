@@ -65,7 +65,11 @@ binds {
     Mod+T { toggle-column-tabbed-display; }
 
     // Hints
-    Mod+H { spawn "sh" "-c" "wl-kbptr -o modes=tile,click"; }
+    Mod+S { spawn "sh" "-c" "wl-kbptr -o modes=tile,bisect,click"; }
+
+    // Handy
+    Mod+f8 { spawn "sh" "-c" "handy --toggle-transcription"; }
+
 
     //
     // Media

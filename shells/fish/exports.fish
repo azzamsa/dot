@@ -29,6 +29,7 @@ end
 fish_add_path ~/.local/bin
 fish_add_path ~/.local/bin/appimages
 fish_add_path ~/.local/kitty.app/bin
+fish_add_path ~/.config/emacs/bin
 
 # Nvim
 fish_add_path ~/.local/share/bob/nvim-bin
